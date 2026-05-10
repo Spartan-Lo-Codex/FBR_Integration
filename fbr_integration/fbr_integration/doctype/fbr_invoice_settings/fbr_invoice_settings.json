@@ -56,7 +56,7 @@
   },
   {
    "fieldname": "sandbox_security_token",
-   "fieldtype": "Data",
+   "fieldtype": "Password",
    "label": "Sandbox Security Token"
   },
   {
@@ -70,7 +70,7 @@
   },
   {
    "fieldname": "production_security_token",
-   "fieldtype": "Data",
+   "fieldtype": "Password",
    "label": "Production Security Token"
   }
  ],

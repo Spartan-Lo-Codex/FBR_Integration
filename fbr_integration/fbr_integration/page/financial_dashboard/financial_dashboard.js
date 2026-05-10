@@ -27,7 +27,16 @@ frappe.pages["financial-dashboard"].on_page_load = function (wrapper) {
         sales_monthly: null,
         purchases_monthly: null,
         expenses_bar: null,
+        sales_overview: null,
+        purchases_overview: null,
     };
+    function freshChartRoot(selector) {
+        const oldEl = document.querySelector(selector);
+        if (!oldEl || !oldEl.parentNode) return null;
+        const newEl = oldEl.cloneNode(false);
+        oldEl.parentNode.replaceChild(newEl, oldEl);
+        return newEl;
+    }
     function currencyFmt(currency) {
         return {
             fieldtype: "Currency",
@@ -176,6 +185,91 @@ frappe.pages["financial-dashboard"].on_page_load = function (wrapper) {
         load_vertical_analysis();
         load_horizontal_analysis();
         load_ratio_analysis();
+        load_invoice_kpis();
+        load_sales_purchases_overview();
+    }
+
+    function load_invoice_kpis() {
+        frappe.call({
+            method: "fbr_integration.templates.pages.financial_dashboard.financial_dashboard.get_invoice_kpis",
+            args: {
+                company: state.company,
+                from_date: state.from_date,
+                to_date: state.to_date,
+            },
+            callback(r) {
+                const d = r.message || {};
+                const fmt = currencyFmt();
+                $("#salesInvoiceCount").text(d.sales_count || 0);
+                $("#purchaseInvoiceCount").text(d.purchase_count || 0);
+                $("#salesInvoiceValue").html(
+                    frappe.format(d.sales_total || 0, fmt)
+                );
+                $("#purchaseInvoiceValue").html(
+                    frappe.format(d.purchase_total || 0, fmt)
+                );
+            },
+        });
+    }
+
+    function load_sales_purchases_overview() {
+        frappe.call({
+            method: "fbr_integration.templates.pages.financial_dashboard.financial_dashboard.get_sales_purchases_overview",
+            args: {
+                company: state.company,
+                from_date: state.from_date,
+                to_date: state.to_date,
+                group_by: state.analytics_group,
+            },
+            callback(r) {
+                const d = r.message || {
+                    labels: [],
+                    sales_values: [],
+                    purchases_values: [],
+                    sales_counts: [],
+                    purchase_counts: [],
+                };
+                const salesEl = freshChartRoot("#salesOverviewChart");
+                const purEl = freshChartRoot("#purchasesOverviewChart");
+                if (!salesEl || !purEl || typeof frappe.Chart === "undefined")
+                    return;
+                charts.sales_overview = new frappe.Chart(salesEl, {
+                    type: "bar",
+                    height: 280,
+                    data: {
+                        labels: d.labels,
+                        datasets: [
+                            { name: __("Sales Value"), values: d.sales_values },
+                            {
+                                name: __("Sales Invoices"),
+                                values: d.sales_counts,
+                            },
+                        ],
+                    },
+                    colors: ["#16a34a", "#0ea5e9"],
+                    axisOptions: { xIsSeries: 1, shortenYAxisNumbers: 1 },
+                });
+                charts.purchases_overview = new frappe.Chart(purEl, {
+                    type: "bar",
+                    height: 280,
+                    data: {
+                        labels: d.labels,
+                        datasets: [
+                            {
+                                name: __("Purchase Value"),
+                                values: d.purchases_values,
+                            },
+                            {
+                                name: __("Purchase Invoices"),
+                                values: d.purchase_counts,
+                            },
+                        ],
+                    },
+                    colors: ["#dc3545", "#f59e0b"],
+                    axisOptions: { xIsSeries: 1, shortenYAxisNumbers: 1 },
+                });
+            },
+        });
     }
 
     function load_trend() {
@@ -199,11 +293,9 @@ frappe.pages["financial-dashboard"].on_page_load = function (wrapper) {
     }
 
     function render_trend_chart(data) {
-        const el = document.querySelector("#trendChart");
+        const el = freshChartRoot("#trendChart");
         if (!el || typeof frappe.Chart === "undefined") return;
         try {
-            if (charts.trend && typeof charts.trend.destroy === "function")
-                charts.trend.destroy();
             charts.trend = new frappe.Chart(el, {
                 type: "line",
                 height: 300,
@@ -232,14 +324,9 @@ frappe.pages["financial-dashboard"].on_page_load = function (wrapper) {
             },
             callback(r) {
                 const data = r.message || { labels: [], values: [] };
-                const el = document.querySelector("#expenseChart");
+                const el = freshChartRoot("#expenseChart");
                 if (!el || typeof frappe.Chart === "undefined") return;
                 try {
-                    if (
-                        charts.expense &&
-                        typeof charts.expense.destroy === "function"
-                    )
-                        charts.expense.destroy();
                     charts.expense = new frappe.Chart(el, {
                         type: "donut",
                         height: 300,
@@ -278,14 +365,9 @@ frappe.pages["financial-dashboard"].on_page_load = function (wrapper) {
             },
             callback(r) {
                 const data = r.message || { labels: [], values: [] };
-                const el = document.querySelector("#cashFlowChart");
+                const el = freshChartRoot("#cashFlowChart");
                 if (!el || typeof frappe.Chart === "undefined") return;
                 try {
-                    if (
-                        charts.cash_flow &&
-                        typeof charts.cash_flow.destroy === "function"
-                    )
-                        charts.cash_flow.destroy();
                     charts.cash_flow = new frappe.Chart(el, {
                         type: "bar",
                         height: 300,
@@ -785,14 +867,9 @@ frappe.pages["financial-dashboard"].on_page_load = function (wrapper) {
     }
 
     function render_sales_monthly_chart(rows) {
-        const el = document.querySelector("#salesMonthlyChart");
+        const el = freshChartRoot("#salesMonthlyChart");
         if (!el) return;
         try {
-            if (
-                charts.sales_monthly &&
-                typeof charts.sales_monthly.destroy === "function"
-            )
-                charts.sales_monthly.destroy();
             charts.sales_monthly = new frappe.Chart(el, {
                 type: "bar",
                 height: 220,
@@ -873,14 +950,9 @@ frappe.pages["financial-dashboard"].on_page_load = function (wrapper) {
     }
 
     function render_purchases_monthly_chart(rows) {
-        const el = document.querySelector("#purchasesMonthlyChart");
+        const el = freshChartRoot("#purchasesMonthlyChart");
         if (!el) return;
         try {
-            if (
-                charts.purchases_monthly &&
-                typeof charts.purchases_monthly.destroy === "function"
-            )
-                charts.purchases_monthly.destroy();
             charts.purchases_monthly = new frappe.Chart(el, {
                 type: "bar",
                 height: 220,
@@ -961,14 +1033,9 @@ frappe.pages["financial-dashboard"].on_page_load = function (wrapper) {
     }
 
     function render_expenses_bar_chart(rows) {
-        const el = document.querySelector("#expensesBarChart");
+        const el = freshChartRoot("#expensesBarChart");
         if (!el) return;
         try {
-            if (
-                charts.expenses_bar &&
-                typeof charts.expenses_bar.destroy === "function"
-            )
-                charts.expenses_bar.destroy();
             charts.expenses_bar = new frappe.Chart(el, {
                 type: "bar",
                 height: 220,
@@ -1255,8 +1322,8 @@ frappe.pages["financial-dashboard"].on_page_load = function (wrapper) {
 
     $(document).on("click", ".custom-range-btn", function (e) {
         e.preventDefault();
-        $("#customFromDate").val(frappe.datetime.str_to_user(state.from_date));
-        $("#customToDate").val(frappe.datetime.str_to_user(state.to_date));
+        $("#customFromDate").val(state.from_date);
+        $("#customToDate").val(state.to_date);
         $("#customDateModal").modal("show");
     });
 
@@ -1264,8 +1331,8 @@ frappe.pages["financial-dashboard"].on_page_load = function (wrapper) {
         const from = $("#customFromDate").val();
         const to = $("#customToDate").val();
         if (from && to) {
-            state.from_date = frappe.datetime.user_to_str(from);
-            state.to_date = frappe.datetime.user_to_str(to);
+            state.from_date = from;
+            state.to_date = to;
             $("#currentPeriod").text(from + " to " + to);
             $("#customDateModal").modal("hide");
             load_data();
