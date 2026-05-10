@@ -109,11 +109,11 @@ def send_invoice_to_fbr(doc, method=None):
     payload = {
         "invoiceType": doc.custom_invoice_type,
         "invoiceDate": str(doc.posting_date),
-        "sellerNTNCNIC": (doc.company_tax_id or "").strip(),
+        "sellerNTNCNIC": doc.company_tax_id,
         "sellerBusinessName": doc.company,
         "sellerAddress": seller_address,
         "sellerProvince": seller_province,
-        "buyerNTNCNIC": (doc.tax_id or "").strip(),
+        "buyerNTNCNIC": doc.tax_id,
         "buyerBusinessName": doc.customer,
         "buyerAddress": buyer_address,
         "buyerProvince": buyer_province,
