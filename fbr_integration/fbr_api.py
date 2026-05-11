@@ -58,6 +58,53 @@ def extra_tax_value(val, sale_type_str):
 		return 0
 
 
+def merge_fbr_items(items):
+	"""Merge duplicate item lines for strict FBR validation.
+
+	Some FBR responses flag repeated lines as duplicate even within one invoice.
+	Merge by item identity fields and sum numeric amounts.
+	"""
+	merged = {}
+	numeric_sum_fields = (
+		"quantity",
+		"totalValues",
+		"valueSalesExcludingST",
+		"salesTaxApplicable",
+		"salesTaxWithheldAtSource",
+		"extraTax",
+		"furtherTax",
+		"fedPayable",
+		"discount",
+	)
+
+	for item in items:
+		key = (
+			item.get("hsCode", ""),
+			item.get("productDescription", ""),
+			item.get("rate", ""),
+			item.get("uoM", ""),
+			item.get("saleType", ""),
+			item.get("sroScheduleNo", ""),
+			item.get("sroItemSerialNo", ""),
+		)
+
+		if key not in merged:
+			merged[key] = dict(item)
+			continue
+
+		target = merged[key]
+		for field in numeric_sum_fields:
+			target[field] = safe_float(target.get(field)) + safe_float(item.get(field))
+
+		# Keep the unit retail/notified value from the first line.
+		if not target.get("fixedNotifiedValueOrRetailPrice"):
+			target["fixedNotifiedValueOrRetailPrice"] = safe_float(
+				item.get("fixedNotifiedValueOrRetailPrice")
+			)
+
+	return list(merged.values())
+
+
 def sync_qr_fields(doc, qr_value):
 	qr_val = (qr_value or "").strip()
 	# keep old and new field names in sync for client installs
@@ -158,7 +205,7 @@ def send_invoice_to_fbr(doc, method=None):
 		"invoiceRefNo": safe_str(doc.name),
 		"scenarioId": safe_str(doc.custom_scenario_id),
 		"buyerRegistrationType": safe_fbr_text(doc.custom_tax_payer_type),
-		"items": items_list,
+		"items": merge_fbr_items(items_list),
 	}
 
 	# Debug log — visible in bench logs to help diagnose FBR rejections
