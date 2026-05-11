@@ -25,14 +25,14 @@ def safe_str(val):
 def extra_tax_value(val, sale_type_str):
 	reduced_types = ("goodsatreducedrate", "reducedrate", "rr")
 	if sale_type_str in reduced_types:
-		return ""
+		return 0
 	try:
 		num = float(val)
 		if num <= 0:
-			return ""
+			return 0
 		return num
 	except (TypeError, ValueError):
-		return ""
+		return 0
 
 
 def sync_qr_fields(doc, qr_value):
