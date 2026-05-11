@@ -540,7 +540,6 @@ frappe.ui.form.on("Sales Invoice", {
     refresh(frm) {
         sync_qr_field_on_form(frm);
         render_qr_preview(frm);
-        sync_fbr_item_tax_templates(frm, { notify: false });
 
         frm.add_custom_button(__("FBR"), async function () {
             if ((frm.doc.custom_fbr_invoice_no || "").trim()) {
