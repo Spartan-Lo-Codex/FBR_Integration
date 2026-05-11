@@ -56,6 +56,28 @@ async function ensure_return_credit_note(frm, options = {}) {
     }
 }
 
+async function clear_fbr_response_fields(frm) {
+    if (!frm || !frm.doc) return;
+
+    // Clear FBR response fields for fresh return submission
+    const fieldsToClean = [
+        "custom_fbr_digital_invoice_response",
+        "custom_fbr_invoice_no",
+        "custom_fbr_responsed",
+        "custom_fbr_qr_code",
+        "custom_fbr_invoice_status",
+        "custom_fbr_invoice_status_code",
+        "custom_fbr_submission_time",
+        "custom_fbr_invoice_statuses",
+    ];
+
+    for (const field of fieldsToClean) {
+        if (field in frm.doc && frm.doc[field]) {
+            await frm.set_value(field, "");
+        }
+    }
+}
+
 async function sync_return_source_invoice_no(frm) {
     if (!frm || !frm.doc) return;
     if (!is_return_checked(frm.doc)) return;
@@ -581,16 +603,23 @@ frappe.ui.form.on("Sales Invoice", {
         if (frm.is_new()) {
             await ensure_return_credit_note(frm);
             await sync_return_source_invoice_no(frm);
+            await clear_fbr_response_fields(frm);
         }
     },
 
     async is_return(frm) {
         await ensure_return_credit_note(frm, { notify: true });
         await sync_return_source_invoice_no(frm);
+        if (is_return_checked(frm.doc)) {
+            await clear_fbr_response_fields(frm);
+        }
     },
 
     async return_against(frm) {
         await sync_return_source_invoice_no(frm);
+        if (is_return_checked(frm.doc)) {
+            await clear_fbr_response_fields(frm);
+        }
     },
 
     async custom_invoice_type(frm) {
