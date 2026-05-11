@@ -202,11 +202,11 @@ def send_invoice_to_fbr(doc, method=None):
 				"salesTaxWithheldAtSource": 0,
 				"extraTax": extra_tax,
 				"furtherTax": further_tax,
-				"sroScheduleNo": safe_fbr_item_text(item.custom_sro_schedule_no),
+				"sroScheduleNo": safe_str(item.custom_sro_schedule_no),
 				"fedPayable": 0,
 				"discount": safe_float(item.discount_amount),
 				"saleType": sale_type_val,
-				"sroItemSerialNo": safe_fbr_item_text(item.custom_sro_item_sno),
+				"sroItemSerialNo": safe_str(item.custom_sro_item_sno),
 			}
 		)
 
