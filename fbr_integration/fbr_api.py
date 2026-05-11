@@ -203,6 +203,31 @@ def enforce_return_invoice_type(doc, method=None):
 		doc.custom_invoice_type = "Credit Note"
 
 
+def log_fbr_exchange(doc_name, attempt_label, payload, response):
+	"""Store complete FBR request/response exchange for troubleshooting."""
+	response_text = safe_str(getattr(response, "text", ""))
+	response_status = getattr(response, "status_code", None)
+
+	try:
+		response_json = response.json()
+	except Exception:
+		response_json = None
+
+	log_body = {
+		"invoice": safe_str(doc_name),
+		"attempt": safe_str(attempt_label),
+		"request": payload,
+		"response_status": response_status,
+		"response_json": response_json,
+		"response_raw": response_text,
+	}
+
+	frappe.log_error(
+		title=f"FBR Exchange [{attempt_label}] {safe_str(doc_name)}",
+		message=json.dumps(log_body, indent=2, ensure_ascii=False),
+	)
+
+
 def get_return_reason(doc):
 	"""Resolve reason for return payload (debit note requirement)."""
 	if hasattr(doc, "custom_fbr_reason"):
@@ -394,6 +419,7 @@ def send_invoice_to_fbr(doc, method=None):
 
 	# Send
 	resp = _post_payload(payload)
+	log_fbr_exchange(doc.name, "initial", payload, resp)
 
 	# Always keep response in SI for audit (even if invalid)
 	resp_text = resp.text or ""
@@ -414,6 +440,7 @@ def send_invoice_to_fbr(doc, method=None):
 				message=json.dumps(payload, indent=2, ensure_ascii=False),
 			)
 			resp = _post_payload(payload)
+			log_fbr_exchange(doc.name, "retry_debit_note", payload, resp)
 			resp_text = resp.text or ""
 			try:
 				res_json = resp.json()
