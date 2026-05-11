@@ -1,0 +1,50 @@
+{
+ "add_total_row": 1,
+ "add_translate_data": 0,
+ "columns": [],
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "default": "2026-01-01",
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "default": "Today",
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "module": "FBR Integration",
+ "name": "FBR Purchases Detail",
+ "prepared_report": 0,
+ "query": "SELECT\n  pi.name AS \"Purchase Invoice:Link/Purchase Invoice:180\",\n  pi.posting_date AS \"Date:Date:95\",\n  pi.supplier AS \"Supplier:Link/Supplier:180\",\n  pi.supplier_name AS \"Supplier Name:Data:180\",\n  pi.currency AS \"Currency:Data:70\",\n  pi.base_grand_total AS \"Base Grand Total:Currency:130\",\n  pi.grand_total AS \"Grand Total:Currency:130\",\n  pi.outstanding_amount AS \"Outstanding:Currency:120\",\n  pi.bill_no AS \"Supplier Bill No:Data:140\",\n  pi.bill_date AS \"Supplier Bill Date:Date:110\"\nFROM `tabPurchase Invoice` pi\nWHERE pi.docstatus = 1\n  AND pi.posting_date BETWEEN %(from_date)s AND %(to_date)s\nORDER BY pi.posting_date DESC, pi.name DESC;",
+ "ref_doctype": "Purchase Invoice",
+ "report_name": "FBR Purchases Detail",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Purchase Manager"
+  },
+  {
+   "role": "Purchase User"
+  }
+ ],
+ "timeout": 0
+}
