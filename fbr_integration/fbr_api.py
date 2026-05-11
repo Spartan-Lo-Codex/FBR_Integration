@@ -4,6 +4,7 @@ import re
 import frappe
 import requests
 import urllib3
+from frappe.utils import cint
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -12,6 +13,13 @@ def safe_float(val):
 	try:
 		num = float(val)
 		return num if num >= 0 else 0
+	except (TypeError, ValueError):
+		return 0
+
+
+def safe_abs_float(val):
+	try:
+		return abs(float(val))
 	except (TypeError, ValueError):
 		return 0
 
@@ -105,6 +113,22 @@ def merge_fbr_items(items):
 	return list(merged.values())
 
 
+def normalize_sro_fields_for_scenario(scenario_id, sro_schedule_no, sro_item_sno):
+	"""Apply scenario-specific SRO normalization for FBR payload."""
+	scenario = safe_str(scenario_id).strip().upper()
+	sro_no = safe_str(sro_schedule_no).strip()
+	sro_item = safe_str(sro_item_sno).strip()
+
+	if scenario == "SN007":
+		normalized_sro = " ".join(sro_no.lower().split())
+		if not normalized_sro or normalized_sro.startswith("eighth schedule"):
+			sro_no = "6th Schd Table I"
+		if not sro_item:
+			sro_item = "1"
+
+	return sro_no, sro_item
+
+
 def sync_qr_fields(doc, qr_value):
 	qr_val = (qr_value or "").strip()
 	# keep old and new field names in sync for client installs
@@ -112,6 +136,23 @@ def sync_qr_fields(doc, qr_value):
 		doc.custom_fbr_qr_code = qr_val
 	if hasattr(doc, "custom_qr_code"):
 		doc.custom_qr_code = qr_val
+
+
+def get_source_invoice_no_for_return(doc):
+	"""Resolve source invoice number for Sales Return payloads."""
+	return_against = safe_str(getattr(doc, "return_against", "")).strip()
+	if not return_against:
+		return ""
+
+	try:
+		source_fbr_no = frappe.db.get_value("Sales Invoice", return_against, "custom_fbr_invoice_no")
+		if source_fbr_no:
+			return safe_str(source_fbr_no).strip()
+	except Exception:
+		pass
+
+	# Fallback to ERP invoice id if FBR invoice no is not present.
+	return return_against
 
 
 @frappe.whitelist()
@@ -158,11 +199,23 @@ def send_invoice_to_fbr(doc, method=None):
 		buyer_address = f"{addr.address_line1}, {addr.city}"
 		buyer_province = addr.state or ""
 
+	is_credit_note_return = (
+		cint(getattr(doc, "is_return", 0)) == 1
+		and safe_str(getattr(doc, "custom_invoice_type", "")).strip().lower() == "credit note"
+	)
+
+	if is_credit_note_return and not safe_str(getattr(doc, "return_against", "")).strip():
+		frappe.throw(
+			"Sales Return Credit Note requires Return Against (original Sales Invoice). "
+			"Please set Return Against before sending to FBR."
+		)
+
 	# Items
 	items_list = []
 	scenario_id = safe_str(doc.custom_scenario_id).strip().upper()
 	is_exempt_scenario = scenario_id == "SN006"
 	is_zero_rated_scenario = scenario_id == "SN007"
+	num = safe_abs_float if is_credit_note_return else safe_float
 	for item in doc.items:
 		sale_type_str = str(item.custom_sale_type or "").lower().replace(" ", "")
 		extra_tax = extra_tax_value(item.custom_extra_tax, sale_type_str)
@@ -173,20 +226,26 @@ def send_invoice_to_fbr(doc, method=None):
 			sales_tax_applicable = 0
 			further_tax = 0
 			extra_tax = 0
-			total_values = safe_float(item.amount)
+			total_values = num(item.amount)
 		elif is_zero_rated_scenario:
 			rate_val = "0%"
 			sale_type_val = "Goods at zero-rate"
 			sales_tax_applicable = 0
 			further_tax = 0
 			extra_tax = 0
-			total_values = safe_float(item.amount)
+			total_values = num(item.amount)
 		else:
-			rate_val = f"{safe_float(item.custom_sales_tax_rate):.2f}%"
+			rate_val = f"{num(item.custom_sales_tax_rate):.2f}%"
 			sale_type_val = safe_str(item.custom_sale_type)
-			sales_tax_applicable = safe_float(item.custom_sales_tax)
-			further_tax = safe_float(item.custom_further_tax)
-			total_values = safe_float(item.custom_tax_inclusive_amount)
+			sales_tax_applicable = num(item.custom_sales_tax)
+			further_tax = num(item.custom_further_tax)
+			total_values = num(item.custom_tax_inclusive_amount)
+
+		sro_schedule_no_val, sro_item_sno_val = normalize_sro_fields_for_scenario(
+			scenario_id,
+			item.custom_sro_schedule_no,
+			item.custom_sro_item_sno,
+		)
 
 		items_list.append(
 			{
@@ -194,19 +253,19 @@ def send_invoice_to_fbr(doc, method=None):
 				"productDescription": safe_fbr_item_text(item.item_name),
 				"rate": rate_val,
 				"uoM": safe_fbr_item_text(item.custom_fbr_uom),
-				"quantity": safe_float(item.qty),
+				"quantity": num(item.qty),
 				"totalValues": total_values,
-				"valueSalesExcludingST": safe_float(item.amount),
-				"fixedNotifiedValueOrRetailPrice": safe_float(item.rate),
+				"valueSalesExcludingST": num(item.amount),
+				"fixedNotifiedValueOrRetailPrice": num(item.rate),
 				"salesTaxApplicable": sales_tax_applicable,
 				"salesTaxWithheldAtSource": 0,
-				"extraTax": extra_tax,
+				"extraTax": num(extra_tax),
 				"furtherTax": further_tax,
-				"sroScheduleNo": safe_str(item.custom_sro_schedule_no),
+				"sroScheduleNo": sro_schedule_no_val,
 				"fedPayable": 0,
-				"discount": safe_float(item.discount_amount),
+				"discount": num(item.discount_amount),
 				"saleType": sale_type_val,
-				"sroItemSerialNo": safe_str(item.custom_sro_item_sno),
+				"sroItemSerialNo": sro_item_sno_val,
 			}
 		)
 
@@ -227,6 +286,16 @@ def send_invoice_to_fbr(doc, method=None):
 		"items": merge_fbr_items(items_list),
 	}
 
+	if is_credit_note_return:
+		payload["reason"] = safe_fbr_text(getattr(doc, "remarks", "") or "Sales Return")
+		source_invoice_no = get_source_invoice_no_for_return(doc)
+		if not source_invoice_no:
+			frappe.throw(
+				"Unable to resolve source invoice number for Credit Note. "
+				"Ensure Return Against is set and the source invoice has FBR invoice no."
+			)
+		payload["sourceInvoiceNo"] = source_invoice_no
+
 	# Debug log — visible in bench logs to help diagnose FBR rejections
 	frappe.log_error(
 		title="FBR Outgoing Payload",
@@ -235,8 +304,11 @@ def send_invoice_to_fbr(doc, method=None):
 
 	headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
 
+	def _post_payload(body):
+		return requests.post(api_url, headers=headers, json=body, verify=False, timeout=90)
+
 	# Send
-	resp = requests.post(api_url, headers=headers, json=payload, verify=False, timeout=90)
+	resp = _post_payload(payload)
 
 	# Always keep response in SI for audit (even if invalid)
 	resp_text = resp.text or ""
@@ -244,6 +316,24 @@ def send_invoice_to_fbr(doc, method=None):
 		res_json = resp.json()
 	except Exception:
 		res_json = {"raw_response": resp_text}
+
+	# Some FBR setups reject Credit Note label but accept Debit Note for returns.
+	if is_credit_note_return:
+		validation = res_json.get("validationResponse", {}) or {}
+		error_code = validation.get("errorCode") or ""
+		invoice_type = safe_str(payload.get("invoiceType")).strip().lower()
+		if error_code == "0003" and invoice_type == "credit note":
+			payload["invoiceType"] = "Debit Note"
+			frappe.log_error(
+				title="FBR Outgoing Payload Retry",
+				message=json.dumps(payload, indent=2, ensure_ascii=False),
+			)
+			resp = _post_payload(payload)
+			resp_text = resp.text or ""
+			try:
+				res_json = resp.json()
+			except Exception:
+				res_json = {"raw_response": resp_text}
 
 	# Store full response json always
 	if hasattr(doc, "custom_fbr_digital_invoice_response"):
