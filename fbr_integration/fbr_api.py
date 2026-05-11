@@ -155,6 +155,59 @@ def get_source_invoice_no_for_return(doc):
 	return return_against
 
 
+def _parse_return_meta_from_remarks(remarks):
+	"""Extract optional source invoice and reason from remarks text.
+
+	Supported examples:
+	- FBR Source Invoice No: 1953701DI1KLDKA962915
+	- Source Invoice No: 1953701DI1KLDKA962915 | Reason: Damaged goods return
+	"""
+	text = safe_str(remarks)
+	if not text:
+		return "", ""
+
+	source_match = re.search(
+		r"(?:fbr\s*source\s*invoice\s*no|source\s*invoice\s*no)\s*[:#\-]\s*([A-Za-z0-9\-_/]+)",
+		text,
+		flags=re.IGNORECASE,
+	)
+	reason_match = re.search(
+		r"(?:reason)\s*[:#\-]\s*(.+)$",
+		text,
+		flags=re.IGNORECASE,
+	)
+
+	source = safe_str(source_match.group(1)).strip() if source_match else ""
+	reason = safe_str(reason_match.group(1)).strip() if reason_match else ""
+	return source, reason
+
+
+def get_manual_source_invoice_no_for_return(doc):
+	"""Resolve manual source invoice number for direct return flow."""
+	if hasattr(doc, "custom_fbr_source_invoice_no"):
+		manual = safe_str(getattr(doc, "custom_fbr_source_invoice_no", "")).strip()
+		if manual:
+			return manual
+
+	parsed_source, _ = _parse_return_meta_from_remarks(getattr(doc, "remarks", ""))
+	return parsed_source
+
+
+def get_return_reason(doc):
+	"""Resolve reason for return payload (debit note requirement)."""
+	if hasattr(doc, "custom_fbr_reason"):
+		reason = safe_fbr_text(getattr(doc, "custom_fbr_reason", ""))
+		if reason:
+			return reason
+
+	_, parsed_reason = _parse_return_meta_from_remarks(getattr(doc, "remarks", ""))
+	if parsed_reason:
+		return safe_fbr_text(parsed_reason)
+
+	remarks = safe_fbr_text(getattr(doc, "remarks", ""))
+	return remarks or "Sales Return"
+
+
 @frappe.whitelist()
 def send_to_fbr_si(name: str):
 	doc = frappe.get_doc("Sales Invoice", name)
@@ -203,11 +256,16 @@ def send_invoice_to_fbr(doc, method=None):
 		cint(getattr(doc, "is_return", 0)) == 1
 		and safe_str(getattr(doc, "custom_invoice_type", "")).strip().lower() == "credit note"
 	)
+	manual_source_invoice_no = get_manual_source_invoice_no_for_return(doc)
 
-	if is_credit_note_return and not safe_str(getattr(doc, "return_against", "")).strip():
+	if (
+		is_credit_note_return
+		and not safe_str(getattr(doc, "return_against", "")).strip()
+		and not manual_source_invoice_no
+	):
 		frappe.throw(
-			"Sales Return Credit Note requires Return Against (original Sales Invoice). "
-			"Please set Return Against before sending to FBR."
+			"Sales Return Credit Note requires one source reference: "
+			"either Return Against (original Sales Invoice) or FBR Source Invoice No."
 		)
 
 	# Items
@@ -287,12 +345,12 @@ def send_invoice_to_fbr(doc, method=None):
 	}
 
 	if is_credit_note_return:
-		payload["reason"] = safe_fbr_text(getattr(doc, "remarks", "") or "Sales Return")
-		source_invoice_no = get_source_invoice_no_for_return(doc)
+		payload["reason"] = get_return_reason(doc)
+		source_invoice_no = get_source_invoice_no_for_return(doc) or manual_source_invoice_no
 		if not source_invoice_no:
 			frappe.throw(
 				"Unable to resolve source invoice number for Credit Note. "
-				"Ensure Return Against is set and the source invoice has FBR invoice no."
+				"Set Return Against or provide FBR Source Invoice No."
 			)
 		payload["sourceInvoiceNo"] = source_invoice_no
 
