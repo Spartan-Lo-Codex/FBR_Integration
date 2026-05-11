@@ -106,6 +106,27 @@ async function show_success_popup_with_qr_barcode(frm) {
     const print_url = get_print_url(frm);
     const pdf_url = get_pdf_url(frm);
 
+    const taxRate =
+        frm.doc.taxes && frm.doc.taxes.length
+            ? frm.doc.taxes[0].rate + "%"
+            : frm.doc.custom_sales_tax_rate
+            ? frm.doc.custom_sales_tax_rate + "%"
+            : "N/A";
+    const taxAmount =
+        frm.doc.total_taxes_and_charges != null
+            ? frappe.format(frm.doc.total_taxes_and_charges, {
+                  fieldtype: "Currency",
+              })
+            : "N/A";
+    const totalAmount =
+        frm.doc.total != null
+            ? frappe.format(frm.doc.total, { fieldtype: "Currency" })
+            : "N/A";
+    const grandTotal =
+        frm.doc.grand_total != null
+            ? frappe.format(frm.doc.grand_total, { fieldtype: "Currency" })
+            : "N/A";
+
     frappe.msgprint({
         title: __("Invoice Sent"),
         message: `
@@ -126,12 +147,53 @@ async function show_success_popup_with_qr_barcode(frm) {
                     </div>
                 </div>
 
-                <div style="background:#2ea86d; color:#fff; border-radius:999px; padding:10px 14px; font-weight:700; text-align:center; letter-spacing:.2px; margin-bottom:12px;">
-                    FBR INVOICE NUMBER: ${esc(fbrNo || "N/A")}
+                <div style="background:#2ea86d; color:#fff; border-radius:999px; padding:8px 14px; font-weight:700; text-align:center; letter-spacing:.2px; margin-bottom:8px;">
+                    FBR INVOICE: ${esc(fbrNo || "N/A")}
                 </div>
 
-                <div style="background:#0f766e; color:#fff; border-radius:999px; padding:9px 14px; font-weight:700; text-align:center; letter-spacing:.2px; margin:-4px 0 12px 0;">
-                    ERP INVOICE NUMBER: ${esc(frm.doc.name || "N/A")}
+                <div style="background:#0f766e; color:#fff; border-radius:999px; padding:8px 14px; font-weight:700; text-align:center; letter-spacing:.2px; margin-bottom:10px;">
+                    ERP INVOICE: ${esc(frm.doc.name || "N/A")}
+                </div>
+
+                <div style="background:#fff; border:1px solid #d1fae5; border-radius:8px; padding:8px 12px; margin-bottom:10px; font-size:12px;">
+                    <table style="width:100%; border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid #e5e7eb;">
+                            <td style="padding:4px 6px; color:#6b7280; width:48%;">📅 Date</td>
+                            <td style="padding:4px 6px; font-weight:600; text-align:right;">${esc(
+                                frm.doc.posting_date || ""
+                            )}</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #e5e7eb;">
+                            <td style="padding:4px 6px; color:#6b7280;">👤 Customer</td>
+                            <td style="padding:4px 6px; font-weight:600; text-align:right;">${esc(
+                                frm.doc.customer_name || frm.doc.customer || ""
+                            )}</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #e5e7eb;">
+                            <td style="padding:4px 6px; color:#6b7280;">💰 Total Amount</td>
+                            <td style="padding:4px 6px; font-weight:600; text-align:right;">${esc(
+                                totalAmount
+                            )}</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #e5e7eb;">
+                            <td style="padding:4px 6px; color:#6b7280;">📊 Tax Rate</td>
+                            <td style="padding:4px 6px; font-weight:600; text-align:right;">${esc(
+                                taxRate
+                            )}</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #e5e7eb;">
+                            <td style="padding:4px 6px; color:#6b7280;">🧾 Tax Amount</td>
+                            <td style="padding:4px 6px; font-weight:600; text-align:right;">${esc(
+                                taxAmount
+                            )}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:4px 6px; color:#166534; font-weight:700;">✅ Grand Total</td>
+                            <td style="padding:4px 6px; font-weight:700; color:#166534; text-align:right;">${esc(
+                                grandTotal
+                            )}</td>
+                        </tr>
+                    </table>
                 </div>
 
                 <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-bottom:10px;">
@@ -149,10 +211,10 @@ async function show_success_popup_with_qr_barcode(frm) {
                 ${
                     data.ok && data.barcode_data_url
                         ? `
-                <div style="margin-top:8px; background:#fff; border:1px solid #d1fae5; border-radius:8px; padding:8px 10px;">
+                <div style="background:#fff; border:1px solid #d1fae5; border-radius:8px; padding:10px 10px 6px;">
                     <img src="${
                         data.barcode_data_url
-                    }" style="max-width:100%; width:100%; height:52px; object-fit:contain; object-position:center; display:block;" />
+                    }" style="width:100%; height:60px; display:block; object-fit:fill;" />
                     <div style="margin-top:4px; font-size:10px; letter-spacing:0.8px; color:#374151; text-align:center; word-break:break-all; font-weight:600;">
                         ${esc(data.value || fbrNo)}
                     </div>
