@@ -160,7 +160,9 @@ def send_invoice_to_fbr(doc, method=None):
 
 	# Items
 	items_list = []
-	is_exempt_scenario = safe_str(doc.custom_scenario_id).strip().upper() == "SN006"
+	scenario_id = safe_str(doc.custom_scenario_id).strip().upper()
+	is_exempt_scenario = scenario_id == "SN006"
+	is_zero_rated_scenario = scenario_id == "SN007"
 	for item in doc.items:
 		sale_type_str = str(item.custom_sale_type or "").lower().replace(" ", "")
 		extra_tax = extra_tax_value(item.custom_extra_tax, sale_type_str)
@@ -168,6 +170,13 @@ def send_invoice_to_fbr(doc, method=None):
 		if is_exempt_scenario:
 			rate_val = "Exempt"
 			sale_type_val = "Exempt goods"
+			sales_tax_applicable = 0
+			further_tax = 0
+			extra_tax = 0
+			total_values = safe_float(item.amount)
+		elif is_zero_rated_scenario:
+			rate_val = "0%"
+			sale_type_val = "Goods at zero-rate"
 			sales_tax_applicable = 0
 			further_tax = 0
 			extra_tax = 0
