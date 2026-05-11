@@ -230,6 +230,8 @@ def send_to_fbr_si(name: str):
 
 
 def send_invoice_to_fbr(doc, method=None):
+	enforce_return_invoice_type(doc)
+
 	settings = frappe.get_single("FBR Invoice Settings")
 
 	if not settings.enabled:
@@ -262,8 +264,9 @@ def send_invoice_to_fbr(doc, method=None):
 		buyer_address = f"{addr.address_line1}, {addr.city}"
 		buyer_province = addr.state or ""
 
+	is_return_invoice = cint(getattr(doc, "is_return", 0)) == 1
 	is_credit_note_return = (
-		cint(getattr(doc, "is_return", 0)) == 1
+		is_return_invoice
 		and safe_str(getattr(doc, "custom_invoice_type", "")).strip().lower() == "credit note"
 	)
 	manual_source_invoice_no = get_manual_source_invoice_no_for_return(doc)
@@ -283,7 +286,7 @@ def send_invoice_to_fbr(doc, method=None):
 	scenario_id = safe_str(doc.custom_scenario_id).strip().upper()
 	is_exempt_scenario = scenario_id == "SN006"
 	is_zero_rated_scenario = scenario_id == "SN007"
-	num = safe_abs_float if is_credit_note_return else safe_float
+	num = safe_abs_float if is_return_invoice else safe_float
 	for item in doc.items:
 		sale_type_str = str(item.custom_sale_type or "").lower().replace(" ", "")
 		extra_tax = extra_tax_value(item.custom_extra_tax, sale_type_str)
@@ -315,6 +318,20 @@ def send_invoice_to_fbr(doc, method=None):
 			item.custom_sro_item_sno,
 		)
 
+		value_sales_excluding_st = num(item.amount)
+		if value_sales_excluding_st <= 0:
+			value_sales_excluding_st = num((safe_float(item.qty) or 0) * (safe_float(item.rate) or 0))
+
+		if value_sales_excluding_st <= 0:
+			frappe.throw(
+				f"Invalid item value for FBR on row {item.idx} ({safe_str(item.item_code) or safe_str(item.item_name)}). "
+				"Value Sales Excluding ST must be greater than zero."
+			)
+
+		total_values = num(item.custom_tax_inclusive_amount)
+		if total_values <= 0:
+			total_values = value_sales_excluding_st + sales_tax_applicable + further_tax + num(extra_tax)
+
 		items_list.append(
 			{
 				"hsCode": safe_str(item.custom_hs_code),
@@ -323,7 +340,7 @@ def send_invoice_to_fbr(doc, method=None):
 				"uoM": safe_fbr_item_text(item.custom_fbr_uom),
 				"quantity": num(item.qty),
 				"totalValues": total_values,
-				"valueSalesExcludingST": num(item.amount),
+				"valueSalesExcludingST": value_sales_excluding_st,
 				"fixedNotifiedValueOrRetailPrice": num(item.rate),
 				"salesTaxApplicable": sales_tax_applicable,
 				"salesTaxWithheldAtSource": 0,
