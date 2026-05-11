@@ -308,21 +308,18 @@ function sync_qr_field_on_form(frm) {
     const fbrNo = (frm.doc.custom_fbr_invoice_no || "").trim();
     if (!fbrNo) return;
 
-    const updates = {};
+    // Only update in-memory for display; don't mark submitted forms as dirty
     if (
         "custom_fbr_qr_code" in frm.doc &&
         (frm.doc.custom_fbr_qr_code || "") !== fbrNo
     ) {
-        updates.custom_fbr_qr_code = fbrNo;
+        frm.doc.custom_fbr_qr_code = fbrNo;
     }
     if (
         "custom_qr_code" in frm.doc &&
         (frm.doc.custom_qr_code || "") !== fbrNo
     ) {
-        updates.custom_qr_code = fbrNo;
-    }
-    if (Object.keys(updates).length) {
-        frm.set_value(updates);
+        frm.doc.custom_qr_code = fbrNo;
     }
 }
 
