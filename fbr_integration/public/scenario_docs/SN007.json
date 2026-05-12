@@ -1,0 +1,41 @@
+{
+  "id": "SN007",
+  "title": "Zero-Rated Goods",
+  "description": "Zero-rated goods have sales tax charged at 0%. The seller can claim input tax credits on purchases. This is often applied to exported goods.",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-04-21",
+    "sellerBusinessName": "Logic Layer Pvt Ltd",
+    "sellerNTNCNIC": "7654321",
+    "sellerProvince": "Sindh",
+    "buyerNTNCNIC": "3710505701479",
+    "buyerBusinessName": "Export House",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "scenarioId": "SN007",
+    "buyerRegistrationType": "Unregistered",
+    "invoiceRefNo": "0",
+    "items": [
+      {
+        "hsCode": "0101.2100",
+        "productDescription": "Export Goods",
+        "rate": "0%",
+        "uoM": "Numbers, pieces, units",
+        "quantity": 100,
+        "totalValues": 0,
+        "valueSalesExcludingST": 100,
+        "salesTaxApplicable": 0,
+        "salesTaxWithheldAtSource": 0,
+        "extraTax": 0,
+        "furtherTax": 0,
+        "sroScheduleNo": "327(I)/2008",
+        "fixedNotifiedValueOrRetailPrice": 0.0,
+        "fedPayable": 0,
+        "discount": 0,
+        "saleType": "Goods at zero-rate",
+        "sroItemSerialNo": "1"
+      }
+    ]
+  }
+}

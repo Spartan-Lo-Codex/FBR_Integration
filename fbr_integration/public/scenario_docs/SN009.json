@@ -1,0 +1,41 @@
+{
+  "id": "SN009",
+  "title": "Cotton Ginners",
+  "description": "Purchases from registered cotton ginners are subject to specific rules under cotton trade taxation, possibly involving reverse charge mechanisms.",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-05-15",
+    "sellerNTNCNIC": "7654321",
+    "sellerBusinessName": "Logic Layer Pvt Ltd",
+    "sellerProvince": "Sindh",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "buyerNTNCNIC": "2046004",
+    "buyerBusinessName": "Textile Mills",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "invoiceRefNo": "",
+    "scenarioId": "SN009",
+    "buyerRegistrationType": "Registered",
+    "items": [
+      {
+        "hsCode": "0101.2100",
+        "productDescription": "Raw Cotton",
+        "rate": "18%",
+        "uoM": "Numbers, pieces, units",
+        "quantity": 0,
+        "totalValues": 2500,
+        "valueSalesExcludingST": 2500,
+        "fixedNotifiedValueOrRetailPrice": 0.0,
+        "salesTaxApplicable": 450,
+        "salesTaxWithheldAtSource": 0,
+        "extraTax": 0,
+        "furtherTax": 0,
+        "sroScheduleNo": "",
+        "fedPayable": 0,
+        "discount": 0,
+        "saleType": "Cotton ginners",
+        "sroItemSerialNo": ""
+      }
+    ]
+  }
+}

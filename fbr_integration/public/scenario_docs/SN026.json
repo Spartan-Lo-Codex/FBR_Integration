@@ -1,0 +1,41 @@
+{
+  "id": "SN026",
+  "title": "Retailer - Standard Rate Goods",
+  "description": "Retailers selling taxable goods directly to end consumers through POS systems integrated with FBR's IRIS platform.",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-05-16",
+    "sellerNTNCNIC": "7000008",
+    "sellerBusinessName": "Logic Layer Retail",
+    "sellerProvince": "Sindh",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "buyerNTNCNIC": "1000000000078",
+    "buyerBusinessName": "Retail Customer",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "buyerRegistrationType": "Registered",
+    "scenarioId": "SN026",
+    "invoiceRefNo": "SI-20260421-001",
+    "items": [
+      {
+        "hsCode": "0101.2100",
+        "productDescription": "Retail Product",
+        "rate": "18%",
+        "uoM": "Numbers, pieces, units",
+        "quantity": 123,
+        "valueSalesExcludingST": 1000,
+        "fixedNotifiedValueOrRetailPrice": 0,
+        "salesTaxApplicable": 180,
+        "salesTaxWithheldAtSource": 0,
+        "extraTax": 0,
+        "furtherTax": 0,
+        "sroScheduleNo": "",
+        "fedPayable": 0,
+        "discount": 0,
+        "totalValues": 0,
+        "saleType": "Goods at standard rate (default)",
+        "sroItemSerialNo": ""
+      }
+    ]
+  }
+}

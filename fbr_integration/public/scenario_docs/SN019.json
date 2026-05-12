@@ -1,0 +1,41 @@
+{
+  "id": "SN019",
+  "title": "ICT Services",
+  "description": "Businesses providing services such as consultancy, software development, and IT solutions are taxed under distinct ordinance.",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-04-21",
+    "sellerNTNCNIC": "7654321",
+    "sellerBusinessName": "Logic Layer Pvt Ltd",
+    "sellerProvince": "Sindh",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "buyerNTNCNIC": "1000000000000",
+    "buyerBusinessName": "Tech Company",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "invoiceRefNo": "SI-20260421-001",
+    "buyerRegistrationType": "Unregistered",
+    "scenarioId": "SN019",
+    "items": [
+      {
+        "hsCode": "0101.2900",
+        "productDescription": "Software Development",
+        "rate": "5%",
+        "uoM": "Numbers, pieces, units",
+        "quantity": 1,
+        "totalValues": 0,
+        "valueSalesExcludingST": 100,
+        "salesTaxApplicable": 5,
+        "fixedNotifiedValueOrRetailPrice": 0,
+        "salesTaxWithheldAtSource": 0,
+        "extraTax": 0,
+        "furtherTax": 0,
+        "sroScheduleNo": "ICTO TABLE I",
+        "fedPayable": 0,
+        "discount": 0,
+        "saleType": "Services",
+        "sroItemSerialNo": "1(ii)(ii)(a)"
+      }
+    ]
+  }
+}

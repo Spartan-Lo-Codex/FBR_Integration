@@ -1,0 +1,41 @@
+{
+  "id": "SN011",
+  "title": "Toll Manufacturing",
+  "description": "Toll manufacturing involves third-party processing of raw materials into finished products. The processor issues an invoice for conversion charges.",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-05-26",
+    "sellerNTNCNIC": "4130276175937",
+    "sellerBusinessName": "Logic Layer Pvt Ltd",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "sellerProvince": "Sindh",
+    "buyerNTNCNIC": "3710505701479",
+    "buyerBusinessName": "Manufacturing Co",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "invoiceRefNo": "",
+    "dataSource": "",
+    "scenarioId": "SN011",
+    "items": [
+      {
+        "hsCode": "7214.9990",
+        "productDescription": "Processed Steel",
+        "rate": "18%",
+        "uoM": "MT",
+        "quantity": 1,
+        "totalValues": 205000,
+        "valueSalesExcludingST": 205000,
+        "salesTaxApplicable": 36900,
+        "fixedNotifiedValueOrRetailPrice": 0,
+        "salesTaxWithheldAtSource": 0,
+        "extraTax": 0,
+        "furtherTax": 0,
+        "sroScheduleNo": "",
+        "fedPayable": 0,
+        "discount": 0,
+        "saleType": "Toll Manufacturing",
+        "sroItemSerialNo": ""
+      }
+    ]
+  }
+}

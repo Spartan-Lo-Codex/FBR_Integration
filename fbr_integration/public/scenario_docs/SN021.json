@@ -1,0 +1,41 @@
+{
+  "id": "SN021",
+  "title": "Cement/Concrete Block",
+  "description": "Cement and concrete blocks are taxed at standard rate and subject to strict regulation due to environmental impact.",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-04-21",
+    "sellerNTNCNIC": "7654321",
+    "sellerBusinessName": "Logic Layer Pvt Ltd",
+    "sellerProvince": "Sindh",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "buyerNTNCNIC": "1000000000000",
+    "buyerBusinessName": "Construction Co",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "invoiceRefNo": "SI-20260421-001",
+    "buyerRegistrationType": "Unregistered",
+    "scenarioId": "SN021",
+    "items": [
+      {
+        "hsCode": "0101.2100",
+        "productDescription": "Cement Bags",
+        "rate": "Rs.3 per unit",
+        "uoM": "Numbers, pieces, units",
+        "quantity": 12,
+        "valueSalesExcludingST": 123,
+        "salesTaxApplicable": 36,
+        "fixedNotifiedValueOrRetailPrice": 3,
+        "salesTaxWithheldAtSource": 0,
+        "extraTax": 0,
+        "furtherTax": 0,
+        "sroScheduleNo": "",
+        "fedPayable": 0,
+        "discount": 0,
+        "totalValues": 0,
+        "saleType": "Cement /Concrete Block",
+        "sroItemSerialNo": ""
+      }
+    ]
+  }
+}

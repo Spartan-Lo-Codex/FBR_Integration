@@ -1,0 +1,41 @@
+{
+  "id": "SN027",
+  "title": "Retailer - Third Schedule Goods",
+  "description": "Retailers selling goods under 3rd Schedule must charge tax based on maximum retail price (MRP).",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-05-10",
+    "sellerNTNCNIC": "7000008",
+    "sellerBusinessName": "Logic Layer Retail",
+    "sellerProvince": "Sindh",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "buyerNTNCNIC": "7000006",
+    "buyerBusinessName": "FMCG Buyer",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "buyerRegistrationType": "Registered",
+    "invoiceRefNo": "",
+    "scenarioId": "SN027",
+    "items": [
+      {
+        "hsCode": "0101.2100",
+        "productDescription": "FMCG Product",
+        "rate": "18%",
+        "uoM": "Numbers, pieces, units",
+        "quantity": 1,
+        "valueSalesExcludingST": 0,
+        "fixedNotifiedValueOrRetailPrice": 100,
+        "salesTaxApplicable": 18,
+        "salesTaxWithheldAtSource": 0,
+        "extraTax": 0,
+        "furtherTax": 0,
+        "sroScheduleNo": "",
+        "fedPayable": 0,
+        "discount": 0,
+        "totalValues": 0,
+        "saleType": "3rd Schedule Goods",
+        "sroItemSerialNo": ""
+      }
+    ]
+  }
+}

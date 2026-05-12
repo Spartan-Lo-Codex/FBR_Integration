@@ -1,0 +1,41 @@
+{
+  "id": "SN008",
+  "title": "Third Schedule Goods (Retail Price Based)",
+  "description": "Items under the Third Schedule are subject to sales tax based on printed retail price rather than transaction value.",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-04-21",
+    "sellerNTNCNIC": "7654321",
+    "sellerBusinessName": "Logic Layer Pvt Ltd",
+    "sellerProvince": "Sindh",
+    "buyerNTNCNIC": "3710505701479",
+    "buyerBusinessName": "Retail Chain",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "invoiceRefNo": "0",
+    "scenarioId": "SN008",
+    "buyerRegistrationType": "Unregistered",
+    "items": [
+      {
+        "hsCode": "0101.2100",
+        "productDescription": "Branded Product",
+        "rate": "18%",
+        "uoM": "Numbers, pieces, units",
+        "quantity": 100,
+        "totalValues": 145,
+        "valueSalesExcludingST": 0,
+        "fixedNotifiedValueOrRetailPrice": 1000,
+        "salesTaxApplicable": 180,
+        "salesTaxWithheldAtSource": 0,
+        "extraTax": 0,
+        "furtherTax": 0,
+        "sroScheduleNo": "",
+        "fedPayable": 0,
+        "discount": 0,
+        "saleType": "3rd Schedule Goods",
+        "sroItemSerialNo": ""
+      }
+    ]
+  }
+}

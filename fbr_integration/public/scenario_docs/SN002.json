@@ -1,0 +1,41 @@
+{
+  "id": "SN002",
+  "title": "Goods at Standard Rate (Unregistered Buyer)",
+  "description": "When goods are sold to buyers not registered for sales tax (B2C sales), the seller charges full sales tax. The buyer cannot claim input tax credits.",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-05-10",
+    "sellerBusinessName": "Logic Layer Pvt Ltd",
+    "sellerProvince": "Sindh",
+    "sellerNTNCNIC": "7654321",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "buyerNTNCNIC": "1234567",
+    "buyerBusinessName": "Walk-in Customer",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "invoiceRefNo": "",
+    "scenarioId": "SN002",
+    "buyerRegistrationType": "Unregistered",
+    "items": [
+      {
+        "hsCode": "0101.2100",
+        "productDescription": "IT Equipment",
+        "rate": "18%",
+        "uoM": "Numbers, pieces, units",
+        "quantity": 400,
+        "totalValues": 0,
+        "valueSalesExcludingST": 1000,
+        "fixedNotifiedValueOrRetailPrice": 0.0,
+        "salesTaxApplicable": 180,
+        "salesTaxWithheldAtSource": 0,
+        "extraTax": "",
+        "furtherTax": 0,
+        "sroScheduleNo": "",
+        "fedPayable": 0,
+        "discount": 0,
+        "saleType": "Goods at standard rate (default)",
+        "sroItemSerialNo": ""
+      }
+    ]
+  }
+}

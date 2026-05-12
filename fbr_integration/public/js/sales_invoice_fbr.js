@@ -2,6 +2,53 @@ function esc(s) {
     return frappe.utils.escape_html((s || "").toString());
 }
 
+function show_scenario_details(scenario_id) {
+    const sid = (scenario_id || "").toString().trim().toUpperCase();
+    if (!sid) return;
+    const url = `/assets/fbr_integration/scenario_docs/${sid}.json`;
+    fetch(url)
+        .then(function (r) {
+            if (!r.ok) throw new Error("Not found: " + sid);
+            return r.json();
+        })
+        .then(function (data) {
+            const sample_html = `<pre style="background:#f4f4f4;border:1px solid #ddd;border-radius:4px;padding:10px;font-size:11px;max-height:320px;overflow:auto;white-space:pre-wrap;word-break:break-all;">${esc(
+                JSON.stringify(data.sample || {}, null, 2)
+            )}</pre>`;
+            const html = `
+<div style="font-family:inherit;line-height:1.6;">
+  <div style="margin-bottom:10px;">
+    <span style="background:#e8f5e9;color:#2e7d32;font-weight:600;padding:3px 10px;border-radius:12px;font-size:13px;">${esc(
+        data.id
+    )}</span>
+    <span style="font-size:16px;font-weight:600;margin-left:8px;">${esc(
+        data.title
+    )}</span>
+  </div>
+  <p style="color:#555;margin-bottom:12px;font-size:13px;">${esc(
+      data.description
+  )}</p>
+  <div style="font-size:12px;font-weight:600;color:#333;margin-bottom:4px;">Sample Payload</div>
+  ${sample_html}
+</div>`;
+            frappe.msgprint({
+                title: __("Scenario Detail: {0}", [esc(data.id)]),
+                indicator: "green",
+                message: html,
+                wide: true,
+            });
+        })
+        .catch(function (err) {
+            frappe.msgprint({
+                title: __("Scenario Not Found"),
+                indicator: "orange",
+                message: __("Could not load details for scenario <b>{0}</b>.", [
+                    esc(sid),
+                ]),
+            });
+        });
+}
+
 const FBR_PRINT_FORMAT = "FBR Sales Invoice";
 const FBR_LOGO_URL = "/assets/fbr_integration/images/fbr/DI_invoicing.png";
 const FBR_DEFAULT_SCENARIO = "Pakistan Tax";
@@ -705,6 +752,13 @@ frappe.ui.form.on("Sales Invoice", {
     refresh(frm) {
         sync_qr_field_on_form(frm);
         render_qr_preview(frm);
+
+        // View Scenario button — shown only when a Scenario ID is selected
+        if ((frm.doc.custom_scenario_id || "").toString().trim()) {
+            frm.add_custom_button(__("View Scenario"), function () {
+                show_scenario_details(frm.doc.custom_scenario_id);
+            });
+        }
 
         frm.add_custom_button(__("FBR"), async function () {
             if ((frm.doc.custom_fbr_invoice_no || "").trim()) {

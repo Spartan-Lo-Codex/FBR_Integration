@@ -1,0 +1,41 @@
+{
+  "id": "SN010",
+  "title": "Telecommunication Services",
+  "description": "Mobile operators providing telecom services are taxed under specific rules, including additional regulatory fees with both FED and GST.",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-05-15",
+    "sellerBusinessName": "Logic Layer Pvt Ltd",
+    "sellerNTNCNIC": "7654321",
+    "sellerProvince": "Sindh",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "buyerNTNCNIC": "1000000000000",
+    "buyerBusinessName": "Telecom Customer",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "invoiceRefNo": "SI-20260515-001",
+    "scenarioId": "SN010",
+    "buyerRegistrationType": "Unregistered",
+    "items": [
+      {
+        "hsCode": "0101.2100",
+        "productDescription": "Telecom Services",
+        "rate": "17%",
+        "uoM": "Numbers, pieces, units",
+        "quantity": 1000,
+        "totalValues": 0,
+        "valueSalesExcludingST": 100,
+        "fixedNotifiedValueOrRetailPrice": 0.0,
+        "salesTaxApplicable": 17,
+        "salesTaxWithheldAtSource": 0,
+        "extraTax": 0,
+        "furtherTax": 0,
+        "sroScheduleNo": "",
+        "fedPayable": 0,
+        "discount": 0,
+        "saleType": "Telecommunication services",
+        "sroItemSerialNo": ""
+      }
+    ]
+  }
+}

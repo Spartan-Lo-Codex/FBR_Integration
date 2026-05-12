@@ -1,0 +1,41 @@
+{
+  "id": "SN028",
+  "title": "Retailer - Reduced Rate Goods",
+  "description": "Essential goods like baby milk and books subject to reduced tax rate to keep vital products affordable.",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-05-16",
+    "sellerNTNCNIC": "7000008",
+    "sellerBusinessName": "Logic Layer Retail",
+    "sellerProvince": "Sindh",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "buyerNTNCNIC": "1000000000000",
+    "buyerBusinessName": "Consumer",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "invoiceRefNo": "",
+    "buyerRegistrationType": "Registered",
+    "scenarioId": "SN028",
+    "items": [
+      {
+        "hsCode": "0101.2100",
+        "productDescription": "Baby Formula",
+        "rate": "1%",
+        "uoM": "Numbers, pieces, units",
+        "quantity": 1,
+        "valueSalesExcludingST": 99.01,
+        "fixedNotifiedValueOrRetailPrice": 100,
+        "salesTaxApplicable": 0.99,
+        "salesTaxWithheldAtSource": 0,
+        "extraTax": "",
+        "furtherTax": 0,
+        "sroScheduleNo": "EIGHTH SCHEDULE Table 1",
+        "fedPayable": 0,
+        "discount": 0,
+        "totalValues": 100,
+        "saleType": "Goods at Reduced Rate",
+        "sroItemSerialNo": "70"
+      }
+    ]
+  }
+}

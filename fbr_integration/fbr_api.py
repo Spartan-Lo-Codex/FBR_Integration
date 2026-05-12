@@ -129,6 +129,43 @@ def normalize_sro_fields_for_scenario(scenario_id, sro_schedule_no, sro_item_sno
 	return sro_no, sro_item
 
 
+def normalize_sale_type_for_scenario(scenario_id, sale_type):
+	"""Apply scenario-specific sale type normalization for FBR payload."""
+	scenario = safe_str(scenario_id).strip().upper()
+	sale_type_text = safe_str(sale_type).strip()
+	if scenario == "SN024":
+		normalized = " ".join(sale_type_text.lower().split())
+		if normalized in {
+			"goods as per sro.297(i)/2023",
+			"goods as per sro 297(i)/2023",
+			"goods as per sro.297(|)/2023",
+		}:
+			return "Goods as per SRO.297(|)/2023"
+	return sale_type_text
+
+
+def sn024_sale_type_candidates(current_sale_type):
+	"""Return ordered SN024 saleType candidates for strict gateway matching."""
+	candidates = [
+		safe_str(current_sale_type).strip(),
+		"Goods as per SRO.297(|)/2023",
+		"Goods as per SRO.297(I)/2023",
+		"Goods at standard rate (default)",
+		"Goods Sold that are Listed in SRO 297(1)/2023",
+		"Goods as per SRO 297(I)/2023",
+	]
+
+	seen = set()
+	ordered = []
+	for value in candidates:
+		if not value or value in seen:
+			continue
+		seen.add(value)
+		ordered.append(value)
+
+	return ordered
+
+
 def sync_qr_fields(doc, qr_value):
 	qr_val = (qr_value or "").strip()
 	# keep old and new field names in sync for client installs
@@ -332,7 +369,7 @@ def send_invoice_to_fbr(doc, method=None):
 			total_values = num(item.amount)
 		else:
 			rate_val = f"{num(item.custom_sales_tax_rate):.2f}%"
-			sale_type_val = safe_str(item.custom_sale_type)
+			sale_type_val = normalize_sale_type_for_scenario(scenario_id, item.custom_sale_type)
 			sales_tax_applicable = num(item.custom_sales_tax)
 			further_tax = num(item.custom_further_tax)
 			total_values = num(item.custom_tax_inclusive_amount)
@@ -362,7 +399,7 @@ def send_invoice_to_fbr(doc, method=None):
 				"hsCode": safe_str(item.custom_hs_code),
 				"productDescription": safe_fbr_item_text(item.item_name),
 				"rate": rate_val,
-				"uoM": safe_fbr_item_text(item.custom_fbr_uom),
+				"uoM": safe_fbr_text(item.custom_fbr_uom),
 				"quantity": num(item.qty),
 				"totalValues": total_values,
 				"valueSalesExcludingST": value_sales_excluding_st,
@@ -392,6 +429,9 @@ def send_invoice_to_fbr(doc, method=None):
 		"buyerProvince": safe_fbr_text(buyer_province),
 		"invoiceRefNo": safe_str(doc.name),
 		"scenarioId": safe_str(doc.custom_scenario_id),
+		"referencedInvoiceNo": "",
+		"reason": "",
+		"remarks": safe_fbr_text(getattr(doc, "remarks", "")),
 		"buyerRegistrationType": safe_fbr_text(doc.custom_tax_payer_type),
 		"items": merge_fbr_items(items_list),
 	}
@@ -404,6 +444,7 @@ def send_invoice_to_fbr(doc, method=None):
 				"Unable to resolve source invoice number for Credit Note. "
 				"Set Return Against or provide FBR Source Invoice No."
 			)
+		payload["referencedInvoiceNo"] = safe_str(source_invoice_no)
 		payload["sourceInvoiceNo"] = source_invoice_no
 
 	# Debug log — visible in bench logs to help diagnose FBR rejections
@@ -446,6 +487,36 @@ def send_invoice_to_fbr(doc, method=None):
 				res_json = resp.json()
 			except Exception:
 				res_json = {"raw_response": resp_text}
+
+	# SN024 can be strict on saleType labels even when scenario and SRO are valid.
+	validation = res_json.get("validationResponse", {}) or {}
+	error_code = validation.get("errorCode") or ""
+	if scenario_id == "SN024" and error_code == "0204":
+		base_sale_type = ""
+		if payload.get("items"):
+			base_sale_type = safe_str((payload.get("items") or [{}])[0].get("saleType")).strip()
+
+		for attempt_idx, candidate in enumerate(sn024_sale_type_candidates(base_sale_type), start=1):
+			if candidate == base_sale_type:
+				continue
+
+			retry_payload = dict(payload)
+			retry_payload["items"] = [dict(it) for it in payload.get("items") or []]
+			for item_payload in retry_payload["items"]:
+				item_payload["saleType"] = candidate
+
+			resp = _post_payload(retry_payload)
+			log_fbr_exchange(doc.name, f"retry_sn024_sale_type_{attempt_idx}", retry_payload, resp)
+			resp_text = resp.text or ""
+			try:
+				res_json = resp.json()
+			except Exception:
+				res_json = {"raw_response": resp_text}
+
+			validation = res_json.get("validationResponse", {}) or {}
+			if validation.get("statusCode") == "00":
+				payload = retry_payload
+				break
 
 	# Store full response json always
 	if hasattr(doc, "custom_fbr_digital_invoice_response"):

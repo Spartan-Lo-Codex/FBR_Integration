@@ -1,0 +1,41 @@
+{
+  "id": "SN006",
+  "title": "Exempt Goods (Sixth Schedule)",
+  "description": "Goods listed in the Sixth Schedule are exempt from sales tax. This exemption reduces tax burden on essential or socially important items.",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-07-01",
+    "sellerBusinessName": "Logic Layer Pvt Ltd",
+    "sellerNTNCNIC": "7654321",
+    "sellerProvince": "Sindh",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "buyerNTNCNIC": "2046004",
+    "buyerBusinessName": "Healthcare Supplies",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "invoiceRefNo": "SI-20260515-001",
+    "scenarioId": "SN006",
+    "buyerRegistrationType": "Registered",
+    "items": [
+      {
+        "hsCode": "0102.2930",
+        "productDescription": "Medical Equipment",
+        "rate": "Exempt",
+        "uoM": "Numbers, pieces, units",
+        "quantity": 1.0,
+        "totalValues": 0.0,
+        "valueSalesExcludingST": 10,
+        "fixedNotifiedValueOrRetailPrice": 0.0,
+        "salesTaxApplicable": 0,
+        "salesTaxWithheldAtSource": 50.23,
+        "extraTax": "",
+        "furtherTax": 120.0,
+        "sroScheduleNo": "6th Schd Table I",
+        "fedPayable": 50.36,
+        "discount": 56.36,
+        "saleType": "Exempt goods",
+        "sroItemSerialNo": "100"
+      }
+    ]
+  }
+}

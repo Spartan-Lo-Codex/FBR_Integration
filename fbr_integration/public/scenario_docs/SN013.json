@@ -1,0 +1,41 @@
+{
+  "id": "SN013",
+  "title": "Electricity Supply to Retailers",
+  "description": "Selling electricity to retailers has unique tax implications with different rates for wholesale vs retail.",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-05-15",
+    "sellerNTNCNIC": "7654321",
+    "sellerBusinessName": "Logic Layer Pvt Ltd",
+    "sellerProvince": "Sindh",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "buyerNTNCNIC": "1000000000000",
+    "buyerBusinessName": "Power Distributor",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "invoiceRefNo": "SI-20260515-001",
+    "scenarioId": "SN013",
+    "buyerRegistrationType": "Unregistered",
+    "items": [
+      {
+        "hsCode": "0101.2100",
+        "productDescription": "Electricity Units",
+        "rate": "5%",
+        "uoM": "Numbers, pieces, units",
+        "quantity": 123,
+        "totalValues": 212,
+        "valueSalesExcludingST": 1000,
+        "fixedNotifiedValueOrRetailPrice": 0.0,
+        "salesTaxApplicable": 50,
+        "salesTaxWithheldAtSource": 11,
+        "extraTax": 0,
+        "furtherTax": 0,
+        "sroScheduleNo": "1450(I)/2021",
+        "fedPayable": 0,
+        "discount": 0,
+        "saleType": "Electricity Supply to Retailers",
+        "sroItemSerialNo": "4"
+      }
+    ]
+  }
+}

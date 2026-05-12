@@ -1,0 +1,41 @@
+{
+  "id": "SN022",
+  "title": "Potassium Chlorate",
+  "description": "A sensitive chemical used in matchstick manufacturing, subject to fixed tax per kilogram.",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-04-21",
+    "sellerNTNCNIC": "7654321",
+    "sellerBusinessName": "Logic Layer Pvt Ltd",
+    "sellerProvince": "Sindh",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "buyerNTNCNIC": "1000000000000",
+    "buyerBusinessName": "Chemical Buyer",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "buyerRegistrationType": "Unregistered",
+    "scenarioId": "SN022",
+    "invoiceRefNo": "SI-20260421-001",
+    "items": [
+      {
+        "hsCode": "3104.2000",
+        "productDescription": "Potassium Chlorate",
+        "rate": "18% + Rs.60/kg",
+        "uoM": "KG",
+        "quantity": 1,
+        "valueSalesExcludingST": 100,
+        "fixedNotifiedValueOrRetailPrice": 60,
+        "salesTaxApplicable": 78,
+        "salesTaxWithheldAtSource": 0,
+        "extraTax": 0,
+        "furtherTax": 0,
+        "sroScheduleNo": "EIGHTH SCHEDULE Table 1",
+        "fedPayable": 0,
+        "discount": 0,
+        "totalValues": 0,
+        "saleType": "Potassium Chlorate",
+        "sroItemSerialNo": "56"
+      }
+    ]
+  }
+}

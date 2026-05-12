@@ -1,0 +1,41 @@
+{
+  "id": "SN025",
+  "title": "Non-Adjustable Supplies (Pharmaceuticals)",
+  "description": "Certain pharmaceutical products taxed at fixed rate under serial 81 of Eighth Schedule to make medicines affordable.",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-05-16",
+    "sellerNTNCNIC": "7654321",
+    "sellerBusinessName": "Logic Layer Pvt Ltd",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "sellerProvince": "Sindh",
+    "buyerNTNCNIC": "1000000000078",
+    "buyerBusinessName": "Pharmacy",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "buyerRegistrationType": "Unregistered",
+    "invoiceRefNo": "",
+    "scenarioId": "SN025",
+    "items": [
+      {
+        "hsCode": "0101.2100",
+        "productDescription": "Medicine",
+        "rate": "0%",
+        "uoM": "Numbers, pieces, units",
+        "quantity": 1,
+        "valueSalesExcludingST": 100,
+        "fixedNotifiedValueOrRetailPrice": 0,
+        "salesTaxApplicable": 0,
+        "salesTaxWithheldAtSource": 0,
+        "extraTax": 0,
+        "furtherTax": 0,
+        "sroScheduleNo": "EIGHTH SCHEDULE Table 1",
+        "fedPayable": 0,
+        "discount": 0,
+        "totalValues": 0,
+        "saleType": "Non-Adjustable Supplies",
+        "sroItemSerialNo": "81"
+      }
+    ]
+  }
+}

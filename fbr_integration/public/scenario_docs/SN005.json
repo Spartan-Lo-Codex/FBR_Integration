@@ -1,0 +1,41 @@
+{
+  "id": "SN005",
+  "title": "Goods at Reduced Rate (Eighth Schedule)",
+  "description": "Certain goods are taxed at a reduced rate (lower than standard) to encourage affordability. The Eighth Schedule lists these goods \u2013 commonly basic food items, medicines, or essential commodities.",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-06-30",
+    "sellerNTNCNIC": "7654321",
+    "sellerBusinessName": "Logic Layer Pvt Ltd",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "sellerProvince": "Sindh",
+    "buyerNTNCNIC": "1000000000000",
+    "buyerBusinessName": "Retail Store",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "invoiceRefNo": "",
+    "scenarioId": "SN005",
+    "buyerRegistrationType": "Unregistered",
+    "items": [
+      {
+        "hsCode": "0102.2930",
+        "productDescription": "Essential Commodity",
+        "rate": "1%",
+        "uoM": "Numbers, pieces, units",
+        "quantity": 1.0,
+        "totalValues": 0.0,
+        "valueSalesExcludingST": 1000.0,
+        "fixedNotifiedValueOrRetailPrice": 0.0,
+        "salesTaxApplicable": 10,
+        "salesTaxWithheldAtSource": 50.23,
+        "extraTax": "",
+        "furtherTax": 120.0,
+        "sroScheduleNo": "EIGHTH SCHEDULE Table 1",
+        "fedPayable": 50.36,
+        "discount": 56.36,
+        "saleType": "Goods at Reduced Rate",
+        "sroItemSerialNo": "82"
+      }
+    ]
+  }
+}

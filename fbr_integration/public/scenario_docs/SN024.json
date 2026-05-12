@@ -1,0 +1,41 @@
+{
+  "id": "SN024",
+  "title": "Goods as per SRO.297(I)/2023",
+  "description": "Specific goods subject to reduced, conditional, or fixed-rate taxation under this SRO.",
+  "sample": {
+    "invoiceType": "Sale Invoice",
+    "invoiceDate": "2026-04-21",
+    "sellerNTNCNIC": "7654321",
+    "sellerBusinessName": "Logic Layer Pvt Ltd",
+    "sellerProvince": "Sindh",
+    "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+    "buyerNTNCNIC": "1000000000000",
+    "buyerBusinessName": "SRO Buyer",
+    "buyerProvince": "Sindh",
+    "buyerAddress": "Karachi",
+    "buyerRegistrationType": "Unregistered",
+    "scenarioId": "SN024",
+    "invoiceRefNo": "SI-20260421-001",
+    "items": [
+      {
+        "hsCode": "0101.2100",
+        "productDescription": "SRO Product",
+        "rate": "25%",
+        "uoM": "Numbers, pieces, units",
+        "quantity": 123,
+        "valueSalesExcludingST": 1000,
+        "fixedNotifiedValueOrRetailPrice": 0,
+        "salesTaxApplicable": 250,
+        "salesTaxWithheldAtSource": 0,
+        "extraTax": 0,
+        "furtherTax": 0,
+        "sroScheduleNo": "297(I)/2023-Table-I",
+        "fedPayable": 0,
+        "discount": 0,
+        "totalValues": 0,
+        "saleType": "Goods as per SRO.297(I)/2023",
+        "sroItemSerialNo": "12"
+      }
+    ]
+  }
+}
