@@ -6,6 +6,7 @@ const FBR_PRINT_FORMAT = "FBR Sales Invoice";
 const FBR_LOGO_URL = "/assets/fbr_integration/images/fbr/DI_invoicing.png";
 const FBR_DEFAULT_SCENARIO = "Pakistan Tax";
 const FBR_SCENARIO_OPTIONS = [
+    "Manual Item-wise",
     "All Taxes",
     "Pakistan Tax",
     "Zero Rated",
