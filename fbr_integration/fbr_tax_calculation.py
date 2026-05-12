@@ -15,6 +15,7 @@ FURTHER_TAX_KEYS = ("further tax",)
 EXTRA_TAX_KEYS = ("extra tax",)
 
 MANUAL_SCENARIO_KEYS = {"", "manual", "manual item wise", "none", "no scenario"}
+SCENARIO_APPLY_MODE_FORCE = "Update All Items"
 
 
 def _normalize_text(value):
@@ -79,13 +80,16 @@ def _get_item_tax_template_rows(template_name: str):
 
 
 def calculate_fbr_tax(doc, method=None):
+	apply_mode = (getattr(doc, "custom_fbr_scenario_apply_mode", None) or "").strip()
+	force_apply = apply_mode == SCENARIO_APPLY_MODE_FORCE
+
 	for item in doc.items:
 		item_scenario = (getattr(item, "custom_fbr_item_scenario", None) or "").strip()
 		doc_scenario = (getattr(doc, "custom_fbr_scenario", None) or "").strip()
 		scenario = item_scenario or doc_scenario
 		template_name = resolve_item_tax_template_name(scenario)
 
-		if template_name:
+		if template_name and (force_apply or not (item.item_tax_template or "").strip()):
 			item.item_tax_template = template_name
 		# If no mapping is found, keep any manually selected template.
 
