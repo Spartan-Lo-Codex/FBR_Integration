@@ -7,6 +7,32 @@ SOURCE_TEXT_FILE = SOURCE_DIR / "DI_Scenarios_Summary.txt"
 OUTPUT_DIR = Path(__file__).resolve().parents[1] / "public" / "scenario_docs"
 
 
+def validate_scenario(scenario):
+	"""Validate required fields in parsed scenario."""
+	errorrs = []
+
+	if not scenario.get("id") or not re.match(r"^SN\d{3}$", scenario["id"]):
+		errorrs.append(f"Invalid scenario ID: {scenario.get('id')}")
+
+	if not scenario.get("title"):
+		errorrs.append(f"Missing title in scenario {scenario.get('id')}")
+
+	if not scenario.get("description"):
+		errorrs.append(f"Missing description in scenario {scenario.get('id')}")
+
+	if not isinstance(scenario.get("sample"), dict):
+		errorrs.append(f"Invalid sample (must be JSON object) in {scenario.get('id')}")
+	else:
+		sample = scenario["sample"]
+		required_sample_keys = ["invoiceType", "scenarioId", "items"]
+		for key in required_sample_keys:
+			if key not in sample:
+				errorrs.append(f"Missing required field '{key}' in sample payload for {scenario.get('id')}")
+
+	if errorrs:
+		raise ValueError(f"Validation failed for {scenario.get('id')}:\n" + "\n".join(errorrs))
+
+
 def parse_scenarios(raw_text):
 	scenarios = []
 	parts = re.split(r"\n(?=SN\d{3}:)", raw_text.strip())
@@ -32,14 +58,14 @@ def parse_scenarios(raw_text):
 
 		description = part[len(header) : json_start].strip()
 		sample = json.loads(part[json_start:json_end])
-		scenarios.append(
-			{
-				"id": scenario_id,
-				"title": title,
-				"description": description,
-				"sample": sample,
-			}
-		)
+		scenario = {
+			"id": scenario_id,
+			"title": title,
+			"description": description,
+			"sample": sample,
+		}
+		validate_scenario(scenario)
+		scenarios.append(scenario)
 
 	return scenarios
 
@@ -64,10 +90,16 @@ def write_scenarios(scenarios):
 
 
 def main():
-	raw_text = SOURCE_TEXT_FILE.read_text(encoding="utf-8")
-	scenarios = parse_scenarios(raw_text)
-	write_scenarios(scenarios)
-	print(f"Built {len(scenarios)} scenario document files in {OUTPUT_DIR}")
+	try:
+		raw_text = SOURCE_TEXT_FILE.read_text(encoding="utf-8")
+		scenarios = parse_scenarios(raw_text)
+		write_scenarios(scenarios)
+		print(f"Built {len(scenarios)} scenario document files in {OUTPUT_DIR}")
+		print(f"Index catalog written to {OUTPUT_DIR / 'index.json'}")
+		return 0
+	except Exception as e:
+		print(f"ERROR: {e}", file=__import__("sys").stderr)
+		return 1
 
 
 if __name__ == "__main__":

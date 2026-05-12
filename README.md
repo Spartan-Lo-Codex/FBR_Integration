@@ -49,19 +49,28 @@ bench restart
 
 ### Scenario Files
 
-The raw FBR scenario source files are kept in `fbr_integration/scenario_data/source/`:
+The authoritative FBR scenario source is kept in `fbr_integration/scenario_data/source/`:
 
-- `DI_Scenarios_Summary.txt`
-- `DI_Scenarios_Summary.csv`
+- `DI_Scenarios_Summary.txt` — JSON payloads with scenario descriptions
 
-The Sales Invoice popup reads the generated per-scenario JSON files from `fbr_integration/public/scenario_docs/`.
+The build process generates:
+- 28 individual scenario JSON files: `SN001.json` through `SN028.json`
+- Scenario index catalog: `index.json`
 
-If you update the source text file and want to rebuild the 28 scenario JSON documents, run:
+These generated files are published to `fbr_integration/public/scenario_docs/` as static assets.
+The Sales Invoice form loads scenarios from this catalog for the searchable **Scenario Index** dialog and **View Scenario** detail popup.
+
+**To rebuild scenarios after editing the source text file:**
 
 ```bash
 cd ~/frappe-bench/apps/fbr_integration
 python3 fbr_integration/scenario_data/build_scenario_docs.py
 ```
+
+The build script validates each scenario for:
+- Valid scenario ID format (SN001–SN028)
+- Required fields: title, description, sample payload
+- Required JSON payload keys: `invoiceType`, `scenarioId`, `items`
 
 Short command (after app environment is installed/updated):
 
