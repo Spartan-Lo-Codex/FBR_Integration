@@ -3,8 +3,8 @@ import frappe
 DEFAULT_FBR_SCENARIO = "Pakistan Tax"
 
 SCENARIO_TEMPLATE_ALIASES = {
-	"all taxes": ["all taxes", "taxable"],
-	"pakistan tax": ["pakistan tax", "taxable"],
+	"all taxes": ["all taxes", "taxable", "gst further extra", "gst+further+extra"],
+	"pakistan tax": ["pakistan tax", "taxable", "gst further extra", "gst+further+extra"],
 	"zero rated": ["zero rated", "zero-rated", "zero rated goods"],
 	"exempt": ["exempt"],
 	"cement per qty": ["cement per qty", "cement /qty", "cement qty"],
@@ -83,8 +83,7 @@ def calculate_fbr_tax(doc, method=None):
 
 		if template_name:
 			item.item_tax_template = template_name
-		else:
-			item.item_tax_template = ""
+		# If no mapping is found, keep any manually selected template.
 
 		qty = float(item.qty or 0)
 		rate = float(item.rate or 0)
