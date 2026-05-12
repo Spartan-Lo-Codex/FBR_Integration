@@ -1,0 +1,31 @@
+{
+ "content": null,
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "module": "FBR Integration",
+ "name": "fbr-usage-guide",
+ "page_name": "fbr-usage-guide",
+ "roles": [
+  {
+   "role": "Sales Manager"
+  },
+  {
+   "role": "Sales User"
+  },
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "FBR Usage Guide"
+}
