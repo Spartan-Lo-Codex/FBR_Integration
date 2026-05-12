@@ -1,0 +1,142 @@
+[
+  {
+    "id": "SN001",
+    "title": "Goods at Standard Rate (Registered Buyer)",
+    "description": "This applies to the sale of goods subject to the standard 18% sales tax rate made to sales tax registered buyers. These buyers can claim input tax credits."
+  },
+  {
+    "id": "SN002",
+    "title": "Goods at Standard Rate (Unregistered Buyer)",
+    "description": "When goods are sold to buyers not registered for sales tax (B2C sales), the seller charges full sales tax. The buyer cannot claim input tax credits."
+  },
+  {
+    "id": "SN003",
+    "title": "Steel Melting and Re-rolling",
+    "description": "The steel sector is governed by strict traceability and sector-specific rules. Tax authorities regulate their tax treatment distinctly, sometimes applying specific tax rates."
+  },
+  {
+    "id": "SN004",
+    "title": "Ship Breaking",
+    "description": "Ship breakers dismantle old ships and recover scrap steel. This scrap is treated separately for tax purposes with special rates or exemptions."
+  },
+  {
+    "id": "SN005",
+    "title": "Goods at Reduced Rate (Eighth Schedule)",
+    "description": "Certain goods are taxed at a reduced rate (lower than standard) to encourage affordability. The Eighth Schedule lists these goods \u2013 commonly basic food items, medicines, or essential commodities."
+  },
+  {
+    "id": "SN006",
+    "title": "Exempt Goods (Sixth Schedule)",
+    "description": "Goods listed in the Sixth Schedule are exempt from sales tax. This exemption reduces tax burden on essential or socially important items."
+  },
+  {
+    "id": "SN007",
+    "title": "Zero-Rated Goods",
+    "description": "Zero-rated goods have sales tax charged at 0%. The seller can claim input tax credits on purchases. This is often applied to exported goods."
+  },
+  {
+    "id": "SN008",
+    "title": "Third Schedule Goods (Retail Price Based)",
+    "description": "Items under the Third Schedule are subject to sales tax based on printed retail price rather than transaction value."
+  },
+  {
+    "id": "SN009",
+    "title": "Cotton Ginners",
+    "description": "Purchases from registered cotton ginners are subject to specific rules under cotton trade taxation, possibly involving reverse charge mechanisms."
+  },
+  {
+    "id": "SN010",
+    "title": "Telecommunication Services",
+    "description": "Mobile operators providing telecom services are taxed under specific rules, including additional regulatory fees with both FED and GST."
+  },
+  {
+    "id": "SN011",
+    "title": "Toll Manufacturing",
+    "description": "Toll manufacturing involves third-party processing of raw materials into finished products. The processor issues an invoice for conversion charges."
+  },
+  {
+    "id": "SN012",
+    "title": "Petroleum Products",
+    "description": "Petroleum products like petrol, diesel, or lubricants have distinct sales tax rates or federal excise duties due to their economic importance."
+  },
+  {
+    "id": "SN013",
+    "title": "Electricity Supply to Retailers",
+    "description": "Selling electricity to retailers has unique tax implications with different rates for wholesale vs retail."
+  },
+  {
+    "id": "SN014",
+    "title": "Gas to CNG Stations",
+    "description": "Natural gas sold to CNG filling stations may have special tax treatment to promote cleaner fuels."
+  },
+  {
+    "id": "SN015",
+    "title": "Mobile Phones",
+    "description": "Mobile handsets attract standard sales tax but may be subject to additional duties or regulatory charges."
+  },
+  {
+    "id": "SN016",
+    "title": "Processing/Conversion of Goods",
+    "description": "Services where raw materials are converted into finished products through manufacturing or processing."
+  },
+  {
+    "id": "SN017",
+    "title": "Goods (FED in ST Mode)",
+    "description": "Federal Excise Duty collected through the sales tax system, streamlining collection."
+  },
+  {
+    "id": "SN018",
+    "title": "Services (FED in ST Mode)",
+    "description": "Certain services like advertisement, franchise, insurance are liable to FED but invoiced under sales tax framework."
+  },
+  {
+    "id": "SN019",
+    "title": "ICT Services",
+    "description": "Businesses providing services such as consultancy, software development, and IT solutions are taxed under distinct ordinance."
+  },
+  {
+    "id": "SN020",
+    "title": "Electric Vehicles",
+    "description": "Electric vehicles may be incentivized through reduced sales tax rates to encourage environmentally friendly transportation."
+  },
+  {
+    "id": "SN021",
+    "title": "Cement/Concrete Block",
+    "description": "Cement and concrete blocks are taxed at standard rate and subject to strict regulation due to environmental impact."
+  },
+  {
+    "id": "SN022",
+    "title": "Potassium Chlorate",
+    "description": "A sensitive chemical used in matchstick manufacturing, subject to fixed tax per kilogram."
+  },
+  {
+    "id": "SN023",
+    "title": "CNG Sales",
+    "description": "Sales of Compressed Natural Gas involve regulated pricing and specific tax treatments including both FED and sales tax."
+  },
+  {
+    "id": "SN024",
+    "title": "Goods as per SRO.297(I)/2023",
+    "description": "Specific goods subject to reduced, conditional, or fixed-rate taxation under this SRO."
+  },
+  {
+    "id": "SN025",
+    "title": "Non-Adjustable Supplies (Pharmaceuticals)",
+    "description": "Certain pharmaceutical products taxed at fixed rate under serial 81 of Eighth Schedule to make medicines affordable."
+  },
+  {
+    "id": "SN026",
+    "title": "Retailer - Standard Rate Goods",
+    "description": "Retailers selling taxable goods directly to end consumers through POS systems integrated with FBR's IRIS platform."
+  },
+  {
+    "id": "SN027",
+    "title": "Retailer - Third Schedule Goods",
+    "description": "Retailers selling goods under 3rd Schedule must charge tax based on maximum retail price (MRP)."
+  },
+  {
+    "id": "SN028",
+    "title": "Retailer - Reduced Rate Goods",
+    "description": "Essential goods like baby milk and books subject to reduced tax rate to keep vital products affordable."
+  }
+]

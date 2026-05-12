@@ -49,6 +49,129 @@ function show_scenario_details(scenario_id) {
         });
 }
 
+let fbrScenarioIndexCache = null;
+
+function load_scenario_index() {
+    if (Array.isArray(fbrScenarioIndexCache)) {
+        return Promise.resolve(fbrScenarioIndexCache);
+    }
+
+    return fetch("/assets/fbr_integration/scenario_docs/index.json")
+        .then(function (r) {
+            if (!r.ok) throw new Error("Failed to load scenario index");
+            return r.json();
+        })
+        .then(function (rows) {
+            fbrScenarioIndexCache = Array.isArray(rows) ? rows : [];
+            return fbrScenarioIndexCache;
+        });
+}
+
+function show_scenario_browser(frm) {
+    load_scenario_index()
+        .then(function (rows) {
+            const dialog = new frappe.ui.Dialog({
+                title: __("Scenario Index"),
+                size: "large",
+                fields: [
+                    {
+                        fieldtype: "Data",
+                        fieldname: "search",
+                        label: __("Search"),
+                        default: "",
+                    },
+                    {
+                        fieldtype: "HTML",
+                        fieldname: "results",
+                    },
+                ],
+            });
+
+            const render_rows = function (query) {
+                const q = (query || "").toString().toLowerCase().trim();
+                const filtered = rows.filter(function (row) {
+                    const hay = `${row.id || ""} ${row.title || ""} ${
+                        row.description || ""
+                    }`
+                        .toLowerCase()
+                        .trim();
+                    return !q || hay.includes(q);
+                });
+
+                const html_rows = filtered
+                    .map(function (row) {
+                        return `
+<div class="scenario-row" style="border:1px solid #ddd;border-radius:8px;padding:10px;margin-bottom:8px;">
+  <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;">
+    <div style="flex:1;min-width:0;">
+      <div style="font-weight:700;font-size:14px;line-height:1.4;">${esc(
+          row.id
+      )} - ${esc(row.title)}</div>
+      <div style="font-size:12px;color:#666;margin-top:4px;line-height:1.5;">${esc(
+          row.description || ""
+      )}</div>
+    </div>
+    <div style="display:flex;gap:6px;flex-shrink:0;">
+      <button class="btn btn-default btn-sm btn-view" data-sid="${esc(
+          row.id
+      )}">${__("View")}</button>
+      <button class="btn btn-primary btn-sm btn-use" data-sid="${esc(
+          row.id
+      )}">${__("Use")}</button>
+    </div>
+  </div>
+</div>`;
+                    })
+                    .join("");
+
+                const container = dialog.get_field("results").$wrapper;
+                container.html(
+                    filtered.length
+                        ? `<div style="max-height:460px;overflow:auto;padding-right:4px;">${html_rows}</div>`
+                        : `<div style="padding:12px;color:#777;">${__(
+                              "No scenarios matched your search."
+                          )}</div>`
+                );
+
+                container.find(".btn-view").on("click", function () {
+                    const sid = ($(this).attr("data-sid") || "")
+                        .toString()
+                        .trim();
+                    if (sid) show_scenario_details(sid);
+                });
+
+                container.find(".btn-use").on("click", function () {
+                    const sid = ($(this).attr("data-sid") || "")
+                        .toString()
+                        .trim();
+                    if (!sid) return;
+                    frm.set_value("custom_scenario_id", sid);
+                    frappe.show_alert({
+                        message: __("Scenario selected: {0}", [sid]),
+                        indicator: "green",
+                    });
+                    dialog.hide();
+                });
+            };
+
+            dialog.show();
+            render_rows("");
+
+            dialog.get_field("search").$input.on("input", function () {
+                render_rows($(this).val());
+            });
+        })
+        .catch(function () {
+            frappe.msgprint({
+                title: __("Scenario Index Not Available"),
+                indicator: "orange",
+                message: __(
+                    "Could not load the scenario catalog. Rebuild scenario docs with <b>fbr-build-scenarios</b> and run bench build."
+                ),
+            });
+        });
+}
+
 const FBR_PRINT_FORMAT = "FBR Sales Invoice";
 const FBR_LOGO_URL = "/assets/fbr_integration/images/fbr/DI_invoicing.png";
 const FBR_DEFAULT_SCENARIO = "Pakistan Tax";
@@ -752,6 +875,10 @@ frappe.ui.form.on("Sales Invoice", {
     refresh(frm) {
         sync_qr_field_on_form(frm);
         render_qr_preview(frm);
+
+        frm.add_custom_button(__("Scenario Index"), function () {
+            show_scenario_browser(frm);
+        });
 
         // View Scenario button — shown only when a Scenario ID is selected
         if ((frm.doc.custom_scenario_id || "").toString().trim()) {

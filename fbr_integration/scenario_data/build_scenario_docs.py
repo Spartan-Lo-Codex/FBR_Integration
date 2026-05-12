@@ -51,6 +51,17 @@ def write_scenarios(scenarios):
 		output_file = OUTPUT_DIR / f"{scenario['id']}.json"
 		output_file.write_text(json.dumps(scenario, indent=2) + "\n", encoding="utf-8")
 
+	index_data = [
+		{
+			"id": scenario["id"],
+			"title": scenario["title"],
+			"description": scenario["description"],
+		}
+		for scenario in scenarios
+	]
+	index_file = OUTPUT_DIR / "index.json"
+	index_file.write_text(json.dumps(index_data, indent=2) + "\n", encoding="utf-8")
+
 
 def main():
 	raw_text = SOURCE_TEXT_FILE.read_text(encoding="utf-8")
