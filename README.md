@@ -47,6 +47,28 @@ bench restart
 > bench restart
 > ```
 
+### Scenario Files
+
+The raw FBR scenario source files are kept in `fbr_integration/scenario_data/source/`:
+
+- `DI_Scenarios_Summary.txt`
+- `DI_Scenarios_Summary.csv`
+
+The Sales Invoice popup reads the generated per-scenario JSON files from `fbr_integration/public/scenario_docs/`.
+
+If you update the source text file and want to rebuild the 28 scenario JSON documents, run:
+
+```bash
+cd ~/frappe-bench/apps/fbr_integration
+python3 fbr_integration/scenario_data/build_scenario_docs.py
+```
+
+Short command (after app environment is installed/updated):
+
+```bash
+fbr-build-scenarios
+```
+
 ### Contributing
 
 This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:

@@ -1,0 +1,1091 @@
+SN001: Goods at Standard Rate (Registered Buyer)
+This applies to the sale of goods subject to the standard 18% sales tax rate made to sales tax registered buyers. These buyers can claim input tax credits.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-05-10",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerProvince": "Sindh",
+  "sellerNTNCNIC": "7654321",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "2046004",
+  "buyerBusinessName": "ABC Trading Company",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "",
+  "scenarioId": "SN001",
+  "buyerRegistrationType": "Registered",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "Software License",
+      "rate": "18%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 400,
+      "totalValues": 0,
+      "valueSalesExcludingST": 1000,
+      "fixedNotifiedValueOrRetailPrice": 0.0,
+      "salesTaxApplicable": 180,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": "",
+      "furtherTax": 0,
+      "sroScheduleNo": "",
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "Goods at standard rate (default)",
+      "sroItemSerialNo": ""
+    }
+  ]
+}
+
+SN002: Goods at Standard Rate (Unregistered Buyer)
+When goods are sold to buyers not registered for sales tax (B2C sales), the seller charges full sales tax. The buyer cannot claim input tax credits.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-05-10",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerProvince": "Sindh",
+  "sellerNTNCNIC": "7654321",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "1234567",
+  "buyerBusinessName": "Walk-in Customer",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "",
+  "scenarioId": "SN002",
+  "buyerRegistrationType": "Unregistered",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "IT Equipment",
+      "rate": "18%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 400,
+      "totalValues": 0,
+      "valueSalesExcludingST": 1000,
+      "fixedNotifiedValueOrRetailPrice": 0.0,
+      "salesTaxApplicable": 180,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": "",
+      "furtherTax": 0,
+      "sroScheduleNo": "",
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "Goods at standard rate (default)",
+      "sroItemSerialNo": ""
+    }
+  ]
+}
+
+SN003: Steel Melting and Re-rolling
+The steel sector is governed by strict traceability and sector-specific rules. Tax authorities regulate their tax treatment distinctly, sometimes applying specific tax rates.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-04-21",
+  "sellerBusinessName": "Logic Layer Steel Division",
+  "sellerNTNCNIC": "7654321",
+  "sellerProvince": "Sindh",
+  "buyerNTNCNIC": "3710505701479",
+  "buyerBusinessName": "Steel Works Ltd",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "invoiceRefNo": "0",
+  "scenarioId": "SN003",
+  "buyerRegistrationType": "Unregistered",
+  "items": [
+    {
+      "hsCode": "7214.1010",
+      "productDescription": "Steel Bars",
+      "rate": "18%",
+      "uoM": "MT",
+      "quantity": 1,
+      "totalValues": 0,
+      "valueSalesExcludingST": 205000.0,
+      "fixedNotifiedValueOrRetailPrice": 0.0,
+      "salesTaxApplicable": 36900,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "",
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "Steel melting and re-rolling",
+      "sroItemSerialNo": ""
+    }
+  ]
+}
+
+SN004: Ship Breaking
+Ship breakers dismantle old ships and recover scrap steel. This scrap is treated separately for tax purposes with special rates or exemptions.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-05-26",
+  "sellerNTNCNIC": "4130276175937",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "sellerProvince": "Sindh",
+  "buyerNTNCNIC": "3710505701479",
+  "buyerBusinessName": "Marine Recyclers",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "SI-20260421-001",
+  "scenarioId": "SN004",
+  "items": [
+    {
+      "hsCode": "7204.1010",
+      "productDescription": "Scrap Steel",
+      "rate": "18%",
+      "uoM": "MT",
+      "quantity": 1,
+      "totalValues": 0,
+      "valueSalesExcludingST": 175000,
+      "salesTaxApplicable": 31500,
+      "fixedNotifiedValueOrRetailPrice": 0,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "",
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "Ship breaking",
+      "sroItemSerialNo": ""
+    }
+  ]
+}
+
+SN005: Goods at Reduced Rate (Eighth Schedule)
+Certain goods are taxed at a reduced rate (lower than standard) to encourage affordability. The Eighth Schedule lists these goods – commonly basic food items, medicines, or essential commodities.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-06-30",
+  "sellerNTNCNIC": "7654321",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "sellerProvince": "Sindh",
+  "buyerNTNCNIC": "1000000000000",
+  "buyerBusinessName": "Retail Store",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "",
+  "scenarioId": "SN005",
+  "buyerRegistrationType": "Unregistered",
+  "items": [
+    {
+      "hsCode": "0102.2930",
+      "productDescription": "Essential Commodity",
+      "rate": "1%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 1.0,
+      "totalValues": 0.00,
+      "valueSalesExcludingST": 1000.00,
+      "fixedNotifiedValueOrRetailPrice": 0.00,
+      "salesTaxApplicable": 10,
+      "salesTaxWithheldAtSource": 50.23,
+      "extraTax": "",
+      "furtherTax": 120.00,
+      "sroScheduleNo": "EIGHTH SCHEDULE Table 1",
+      "fedPayable": 50.36,
+      "discount": 56.36,
+      "saleType": "Goods at Reduced Rate",
+      "sroItemSerialNo": "82"
+    }
+  ]
+}
+
+SN006: Exempt Goods (Sixth Schedule)
+Goods listed in the Sixth Schedule are exempt from sales tax. This exemption reduces tax burden on essential or socially important items.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-07-01",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerNTNCNIC": "7654321",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "2046004",
+  "buyerBusinessName": "Healthcare Supplies",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "SI-20260515-001",
+  "scenarioId": "SN006",
+  "buyerRegistrationType": "Registered",
+  "items": [
+    {
+      "hsCode": "0102.2930",
+      "productDescription": "Medical Equipment",
+      "rate": "Exempt",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 1.0,
+      "totalValues": 0.00,
+      "valueSalesExcludingST": 10,
+      "fixedNotifiedValueOrRetailPrice": 0.00,
+      "salesTaxApplicable": 0,
+      "salesTaxWithheldAtSource": 50.23,
+      "extraTax": "",
+      "furtherTax": 120.00,
+      "sroScheduleNo": "6th Schd Table I",
+      "fedPayable": 50.36,
+      "discount": 56.36,
+      "saleType": "Exempt goods",
+      "sroItemSerialNo": "100"
+    }
+  ]
+}
+
+SN007: Zero-Rated Goods
+Zero-rated goods have sales tax charged at 0%. The seller can claim input tax credits on purchases. This is often applied to exported goods.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-04-21",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerNTNCNIC": "7654321",
+  "sellerProvince": "Sindh",
+  "buyerNTNCNIC": "3710505701479",
+  "buyerBusinessName": "Export House",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "scenarioId": "SN007",
+  "buyerRegistrationType": "Unregistered",
+  "invoiceRefNo": "0",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "Export Goods",
+      "rate": "0%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 100,
+      "totalValues": 0,
+      "valueSalesExcludingST": 100,
+      "salesTaxApplicable": 0,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "327(I)/2008",
+      "fixedNotifiedValueOrRetailPrice": 0.00,
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "Goods at zero-rate",
+      "sroItemSerialNo": "1"
+    }
+  ]
+}
+
+SN008: Third Schedule Goods (Retail Price Based)
+Items under the Third Schedule are subject to sales tax based on printed retail price rather than transaction value.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-04-21",
+  "sellerNTNCNIC": "7654321",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerProvince": "Sindh",
+  "buyerNTNCNIC": "3710505701479",
+  "buyerBusinessName": "Retail Chain",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "invoiceRefNo": "0",
+  "scenarioId": "SN008",
+  "buyerRegistrationType": "Unregistered",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "Branded Product",
+      "rate": "18%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 100,
+      "totalValues": 145,
+      "valueSalesExcludingST": 0,
+      "fixedNotifiedValueOrRetailPrice": 1000,
+      "salesTaxApplicable": 180,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "",
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "3rd Schedule Goods",
+      "sroItemSerialNo": ""
+    }
+  ]
+}
+
+SN009: Cotton Ginners
+Purchases from registered cotton ginners are subject to specific rules under cotton trade taxation, possibly involving reverse charge mechanisms.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-05-15",
+  "sellerNTNCNIC": "7654321",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "2046004",
+  "buyerBusinessName": "Textile Mills",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "",
+  "scenarioId": "SN009",
+  "buyerRegistrationType": "Registered",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "Raw Cotton",
+      "rate": "18%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 0,
+      "totalValues": 2500,
+      "valueSalesExcludingST": 2500,
+      "fixedNotifiedValueOrRetailPrice": 0.00,
+      "salesTaxApplicable": 450,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "",
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "Cotton ginners",
+      "sroItemSerialNo": ""
+    }
+  ]
+}
+
+SN010: Telecommunication Services
+Mobile operators providing telecom services are taxed under specific rules, including additional regulatory fees with both FED and GST.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-05-15",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerNTNCNIC": "7654321",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "1000000000000",
+  "buyerBusinessName": "Telecom Customer",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "SI-20260515-001",
+  "scenarioId": "SN010",
+  "buyerRegistrationType": "Unregistered",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "Telecom Services",
+      "rate": "17%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 1000,
+      "totalValues": 0,
+      "valueSalesExcludingST": 100,
+      "fixedNotifiedValueOrRetailPrice": 0.00,
+      "salesTaxApplicable": 17,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "",
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "Telecommunication services",
+      "sroItemSerialNo": ""
+    }
+  ]
+}
+
+SN011: Toll Manufacturing
+Toll manufacturing involves third-party processing of raw materials into finished products. The processor issues an invoice for conversion charges.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-05-26",
+  "sellerNTNCNIC": "4130276175937",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "sellerProvince": "Sindh",
+  "buyerNTNCNIC": "3710505701479",
+  "buyerBusinessName": "Manufacturing Co",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "",
+  "dataSource": "",
+  "scenarioId": "SN011",
+  "items": [
+    {
+      "hsCode": "7214.9990",
+      "productDescription": "Processed Steel",
+      "rate": "18%",
+      "uoM": "MT",
+      "quantity": 1,
+      "totalValues": 205000,
+      "valueSalesExcludingST": 205000,
+      "salesTaxApplicable": 36900,
+      "fixedNotifiedValueOrRetailPrice": 0,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "",
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "Toll Manufacturing",
+      "sroItemSerialNo": ""
+    }
+  ]
+}
+
+SN012: Petroleum Products
+Petroleum products like petrol, diesel, or lubricants have distinct sales tax rates or federal excise duties due to their economic importance.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-05-15",
+  "sellerNTNCNIC": "7654321",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "1000000000000",
+  "buyerBusinessName": "Fuel Station",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "SI-20260515-001",
+  "scenarioId": "SN012",
+  "buyerRegistrationType": "Unregistered",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "Petroleum Product",
+      "rate": "1.43%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 123,
+      "totalValues": 132,
+      "valueSalesExcludingST": 100,
+      "fixedNotifiedValueOrRetailPrice": 0.00,
+      "salesTaxApplicable": 1.43,
+      "salesTaxWithheldAtSource": 2,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "1450(I)/2021",
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "Petroleum Products",
+      "sroItemSerialNo": "4"
+    }
+  ]
+}
+
+SN013: Electricity Supply to Retailers
+Selling electricity to retailers has unique tax implications with different rates for wholesale vs retail.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-05-15",
+  "sellerNTNCNIC": "7654321",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "1000000000000",
+  "buyerBusinessName": "Power Distributor",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "SI-20260515-001",
+  "scenarioId": "SN013",
+  "buyerRegistrationType": "Unregistered",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "Electricity Units",
+      "rate": "5%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 123,
+      "totalValues": 212,
+      "valueSalesExcludingST": 1000,
+      "fixedNotifiedValueOrRetailPrice": 0.00,
+      "salesTaxApplicable": 50,
+      "salesTaxWithheldAtSource": 11,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "1450(I)/2021",
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "Electricity Supply to Retailers",
+      "sroItemSerialNo": "4"
+    }
+  ]
+}
+
+SN014: Gas to CNG Stations
+Natural gas sold to CNG filling stations may have special tax treatment to promote cleaner fuels.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-05-15",
+  "sellerNTNCNIC": "7654321",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "1000000000000",
+  "buyerBusinessName": "CNG Station",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "SI-20260515-001",
+  "scenarioId": "SN014",
+  "buyerRegistrationType": "Unregistered",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "Natural Gas",
+      "rate": "18%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 123,
+      "totalValues": 0,
+      "valueSalesExcludingST": 1000,
+      "salesTaxApplicable": 180,
+      "salesTaxWithheldAtSource": 0,
+      "fixedNotifiedValueOrRetailPrice": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "",
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "Gas to CNG stations",
+      "sroItemSerialNo": ""
+    }
+  ]
+}
+
+SN015: Mobile Phones
+Mobile handsets attract standard sales tax but may be subject to additional duties or regulatory charges.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-05-15",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerNTNCNIC": "7654321",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "1000000000000",
+  "buyerBusinessName": "Mobile Retailer",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "SI-20260515-001",
+  "scenarioId": "SN015",
+  "buyerRegistrationType": "Unregistered",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "Smartphone",
+      "rate": "18%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 123,
+      "totalValues": 0,
+      "valueSalesExcludingST": 1234,
+      "salesTaxApplicable": 222.12,
+      "salesTaxWithheldAtSource": 0,
+      "fixedNotifiedValueOrRetailPrice": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "NINTH SCHEDULE",
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "Mobile Phones",
+      "sroItemSerialNo": "1(A)"
+    }
+  ]
+}
+
+SN016: Processing/Conversion of Goods
+Services where raw materials are converted into finished products through manufacturing or processing.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-05-16",
+  "sellerNTNCNIC": "7654321",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "1000000000078",
+  "buyerBusinessName": "Processing Client",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "",
+  "scenarioId": "SN016",
+  "buyerRegistrationType": "Unregistered",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "Processing Service",
+      "rate": "5%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 1,
+      "totalValues": 0,
+      "valueSalesExcludingST": 100,
+      "salesTaxApplicable": 5,
+      "salesTaxWithheldAtSource": 0,
+      "fixedNotifiedValueOrRetailPrice": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "",
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "Processing/Conversion of Goods",
+      "sroItemSerialNo": ""
+    }
+  ]
+}
+
+SN017: Goods (FED in ST Mode)
+Federal Excise Duty collected through the sales tax system, streamlining collection.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-05-10",
+  "sellerNTNCNIC": "7654321",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "7000009",
+  "buyerBusinessName": "FED Customer",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "",
+  "scenarioId": "SN017",
+  "buyerRegistrationType": "Unregistered",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "FED Goods",
+      "rate": "8%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 1,
+      "valueSalesExcludingST": 100,
+      "fixedNotifiedValueOrRetailPrice": 0,
+      "salesTaxApplicable": 8,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "fedPayable": 0,
+      "discount": 0,
+      "totalValues": 0,
+      "saleType": "Goods (FED in ST Mode)",
+      "sroScheduleNo": "",
+      "sroItemSerialNo": ""
+    }
+  ]
+}
+
+SN018: Services (FED in ST Mode)
+Certain services like advertisement, franchise, insurance are liable to FED but invoiced under sales tax framework.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-06-14",
+  "sellerNTNCNIC": "7654321",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "1000000000056",
+  "buyerBusinessName": "Service Client",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "SI-20260421-001",
+  "scenarioId": "SN018",
+  "buyerRegistrationType": "Unregistered",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "Consulting Service",
+      "rate": "8%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 20,
+      "totalValues": 0,
+      "valueSalesExcludingST": 1000,
+      "salesTaxApplicable": 80,
+      "fixedNotifiedValueOrRetailPrice": 0,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "",
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "Services (FED in ST Mode)",
+      "sroItemSerialNo": ""
+    }
+  ]
+}
+
+SN019: ICT Services
+Businesses providing services such as consultancy, software development, and IT solutions are taxed under distinct ordinance.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-04-21",
+  "sellerNTNCNIC": "7654321",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "1000000000000",
+  "buyerBusinessName": "Tech Company",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "SI-20260421-001",
+  "buyerRegistrationType": "Unregistered",
+  "scenarioId": "SN019",
+  "items": [
+    {
+      "hsCode": "0101.2900",
+      "productDescription": "Software Development",
+      "rate": "5%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 1,
+      "totalValues": 0,
+      "valueSalesExcludingST": 100,
+      "salesTaxApplicable": 5,
+      "fixedNotifiedValueOrRetailPrice": 0,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "ICTO TABLE I",
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "Services",
+      "sroItemSerialNo": "1(ii)(ii)(a)"
+    }
+  ]
+}
+
+SN020: Electric Vehicles
+Electric vehicles may be incentivized through reduced sales tax rates to encourage environmentally friendly transportation.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-04-21",
+  "sellerNTNCNIC": "7654321",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "1000000000000",
+  "buyerBusinessName": "EV Buyer",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "buyerRegistrationType": "Unregistered",
+  "scenarioId": "SN020",
+  "invoiceRefNo": "SI-20260421-001",
+  "items": [
+    {
+      "hsCode": "0101.2900",
+      "productDescription": "Electric Vehicle",
+      "rate": "1%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 122,
+      "totalValues": 0,
+      "valueSalesExcludingST": 1000,
+      "salesTaxApplicable": 10,
+      "salesTaxWithheldAtSource": 0,
+      "fixedNotifiedValueOrRetailPrice": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "6th Schd Table III",
+      "fedPayable": 0,
+      "discount": 0,
+      "saleType": "Electric Vehicle",
+      "sroItemSerialNo": "20"
+    }
+  ]
+}
+
+SN021: Cement/Concrete Block
+Cement and concrete blocks are taxed at standard rate and subject to strict regulation due to environmental impact.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-04-21",
+  "sellerNTNCNIC": "7654321",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "1000000000000",
+  "buyerBusinessName": "Construction Co",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "SI-20260421-001",
+  "buyerRegistrationType": "Unregistered",
+  "scenarioId": "SN021",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "Cement Bags",
+      "rate": "Rs.3 per unit",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 12,
+      "valueSalesExcludingST": 123,
+      "salesTaxApplicable": 36,
+      "fixedNotifiedValueOrRetailPrice": 3,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "",
+      "fedPayable": 0,
+      "discount": 0,
+      "totalValues": 0,
+      "saleType": "Cement /Concrete Block",
+      "sroItemSerialNo": ""
+    }
+  ]
+}
+
+SN022: Potassium Chlorate
+A sensitive chemical used in matchstick manufacturing, subject to fixed tax per kilogram.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-04-21",
+  "sellerNTNCNIC": "7654321",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "1000000000000",
+  "buyerBusinessName": "Chemical Buyer",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "buyerRegistrationType": "Unregistered",
+  "scenarioId": "SN022",
+  "invoiceRefNo": "SI-20260421-001",
+  "items": [
+    {
+      "hsCode": "3104.2000",
+      "productDescription": "Potassium Chlorate",
+      "rate": "18% + Rs.60/kg",
+      "uoM": "KG",
+      "quantity": 1,
+      "valueSalesExcludingST": 100,
+      "fixedNotifiedValueOrRetailPrice": 60,
+      "salesTaxApplicable": 78,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "EIGHTH SCHEDULE Table 1",
+      "fedPayable": 0,
+      "discount": 0,
+      "totalValues": 0,
+      "saleType": "Potassium Chlorate",
+      "sroItemSerialNo": "56"
+    }
+  ]
+}
+
+SN023: CNG Sales
+Sales of Compressed Natural Gas involve regulated pricing and specific tax treatments including both FED and sales tax.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-04-21",
+  "sellerNTNCNIC": "7654321",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "1000000000000",
+  "buyerBusinessName": "Vehicle Owner",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "buyerRegistrationType": "Unregistered",
+  "scenarioId": "SN023",
+  "invoiceRefNo": "SI-20260421-001",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "CNG Fuel",
+      "rate": "Rs.200/unit",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 123,
+      "valueSalesExcludingST": 234,
+      "fixedNotifiedValueOrRetailPrice": 200,
+      "salesTaxApplicable": 24600,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "581(1)/2024",
+      "fedPayable": 0,
+      "discount": 0,
+      "totalValues": 0,
+      "saleType": "CNG Sales",
+      "sroItemSerialNo": "Region-I"
+    }
+  ]
+}
+
+SN024: Goods as per SRO.297(I)/2023
+Specific goods subject to reduced, conditional, or fixed-rate taxation under this SRO.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-04-21",
+  "sellerNTNCNIC": "7654321",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "1000000000000",
+  "buyerBusinessName": "SRO Buyer",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "buyerRegistrationType": "Unregistered",
+  "scenarioId": "SN024",
+  "invoiceRefNo": "SI-20260421-001",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "SRO Product",
+      "rate": "25%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 123,
+      "valueSalesExcludingST": 1000,
+      "fixedNotifiedValueOrRetailPrice": 0,
+      "salesTaxApplicable": 250,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "297(I)/2023-Table-I",
+      "fedPayable": 0,
+      "discount": 0,
+      "totalValues": 0,
+      "saleType": "Goods as per SRO.297(I)/2023",
+      "sroItemSerialNo": "12"
+    }
+  ]
+}
+
+SN025: Non-Adjustable Supplies (Pharmaceuticals)
+Certain pharmaceutical products taxed at fixed rate under serial 81 of Eighth Schedule to make medicines affordable.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-05-16",
+  "sellerNTNCNIC": "7654321",
+  "sellerBusinessName": "Logic Layer Pvt Ltd",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "sellerProvince": "Sindh",
+  "buyerNTNCNIC": "1000000000078",
+  "buyerBusinessName": "Pharmacy",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "buyerRegistrationType": "Unregistered",
+  "invoiceRefNo": "",
+  "scenarioId": "SN025",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "Medicine",
+      "rate": "0%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 1,
+      "valueSalesExcludingST": 100,
+      "fixedNotifiedValueOrRetailPrice": 0,
+      "salesTaxApplicable": 0,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "EIGHTH SCHEDULE Table 1",
+      "fedPayable": 0,
+      "discount": 0,
+      "totalValues": 0,
+      "saleType": "Non-Adjustable Supplies",
+      "sroItemSerialNo": "81"
+    }
+  ]
+}
+
+SN026: Retailer - Standard Rate Goods
+Retailers selling taxable goods directly to end consumers through POS systems integrated with FBR's IRIS platform.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-05-16",
+  "sellerNTNCNIC": "7000008",
+  "sellerBusinessName": "Logic Layer Retail",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "1000000000078",
+  "buyerBusinessName": "Retail Customer",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "buyerRegistrationType": "Registered",
+  "scenarioId": "SN026",
+  "invoiceRefNo": "SI-20260421-001",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "Retail Product",
+      "rate": "18%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 123,
+      "valueSalesExcludingST": 1000,
+      "fixedNotifiedValueOrRetailPrice": 0,
+      "salesTaxApplicable": 180,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "",
+      "fedPayable": 0,
+      "discount": 0,
+      "totalValues": 0,
+      "saleType": "Goods at standard rate (default)",
+      "sroItemSerialNo": ""
+    }
+  ]
+}
+
+SN027: Retailer - Third Schedule Goods
+Retailers selling goods under 3rd Schedule must charge tax based on maximum retail price (MRP).
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-05-10",
+  "sellerNTNCNIC": "7000008",
+  "sellerBusinessName": "Logic Layer Retail",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "7000006",
+  "buyerBusinessName": "FMCG Buyer",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "buyerRegistrationType": "Registered",
+  "invoiceRefNo": "",
+  "scenarioId": "SN027",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "FMCG Product",
+      "rate": "18%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 1,
+      "valueSalesExcludingST": 0,
+      "fixedNotifiedValueOrRetailPrice": 100,
+      "salesTaxApplicable": 18,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": 0,
+      "furtherTax": 0,
+      "sroScheduleNo": "",
+      "fedPayable": 0,
+      "discount": 0,
+      "totalValues": 0,
+      "saleType": "3rd Schedule Goods",
+      "sroItemSerialNo": ""
+    }
+  ]
+}
+
+SN028: Retailer - Reduced Rate Goods
+Essential goods like baby milk and books subject to reduced tax rate to keep vital products affordable.
+{
+  "invoiceType": "Sale Invoice",
+  "invoiceDate": "2026-05-16",
+  "sellerNTNCNIC": "7000008",
+  "sellerBusinessName": "Logic Layer Retail",
+  "sellerProvince": "Sindh",
+  "sellerAddress": "Office 67, Habib Chamber, Gulshan-e-Iqbal Block 14, Karachi",
+  "buyerNTNCNIC": "1000000000000",
+  "buyerBusinessName": "Consumer",
+  "buyerProvince": "Sindh",
+  "buyerAddress": "Karachi",
+  "invoiceRefNo": "",
+  "buyerRegistrationType": "Registered",
+  "scenarioId": "SN028",
+  "items": [
+    {
+      "hsCode": "0101.2100",
+      "productDescription": "Baby Formula",
+      "rate": "1%",
+      "uoM": "Numbers, pieces, units",
+      "quantity": 1,
+      "valueSalesExcludingST": 99.01,
+      "fixedNotifiedValueOrRetailPrice": 100,
+      "salesTaxApplicable": 0.99,
+      "salesTaxWithheldAtSource": 0,
+      "extraTax": "",
+      "furtherTax": 0,
+      "sroScheduleNo": "EIGHTH SCHEDULE Table 1",
+      "fedPayable": 0,
+      "discount": 0,
+      "totalValues": 100,
+      "saleType": "Goods at Reduced Rate",
+      "sroItemSerialNo": "70"
+    }
+  ]
+}
+

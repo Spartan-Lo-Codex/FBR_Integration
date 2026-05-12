@@ -1,0 +1,169 @@
+Scenario ID,Scenario Description,Field Name,Field Value
+SN001,Sale of Standard Rate Goods to Registered Buyers,invoiceType,Sale Invoice
+SN001,Sale of Standard Rate Goods to Registered Buyers,scenarioId,SN001
+SN001,Sale of Standard Rate Goods to Registered Buyers,buyerRegistrationType,Registered
+SN001,Sale of Standard Rate Goods to Registered Buyers,hsCode,101.21
+SN001,Sale of Standard Rate Goods to Registered Buyers,sroScheduleNo,
+SN001,Sale of Standard Rate Goods to Registered Buyers,saleType,Goods at standard rate (default)
+SN002,Sale of Standard Rate Goods to Unregistered Buyers,invoiceType,Sale Invoice
+SN002,Sale of Standard Rate Goods to Unregistered Buyers,scenarioId,SN002
+SN002,Sale of Standard Rate Goods to Unregistered Buyers,buyerRegistrationType,Unregistered
+SN002,Sale of Standard Rate Goods to Unregistered Buyers,hsCode,101.21
+SN002,Sale of Standard Rate Goods to Unregistered Buyers,sroScheduleNo,
+SN002,Sale of Standard Rate Goods to Unregistered Buyers,saleType,Goods at standard rate (default)
+SN003,"Sale of Steel (Melted and Re-Rolled) (Billets, Ingots and Long Bars)",invoiceType,Sale Invoice
+SN003,"Sale of Steel (Melted and Re-Rolled) (Billets, Ingots and Long Bars)",scenarioId,SN003
+SN003,"Sale of Steel (Melted and Re-Rolled) (Billets, Ingots and Long Bars)",buyerRegistrationType,Unregistered
+SN003,"Sale of Steel (Melted and Re-Rolled) (Billets, Ingots and Long Bars)",hsCode,7214.101
+SN003,"Sale of Steel (Melted and Re-Rolled) (Billets, Ingots and Long Bars)",sroScheduleNo,
+SN003,"Sale of Steel (Melted and Re-Rolled) (Billets, Ingots and Long Bars)",saleType,Steel melting and re-rolling
+SN004,Sale of Steel Scrap by Ship Breakers,invoiceType,Sale Invoice
+SN004,Sale of Steel Scrap by Ship Breakers,scenarioId,SN004
+SN004,Sale of Steel Scrap by Ship Breakers,buyerRegistrationType,N/A
+SN004,Sale of Steel Scrap by Ship Breakers,hsCode,7204.101
+SN004,Sale of Steel Scrap by Ship Breakers,sroScheduleNo,
+SN004,Sale of Steel Scrap by Ship Breakers,saleType,Ship breaking
+SN005,Sales of Reduced Rate Goods (Eighth Schedule),invoiceType,Sale Invoice
+SN005,Sales of Reduced Rate Goods (Eighth Schedule),scenarioId,SN005
+SN005,Sales of Reduced Rate Goods (Eighth Schedule),buyerRegistrationType,Unregistered
+SN005,Sales of Reduced Rate Goods (Eighth Schedule),hsCode,102.293
+SN005,Sales of Reduced Rate Goods (Eighth Schedule),sroScheduleNo,EIGHTH SCHEDULE Table 1
+SN005,Sales of Reduced Rate Goods (Eighth Schedule),saleType,Goods at Reduced Rate
+SN006,Sale of Exempt Goods (Sixth Schedule),invoiceType,Sale Invoice
+SN006,Sale of Exempt Goods (Sixth Schedule),scenarioId,SN006
+SN006,Sale of Exempt Goods (Sixth Schedule),buyerRegistrationType,Registered
+SN006,Sale of Exempt Goods (Sixth Schedule),hsCode,102.293
+SN006,Sale of Exempt Goods (Sixth Schedule),sroScheduleNo,6th Schd Table I
+SN006,Sale of Exempt Goods (Sixth Schedule),saleType,Exempt goods
+SN007,Sale Of Zero-Rated Goods (Fifth Schedule),invoiceType,Sale Invoice
+SN007,Sale Of Zero-Rated Goods (Fifth Schedule),scenarioId,SN007
+SN007,Sale Of Zero-Rated Goods (Fifth Schedule),buyerRegistrationType,Unregistered
+SN007,Sale Of Zero-Rated Goods (Fifth Schedule),hsCode,101.21
+SN007,Sale Of Zero-Rated Goods (Fifth Schedule),sroScheduleNo,327(I)/2008
+SN007,Sale Of Zero-Rated Goods (Fifth Schedule),saleType,Goods at zero-rate
+SN008,Sale of 3rd Schedule Goods,invoiceType,Sale Invoice
+SN008,Sale of 3rd Schedule Goods,scenarioId,SN008
+SN008,Sale of 3rd Schedule Goods,buyerRegistrationType,Unregistered
+SN008,Sale of 3rd Schedule Goods,hsCode,101.21
+SN008,Sale of 3rd Schedule Goods,sroScheduleNo,
+SN008,Sale of 3rd Schedule Goods,saleType,3rd Schedule Goods
+SN009,Purchase From Registered Cotton Ginners,invoiceType,Sale Invoice
+SN009,Purchase From Registered Cotton Ginners,scenarioId,SN009
+SN009,Purchase From Registered Cotton Ginners,buyerRegistrationType,Registered
+SN009,Purchase From Registered Cotton Ginners,hsCode,101.21
+SN009,Purchase From Registered Cotton Ginners,sroScheduleNo,
+SN009,Purchase From Registered Cotton Ginners,saleType,Cotton ginners
+SN010,Sale Of Telecom Services by Mobile Operators,invoiceType,Sale Invoice
+SN010,Sale Of Telecom Services by Mobile Operators,scenarioId,SN010
+SN010,Sale Of Telecom Services by Mobile Operators,buyerRegistrationType,Unregistered
+SN010,Sale Of Telecom Services by Mobile Operators,hsCode,101.21
+SN010,Sale Of Telecom Services by Mobile Operators,sroScheduleNo,
+SN010,Sale Of Telecom Services by Mobile Operators,saleType,Telecommunication services
+SN011,"Sale of Steel through Toll Manufacturing (Billets, Ingots and Long Bars)",invoiceType,Sale Invoice
+SN011,"Sale of Steel through Toll Manufacturing (Billets, Ingots and Long Bars)",scenarioId,SN011
+SN011,"Sale of Steel through Toll Manufacturing (Billets, Ingots and Long Bars)",buyerRegistrationType,N/A
+SN011,"Sale of Steel through Toll Manufacturing (Billets, Ingots and Long Bars)",hsCode,7214.999
+SN011,"Sale of Steel through Toll Manufacturing (Billets, Ingots and Long Bars)",sroScheduleNo,
+SN011,"Sale of Steel through Toll Manufacturing (Billets, Ingots and Long Bars)",saleType,Toll Manufacturing
+SN012,Sale Of Petroleum Products,invoiceType,Sale Invoice
+SN012,Sale Of Petroleum Products,scenarioId,SN012
+SN012,Sale Of Petroleum Products,buyerRegistrationType,Unregistered
+SN012,Sale Of Petroleum Products,hsCode,101.21
+SN012,Sale Of Petroleum Products,sroScheduleNo,1450(I)/2021
+SN012,Sale Of Petroleum Products,saleType,Petroleum Products
+SN013,Sale Of Electricity to Retailers,invoiceType,Sale Invoice
+SN013,Sale Of Electricity to Retailers,scenarioId,SN013
+SN013,Sale Of Electricity to Retailers,buyerRegistrationType,Unregistered
+SN013,Sale Of Electricity to Retailers,hsCode,101.21
+SN013,Sale Of Electricity to Retailers,sroScheduleNo,1450(I)/2021
+SN013,Sale Of Electricity to Retailers,saleType,Electricity Supply to Retailers
+SN014,Sale of Gas to CNG Stations,invoiceType,Sale Invoice
+SN014,Sale of Gas to CNG Stations,scenarioId,SN014
+SN014,Sale of Gas to CNG Stations,buyerRegistrationType,Unregistered
+SN014,Sale of Gas to CNG Stations,hsCode,101.21
+SN014,Sale of Gas to CNG Stations,sroScheduleNo,
+SN014,Sale of Gas to CNG Stations,saleType,Gas to CNG stations
+SN015,Sale of Mobile Phones,invoiceType,Sale Invoice
+SN015,Sale of Mobile Phones,scenarioId,SN015
+SN015,Sale of Mobile Phones,buyerRegistrationType,Unregistered
+SN015,Sale of Mobile Phones,hsCode,101.21
+SN015,Sale of Mobile Phones,sroScheduleNo,NINTH SCHEDULE
+SN015,Sale of Mobile Phones,saleType,Mobile Phones
+SN016,Processing / Conversion of Goods,invoiceType,Sale Invoice
+SN016,Processing / Conversion of Goods,scenarioId,SN016
+SN016,Processing / Conversion of Goods,buyerRegistrationType,Unregistered
+SN016,Processing / Conversion of Goods,hsCode,101.21
+SN016,Processing / Conversion of Goods,sroScheduleNo,
+SN016,Processing / Conversion of Goods,saleType,Processing/Conversion of Goods
+SN017,Sale of Goods Where FED Is Charged in ST Mode,invoiceType,Sale Invoice
+SN017,Sale of Goods Where FED Is Charged in ST Mode,scenarioId,SN017
+SN017,Sale of Goods Where FED Is Charged in ST Mode,buyerRegistrationType,Unregistered
+SN017,Sale of Goods Where FED Is Charged in ST Mode,hsCode,101.21
+SN017,Sale of Goods Where FED Is Charged in ST Mode,sroScheduleNo,
+SN017,Sale of Goods Where FED Is Charged in ST Mode,saleType,Goods (FED in ST Mode)
+SN018,Sale Of Services Where FED Is Charged in ST Mode,invoiceType,Sale Invoice
+SN018,Sale Of Services Where FED Is Charged in ST Mode,scenarioId,SN018
+SN018,Sale Of Services Where FED Is Charged in ST Mode,buyerRegistrationType,Unregistered
+SN018,Sale Of Services Where FED Is Charged in ST Mode,hsCode,101.21
+SN018,Sale Of Services Where FED Is Charged in ST Mode,sroScheduleNo,
+SN018,Sale Of Services Where FED Is Charged in ST Mode,saleType,Services (FED in ST Mode)
+SN019,Sale of Services (as per ICT Ordinance),invoiceType,Sale Invoice
+SN019,Sale of Services (as per ICT Ordinance),scenarioId,SN019
+SN019,Sale of Services (as per ICT Ordinance),buyerRegistrationType,Unregistered
+SN019,Sale of Services (as per ICT Ordinance),hsCode,101.29
+SN019,Sale of Services (as per ICT Ordinance),sroScheduleNo,ICTO TABLE I
+SN019,Sale of Services (as per ICT Ordinance),saleType,Services
+SN020,Sale of Electric Vehicles,invoiceType,Sale Invoice
+SN020,Sale of Electric Vehicles,scenarioId,SN020
+SN020,Sale of Electric Vehicles,buyerRegistrationType,Unregistered
+SN020,Sale of Electric Vehicles,hsCode,101.29
+SN020,Sale of Electric Vehicles,sroScheduleNo,6th Schd Table III
+SN020,Sale of Electric Vehicles,saleType,Electric Vehicle
+SN021,Sale of Cement /Concrete Block,invoiceType,Sale Invoice
+SN021,Sale of Cement /Concrete Block,scenarioId,SN021
+SN021,Sale of Cement /Concrete Block,buyerRegistrationType,Unregistered
+SN021,Sale of Cement /Concrete Block,hsCode,101.21
+SN021,Sale of Cement /Concrete Block,sroScheduleNo,
+SN021,Sale of Cement /Concrete Block,saleType,Cement /Concrete Block
+SN022,Sale of Potassium Chlorate,invoiceType,Sale Invoice
+SN022,Sale of Potassium Chlorate,scenarioId,SN022
+SN022,Sale of Potassium Chlorate,buyerRegistrationType,Unregistered
+SN022,Sale of Potassium Chlorate,hsCode,3104.2
+SN022,Sale of Potassium Chlorate,sroScheduleNo,EIGHTH SCHEDULE Table 1
+SN022,Sale of Potassium Chlorate,saleType,Potassium Chlorate
+SN023,Sale of CNG,invoiceType,Sale Invoice
+SN023,Sale of CNG,scenarioId,SN023
+SN023,Sale of CNG,buyerRegistrationType,Unregistered
+SN023,Sale of CNG,hsCode,101.21
+SN023,Sale of CNG,sroScheduleNo,581(1)/2024
+SN023,Sale of CNG,saleType,CNG Sales
+SN024,Sale Of Goods Listed in SRO 297(1)/2023,invoiceType,Sale Invoice
+SN024,Sale Of Goods Listed in SRO 297(1)/2023,scenarioId,SN024
+SN024,Sale Of Goods Listed in SRO 297(1)/2023,buyerRegistrationType,Unregistered
+SN024,Sale Of Goods Listed in SRO 297(1)/2023,hsCode,101.21
+SN024,Sale Of Goods Listed in SRO 297(1)/2023,sroScheduleNo,297(I)/2023-Table-I
+SN024,Sale Of Goods Listed in SRO 297(1)/2023,saleType,Goods as per SRO.297(|)/2023
+SN025,Drugs Sold at Fixed ST Rate Under Serial 81 Of Eighth Schedule Table 1,invoiceType,Sale Invoice
+SN025,Drugs Sold at Fixed ST Rate Under Serial 81 Of Eighth Schedule Table 1,scenarioId,SN025
+SN025,Drugs Sold at Fixed ST Rate Under Serial 81 Of Eighth Schedule Table 1,buyerRegistrationType,Unregistered
+SN025,Drugs Sold at Fixed ST Rate Under Serial 81 Of Eighth Schedule Table 1,hsCode,101.21
+SN025,Drugs Sold at Fixed ST Rate Under Serial 81 Of Eighth Schedule Table 1,sroScheduleNo,EIGHTH SCHEDULE Table 1
+SN025,Drugs Sold at Fixed ST Rate Under Serial 81 Of Eighth Schedule Table 1,saleType,Non-Adjustable Supplies
+SN026,Sale Of Goods at Standard Rate to End Consumers by Retailers,invoiceType,Sale Invoice
+SN026,Sale Of Goods at Standard Rate to End Consumers by Retailers,scenarioId,SN026
+SN026,Sale Of Goods at Standard Rate to End Consumers by Retailers,buyerRegistrationType,Registered
+SN026,Sale Of Goods at Standard Rate to End Consumers by Retailers,hsCode,101.21
+SN026,Sale Of Goods at Standard Rate to End Consumers by Retailers,sroScheduleNo,
+SN026,Sale Of Goods at Standard Rate to End Consumers by Retailers,saleType,Goods at standard rate (default)
+SN027,Sale Of 3rd Schedule Goods to End Consumers by Retailers,invoiceType,Sale Invoice
+SN027,Sale Of 3rd Schedule Goods to End Consumers by Retailers,scenarioId,SN027
+SN027,Sale Of 3rd Schedule Goods to End Consumers by Retailers,buyerRegistrationType,Registered
+SN027,Sale Of 3rd Schedule Goods to End Consumers by Retailers,hsCode,101.21
+SN027,Sale Of 3rd Schedule Goods to End Consumers by Retailers,sroScheduleNo,
+SN027,Sale Of 3rd Schedule Goods to End Consumers by Retailers,saleType,3rd Schedule Goods
+SN028,Sale of Goods at Reduced Rate to End Consumers by Retailers,invoiceType,Sale Invoice
+SN028,Sale of Goods at Reduced Rate to End Consumers by Retailers,scenarioId,SN028
+SN028,Sale of Goods at Reduced Rate to End Consumers by Retailers,buyerRegistrationType,Registered
+SN028,Sale of Goods at Reduced Rate to End Consumers by Retailers,hsCode,101.21
+SN028,Sale of Goods at Reduced Rate to End Consumers by Retailers,sroScheduleNo,EIGHTH SCHEDULE Table 1
+SN028,Sale of Goods at Reduced Rate to End Consumers by Retailers,saleType,Goods at Reduced Rate
