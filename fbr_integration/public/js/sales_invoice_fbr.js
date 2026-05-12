@@ -931,34 +931,22 @@ frappe.ui.form.on("Sales Invoice", {
             show_scenario_browser(frm);
         });
 
-        // View Scenario button — shown only when a Scenario ID is selected
-        if ((frm.doc.custom_scenario_id || "").toString().trim()) {
-            frm.add_custom_button(__("View Scenario"), function () {
-                show_scenario_details(frm.doc.custom_scenario_id);
-            });
-        }
+        // Determine if invoice is already submitted to FBR
+        const is_sent_to_fbr = (frm.doc.custom_fbr_invoice_no || "").trim();
 
-        frm.add_custom_button(__("FBR"), async function () {
-            if ((frm.doc.custom_fbr_invoice_no || "").trim()) {
+        // Single "Send to FBR" button with dynamic styling
+        const button_text = is_sent_to_fbr
+            ? __("✓ Sent to FBR")
+            : __("Send to FBR");
+
+        const btn = frm.add_custom_button(button_text, async function () {
+            // If already sent -> show success popup with QR/barcode
+            if (is_sent_to_fbr) {
                 await show_success_popup_with_qr_barcode(frm);
                 return;
             }
 
-            frappe.msgprint({
-                title: __("FBR Status"),
-                indicator: "orange",
-                message: `<div style="font-size:14px;line-height:1.6;"><b>This invoice has not been submitted to FBR yet.</b></div>`,
-            });
-        });
-
-        // Purple Send button
-        const btn = frm.add_custom_button(__("Send to FBR"), async function () {
-            // If already sent -> block
-            if ((frm.doc.custom_fbr_invoice_no || "").trim()) {
-                await show_success_popup_with_qr_barcode(frm);
-                return;
-            }
-
+            // If not sent -> send to FBR
             frappe.call({
                 method: "fbr_integration.handler.send_to_fbr_si",
                 args: { name: frm.doc.name },
@@ -980,9 +968,17 @@ frappe.ui.form.on("Sales Invoice", {
         });
 
         try {
-            btn.removeClass(
-                "btn-default btn-primary btn-danger btn-success"
-            ).addClass("btn-purple");
+            if (is_sent_to_fbr) {
+                // Green styling for submitted invoices
+                btn.removeClass(
+                    "btn-default btn-primary btn-danger btn-purple"
+                ).addClass("btn-success");
+            } else {
+                // Purple styling for pending invoices
+                btn.removeClass(
+                    "btn-default btn-primary btn-danger btn-success"
+                ).addClass("btn-purple");
+            }
         } catch (e) {
             // ignore style application errors
         }
