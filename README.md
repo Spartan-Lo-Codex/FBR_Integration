@@ -20,32 +20,23 @@ bench restart
 If you already have the app installed and want to pull the latest changes:
 
 ```bash
+cd ~/frappe-bench/apps/fbr_integration
+git fetch origin
+git checkout main
+git pull origin main
+
 cd ~/frappe-bench
-
-# Pull latest code
-bench get-app fbr_integration https://github.com/ERPNEXT-PAKISTAN/FBR_Integration.git --branch main
-
-# Run database migrations (for any new doctypes/fields)
 bench --site site1.local migrate
-
-# Rebuild JS/CSS assets
 bench build --app fbr_integration
-
-# Clear cache and restart
 bench --site site1.local clear-cache
 bench restart
 ```
 
-> **Tip:** If `bench get-app` reports the app is already present, pull manually:
-> ```bash
-> cd ~/frappe-bench/apps/fbr_integration
-> git pull origin main
-> cd ~/frappe-bench
-> bench --site site1.local migrate
-> bench build --app fbr_integration
-> bench --site site1.local clear-cache
-> bench restart
-> ```
+Important notes:
+
+- Do not run `bench get-app` for an app that is already installed in `apps/fbr_integration`.
+- If your repo uses `upstream` remote instead of `origin`, replace `origin` with `upstream` in the commands above.
+- If your local branch has custom commits/diverges, resolve git merge/rebase first, then run migrate/build.
 
 ### Scenario Files
 
