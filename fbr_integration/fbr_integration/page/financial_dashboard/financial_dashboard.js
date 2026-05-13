@@ -11,11 +11,11 @@ frappe.pages["financial-dashboard"].on_page_load = function (wrapper) {
 
     let state = {
         company: frappe.defaults.get_user_default("Company") || "",
-        from_date: frappe.datetime.year_start(),
+        from_date: frappe.datetime.month_start(),
         to_date: frappe.datetime.get_today(),
-        trend_view: "yearly",
-        analytics_group: "yearly",
-        period_type: "yearly",
+        trend_view: "monthly",
+        analytics_group: "monthly",
+        period_type: "monthly",
         vertical_analysis_view: "period",
         horizontal_analysis_view: "period",
     };
@@ -39,8 +39,7 @@ frappe.pages["financial-dashboard"].on_page_load = function (wrapper) {
     }
     function currencyFmt(currency) {
         return {
-            fieldtype: "Currency",
-            options: currency || frappe.defaults.get_default("currency"),
+            fieldtype: "Float",
             precision: 0,
         };
     }
@@ -101,7 +100,7 @@ frappe.pages["financial-dashboard"].on_page_load = function (wrapper) {
             this_year: "This Year",
             last_year: "Last Year",
         };
-        return labels[period] || "This Year";
+        return labels[period] || "This Month";
     }
 
     function load_companies() {

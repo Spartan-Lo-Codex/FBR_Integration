@@ -480,35 +480,115 @@
 }
 
 .financial-dashboard.fdash-pro .kpi-card .card-body {
-    min-height: 110px;
+    min-height: 128px;
+    padding: 14px 14px 12px;
+}
+
+.financial-dashboard.fdash-pro .kpi-card {
+    background: #ffffff !important;
+    color: #0f2942 !important;
+    border: 1px solid #d5e2ef;
+    box-shadow: 0 10px 20px rgba(15, 41, 66, 0.09);
+    position: relative;
+    overflow: hidden;
+}
+
+.financial-dashboard.fdash-pro .kpi-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 5px;
+    border-radius: 16px 16px 0 0;
+}
+
+.financial-dashboard.fdash-pro .kpi-card.bg-success::before {
+    background: linear-gradient(90deg, #0e9f6e, #19b47c);
+}
+
+.financial-dashboard.fdash-pro .kpi-card.bg-danger::before {
+    background: linear-gradient(90deg, #dc3545, #ef4444);
+}
+
+.financial-dashboard.fdash-pro .kpi-card.bg-info::before {
+    background: linear-gradient(90deg, #0284c7, #2563eb);
+}
+
+.financial-dashboard.fdash-pro .kpi-card.bg-warning::before {
+    background: linear-gradient(90deg, #d97706, #f59e0b);
+}
+
+.financial-dashboard.fdash-pro .kpi-card .card-title,
+.financial-dashboard.fdash-pro .kpi-card h3,
+.financial-dashboard.fdash-pro .kpi-card small,
+.financial-dashboard.fdash-pro .kpi-card .fa {
+    color: inherit !important;
 }
 
 .financial-dashboard.fdash-pro .kpi-card.bg-success {
-    background: linear-gradient(130deg, #0e9f6e 0%, #057a55 100%) !important;
+    background: #ffffff !important;
 }
 
 .financial-dashboard.fdash-pro .kpi-card.bg-danger {
-    background: linear-gradient(130deg, #e84a5f 0%, #b42318 100%) !important;
+    background: #ffffff !important;
 }
 
 .financial-dashboard.fdash-pro .kpi-card.bg-info {
-    background: linear-gradient(130deg, #0ea5e9 0%, #1d4ed8 100%) !important;
+    background: #ffffff !important;
 }
 
 .financial-dashboard.fdash-pro .kpi-card.bg-warning {
-    background: linear-gradient(130deg, #f59e0b 0%, #c2410c 100%) !important;
+    background: #ffffff !important;
 }
 
 .financial-dashboard.fdash-pro .kpi-card .card-title {
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.07em;
     font-size: 11px;
-    opacity: 0.94;
+    font-weight: 700;
+    color: #4a6684 !important;
+    margin-bottom: 6px;
 }
 
 .financial-dashboard.fdash-pro .kpi-card h3 {
-    font-size: 1.2rem;
-    letter-spacing: -0.02em;
+    font-size: clamp(0.95rem, 1.1vw, 1.35rem);
+    line-height: 1.25;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px !important;
+    word-break: break-all;
+}
+
+.financial-dashboard.fdash-pro .kpi-card small {
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.financial-dashboard.fdash-pro .kpi-card .kpi-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f7fe;
+    color: #4c6f93 !important;
+    opacity: 1;
+}
+
+.financial-dashboard.fdash-pro .kpi-card .kpi-icon .fa {
+    font-size: 1.2rem !important;
+}
+
+.financial-dashboard.fdash-pro .kpi-mini-card {
+    background: #ffffff;
+    border: 1px solid #d5e2ef;
+}
+
+.financial-dashboard.fdash-pro .kpi-mini-card h4,
+.financial-dashboard.fdash-pro .kpi-mini-card .text-muted {
+    word-break: break-all;
 }
 
 .financial-dashboard.fdash-pro .chart-card {

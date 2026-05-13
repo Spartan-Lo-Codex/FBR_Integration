@@ -2,14 +2,14 @@
 <div class="financial-dashboard-toolbar fdash-pro-toolbar mb-3">
     <div class="d-flex justify-content-end flex-wrap gap-2 align-items-center">
         <div class="btn-group btn-group-sm" role="group" title="Apply to entire dashboard">
-            <button type="button" class="btn btn-default dashboard-period-type" data-period-type="monthly" title="Monthly view">Monthly</button>
+            <button type="button" class="btn btn-default dashboard-period-type active" data-period-type="monthly" title="Monthly view">Monthly</button>
             <button type="button" class="btn btn-default dashboard-period-type" data-period-type="quarterly" title="Quarterly view">Quarterly</button>
-            <button type="button" class="btn btn-default dashboard-period-type active" data-period-type="yearly" title="Yearly view">Yearly</button>
+            <button type="button" class="btn btn-default dashboard-period-type" data-period-type="yearly" title="Yearly view">Yearly</button>
         </div>
         <div class="dropdown">
             <a class="btn btn-default dropdown-toggle" href="#" id="periodDropdown" role="button" data-toggle="dropdown">
                 <i class="fa fa-calendar me-1"></i>
-                <span id="currentPeriod">This Year</span>
+                <span id="currentPeriod">This Month</span>
             </a>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item period-option" href="#" data-period="today">Today</a></li>
