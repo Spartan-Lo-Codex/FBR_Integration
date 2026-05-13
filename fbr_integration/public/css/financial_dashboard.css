@@ -722,3 +722,266 @@
         overflow: visible;
     }
 }
+
+/* ===== Executive Polish Layer (final override) ===== */
+.financial-dashboard.fdash-pro {
+    --fd-text: #102a43;
+    --fd-subtle: #5d7288;
+    --fd-surface: #ffffff;
+    --fd-border-strong: #cddbea;
+    --fd-border-soft: #dfe9f4;
+    --fd-bg-soft: #f7fafc;
+    --fd-accent: #1463c8;
+    --fd-shadow-soft: 0 8px 24px rgba(16, 42, 67, 0.08);
+    --fd-shadow-card: 0 14px 28px rgba(16, 42, 67, 0.09);
+    background:
+        radial-gradient(circle at 0% 0%, rgba(20, 99, 200, 0.08), transparent 34%),
+        radial-gradient(circle at 100% 0%, rgba(10, 168, 210, 0.08), transparent 32%),
+        linear-gradient(180deg, #f4f8fc, #f2f6fb 40%, #f8fbff);
+    border: 1px solid #d8e3ef;
+    border-radius: 20px;
+    padding: 18px 16px 24px;
+}
+
+.financial-dashboard-toolbar.fdash-pro-toolbar {
+    background: linear-gradient(180deg, rgba(245, 249, 253, 0.95), rgba(245, 249, 253, 0.86));
+    border-bottom: 1px solid var(--fd-border-soft);
+    padding: 10px 14px;
+}
+
+.financial-dashboard-toolbar.fdash-pro-toolbar .btn,
+.financial-dashboard-toolbar.fdash-pro-toolbar .dropdown-toggle {
+    border: 1px solid var(--fd-border-strong);
+    color: var(--fd-text);
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(16, 42, 67, 0.06);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.financial-dashboard-toolbar.fdash-pro-toolbar .btn.active,
+.financial-dashboard-toolbar.fdash-pro-toolbar .btn:focus,
+.financial-dashboard-toolbar.fdash-pro-toolbar .dropdown-toggle:focus {
+    border-color: #8fb4df;
+    box-shadow: 0 0 0 3px rgba(20, 99, 200, 0.12);
+}
+
+.financial-dashboard.fdash-pro .kpi-card,
+.financial-dashboard.fdash-pro .kpi-mini-card,
+.financial-dashboard.fdash-pro .chart-card,
+.financial-dashboard.fdash-pro .financial-statements-card {
+    background: var(--fd-surface) !important;
+    border: 1px solid var(--fd-border-soft) !important;
+    border-radius: 14px;
+    box-shadow: var(--fd-shadow-soft);
+}
+
+.financial-dashboard.fdash-pro .kpi-card:hover,
+.financial-dashboard.fdash-pro .chart-card:hover,
+.financial-dashboard.fdash-pro .kpi-mini-card:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--fd-shadow-card);
+}
+
+.financial-dashboard.fdash-pro .kpi-card .card-body {
+    min-height: 126px;
+    padding: 16px 16px 12px;
+}
+
+.financial-dashboard.fdash-pro .kpi-card::before {
+    height: 4px;
+}
+
+.financial-dashboard.fdash-pro .kpi-card .card-title {
+    color: #4f647a !important;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    margin-bottom: 7px;
+}
+
+.financial-dashboard.fdash-pro .kpi-card h3,
+.financial-dashboard.fdash-pro #profitMargin {
+    color: #0f2f4f !important;
+    font-size: clamp(0.95rem, 1.05vw, 1.28rem);
+    font-weight: 800;
+    line-height: 1.24;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.financial-dashboard.fdash-pro .kpi-card small {
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.financial-dashboard.fdash-pro .kpi-card .kpi-icon {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #d5e3f2;
+    background: linear-gradient(180deg, #f5f9fe, #edf4fc);
+    color: #476786 !important;
+}
+
+.financial-dashboard.fdash-pro .kpi-mini-card {
+    min-height: 126px;
+}
+
+.financial-dashboard.fdash-pro .kpi-mini-card .card-header {
+    border-bottom: 1px solid #e5edf6;
+    background: #fafcff;
+}
+
+.financial-dashboard.fdash-pro .kpi-mini-card h4 {
+    color: #0f2f4f;
+    font-size: clamp(1rem, 1.12vw, 1.4rem);
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.financial-dashboard.fdash-pro .kpi-mini-card .text-muted {
+    color: #4b657f !important;
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+.financial-dashboard.fdash-pro .chart-card .card-header {
+    background: linear-gradient(180deg, #fbfdff, #f5f9fe);
+    border-bottom: 1px solid #e1ebf5;
+    color: #183958;
+    font-size: 0.98rem;
+    font-weight: 700;
+    padding: 0.9rem 1.1rem;
+}
+
+.financial-dashboard.fdash-pro .chart-card .card-body {
+    padding: 1.05rem 1.1rem;
+}
+
+.financial-dashboard.fdash-pro .chart-card .btn-group .btn {
+    border-radius: 8px;
+    border: 1px solid #c8d9eb;
+    background: #fff;
+    color: #31516f;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.financial-dashboard.fdash-pro .chart-card .btn-group .btn.active {
+    background: linear-gradient(135deg, #1a73d9, #0c5ebf);
+    border-color: #0c5ebf;
+    color: #fff;
+    box-shadow: 0 5px 12px rgba(20, 99, 200, 0.28);
+}
+
+.financial-dashboard.fdash-pro .table-responsive {
+    border: 1px solid #d8e4f1;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.financial-dashboard.fdash-pro .table thead th {
+    background: linear-gradient(180deg, #f8fbff, #eef5fc);
+    color: #385775;
+    border-bottom: 1px solid #d5e3f1;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.financial-dashboard.fdash-pro .table td {
+    color: #223f5d;
+    font-size: 12.5px;
+    border-color: #e4edf6;
+}
+
+.financial-dashboard.fdash-pro .financial-statements-card {
+    margin-top: 10px;
+}
+
+.financial-dashboard.fdash-pro .financial-statements-header {
+    background: linear-gradient(180deg, #f4f9ff, #edf5fd);
+    border-bottom: 1px solid #d9e5f3;
+    padding: 12px 14px 8px;
+}
+
+.financial-dashboard.fdash-pro .financial-statements-header .card-title {
+    color: #173b5b;
+    font-size: 1.04rem;
+    font-weight: 800;
+}
+
+.financial-dashboard.fdash-pro .financial-statement-tabs .nav-link {
+    border: 1px solid #c9dbed;
+    background: #f8fbff;
+    color: #395b7d;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+.financial-dashboard.fdash-pro .financial-statement-tabs .nav-link.active {
+    background: linear-gradient(135deg, #1a73d9, #0c5ebf) !important;
+    border-color: #0c5ebf;
+    color: #fff !important;
+    box-shadow: 0 5px 12px rgba(20, 99, 200, 0.28);
+}
+
+.financial-dashboard.fdash-pro .financial-statements-card .card-body {
+    padding: 14px;
+}
+
+.financial-dashboard.fdash-pro .statement-row-section_header td {
+    background: #e7f0fa;
+    color: #193d5d;
+    border-top: 2px solid #9fbada;
+}
+
+.financial-dashboard.fdash-pro .statement-row-subtotal td {
+    background: #f4f8fc;
+    color: #2b4b6b;
+}
+
+.financial-dashboard.fdash-pro .statement-row-total td {
+    background: #ddeaf8;
+    color: #11324f;
+    border-top: 2px solid #7f9fc2;
+}
+
+@media (max-width: 1200px) {
+    .financial-dashboard.fdash-pro .kpi-card h3,
+    .financial-dashboard.fdash-pro #profitMargin {
+        font-size: clamp(0.9rem, 1.8vw, 1.16rem);
+    }
+
+    .financial-dashboard.fdash-pro .kpi-mini-card h4 {
+        font-size: clamp(0.92rem, 1.9vw, 1.18rem);
+    }
+}
+
+@media (max-width: 991px) {
+    .financial-dashboard.fdash-pro {
+        border-radius: 14px;
+        padding: 12px 10px 18px;
+    }
+
+    .financial-dashboard.fdash-pro .kpi-card,
+    .financial-dashboard.fdash-pro .kpi-mini-card,
+    .financial-dashboard.fdash-pro .chart-card,
+    .financial-dashboard.fdash-pro .financial-statements-card {
+        border-radius: 12px;
+    }
+
+    .financial-dashboard.fdash-pro .kpi-card .card-body,
+    .financial-dashboard.fdash-pro .kpi-mini-card {
+        min-height: 112px;
+    }
+}
