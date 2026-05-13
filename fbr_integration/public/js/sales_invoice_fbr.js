@@ -75,10 +75,7 @@ function show_scenario_details(scenario_id) {
     <span style="font-size:15px;font-weight:700;color:#f1f5f9;">${esc(
         data.title || ""
     )}</span>
-    <button id="${copy_id}" onclick="
-      navigator.clipboard.writeText(${JSON.stringify(raw_json)});
-      this.textContent='Copied!';setTimeout(()=>this.textContent='Copy JSON',1500);
-    " style="margin-left:auto;padding:4px 12px;background:#334155;color:#e2e8f0;
+    <button id="${copy_id}" style="margin-left:auto;padding:4px 12px;background:#334155;color:#e2e8f0;
       border:1px solid #475569;border-radius:6px;cursor:pointer;font-size:12px;">Copy JSON</button>
   </div>
   <p style="color:#475569;margin-bottom:10px;font-size:13px;">${esc(
@@ -99,6 +96,22 @@ function show_scenario_details(scenario_id) {
                 message: html,
                 wide: true,
             });
+            // Attach copy handler after DOM render (onclick is stripped by Frappe sanitizer)
+            setTimeout(function () {
+                const btn = document.getElementById(copy_id);
+                if (btn) {
+                    btn.addEventListener("click", function () {
+                        navigator.clipboard
+                            .writeText(raw_json)
+                            .then(function () {
+                                btn.textContent = "Copied!";
+                                setTimeout(function () {
+                                    btn.textContent = "Copy JSON";
+                                }, 1500);
+                            });
+                    });
+                }
+            }, 100);
         })
         .catch(function () {
             frappe.msgprint({
