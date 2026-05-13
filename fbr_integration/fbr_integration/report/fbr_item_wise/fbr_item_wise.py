@@ -14,6 +14,11 @@ def execute(filters=None):
 def get_columns():
 	return [
 		{"label": "Posting Date", "fieldname": "posting_date", "fieldtype": "Date", "width": 110},
+		{"label": "Item Name", "fieldname": "item_name", "fieldtype": "Data", "width": 180},
+		{"label": "Qty", "fieldname": "qty", "fieldtype": "Float", "width": 90},
+		{"label": "Rate", "fieldname": "rate", "fieldtype": "Currency", "width": 110},
+		{"label": "Sales Tax", "fieldname": "custom_sales_tax", "fieldtype": "Currency", "width": 110},
+		{"label": "Amount", "fieldname": "amount", "fieldtype": "Currency", "width": 130},
 		{
 			"label": "Sales Invoice",
 			"fieldname": "sales_invoice",
@@ -35,7 +40,6 @@ def get_columns():
 			"options": "Item",
 			"width": 170,
 		},
-		{"label": "Item Name", "fieldname": "item_name", "fieldtype": "Data", "width": 180},
 		{
 			"label": "Item Group",
 			"fieldname": "item_group",
@@ -43,15 +47,11 @@ def get_columns():
 			"options": "Item Group",
 			"width": 150,
 		},
-		{"label": "Qty", "fieldname": "qty", "fieldtype": "Float", "width": 90},
-		{"label": "Rate", "fieldname": "rate", "fieldtype": "Currency", "width": 110},
-		{"label": "Amount", "fieldname": "amount", "fieldtype": "Currency", "width": 130},
 		{"label": "Sale Type", "fieldname": "custom_sale_type", "fieldtype": "Data", "width": 120},
 		{"label": "HS Code", "fieldname": "custom_hs_code", "fieldtype": "Data", "width": 120},
 		{"label": "SRO Schedule", "fieldname": "custom_sro_schedule_no", "fieldtype": "Data", "width": 130},
 		{"label": "SRO Item", "fieldname": "custom_sro_item_sno", "fieldtype": "Data", "width": 100},
 		{"label": "FBR UOM", "fieldname": "custom_fbr_uom", "fieldtype": "Data", "width": 90},
-		{"label": "Sales Tax", "fieldname": "custom_sales_tax", "fieldtype": "Currency", "width": 110},
 	]
 
 
