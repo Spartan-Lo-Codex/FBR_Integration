@@ -422,3 +422,226 @@
 .text-right {
     text-align: right;
 }
+
+/* ===== Pro Redesign Overrides (scoped) ===== */
+.financial-dashboard.fdash-pro {
+    --fd-bg-a: #f4f8fd;
+    --fd-bg-b: #eef3fa;
+    --fd-surface: #ffffff;
+    --fd-border: #d8e3f0;
+    --fd-muted: #64748b;
+    --fd-title: #0f2942;
+    --fd-primary: #0d6efd;
+    --fd-primary-soft: #e9f2ff;
+    --fd-shadow: 0 10px 30px rgba(15, 41, 66, 0.1);
+    --fd-radius: 16px;
+    background:
+        radial-gradient(circle at 10% -10%, rgba(13, 110, 253, 0.16), transparent 36%),
+        radial-gradient(circle at 100% 0%, rgba(14, 165, 233, 0.14), transparent 30%),
+        linear-gradient(155deg, var(--fd-bg-a), var(--fd-bg-b));
+    border: 1px solid #dbe7f4;
+    border-radius: 22px;
+    padding: 16px 14px 22px;
+    font-family: "IBM Plex Sans", "Segoe UI", Tahoma, sans-serif;
+}
+
+.financial-dashboard-toolbar.fdash-pro-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    padding: 10px 12px;
+    background: linear-gradient(180deg, rgba(244, 248, 253, 0.95), rgba(244, 248, 253, 0.82));
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #dde8f5;
+}
+
+.financial-dashboard-toolbar.fdash-pro-toolbar .btn,
+.financial-dashboard-toolbar.fdash-pro-toolbar .dropdown-toggle {
+    border-radius: 12px;
+    border: 1px solid #cad9ea;
+    background: #ffffff;
+    color: #184269;
+    box-shadow: 0 2px 8px rgba(15, 41, 66, 0.08);
+    font-weight: 600;
+}
+
+.financial-dashboard-toolbar.fdash-pro-toolbar .btn:hover,
+.financial-dashboard-toolbar.fdash-pro-toolbar .dropdown-toggle:hover {
+    border-color: #9eb9d8;
+    box-shadow: 0 6px 14px rgba(15, 41, 66, 0.12);
+}
+
+.financial-dashboard.fdash-pro .kpi-card,
+.financial-dashboard.fdash-pro .chart-card,
+.financial-dashboard.fdash-pro .financial-statements-card {
+    border: 1px solid var(--fd-border);
+    border-radius: var(--fd-radius);
+    box-shadow: var(--fd-shadow);
+}
+
+.financial-dashboard.fdash-pro .kpi-card .card-body {
+    min-height: 110px;
+}
+
+.financial-dashboard.fdash-pro .kpi-card.bg-success {
+    background: linear-gradient(130deg, #0e9f6e 0%, #057a55 100%) !important;
+}
+
+.financial-dashboard.fdash-pro .kpi-card.bg-danger {
+    background: linear-gradient(130deg, #e84a5f 0%, #b42318 100%) !important;
+}
+
+.financial-dashboard.fdash-pro .kpi-card.bg-info {
+    background: linear-gradient(130deg, #0ea5e9 0%, #1d4ed8 100%) !important;
+}
+
+.financial-dashboard.fdash-pro .kpi-card.bg-warning {
+    background: linear-gradient(130deg, #f59e0b 0%, #c2410c 100%) !important;
+}
+
+.financial-dashboard.fdash-pro .kpi-card .card-title {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 11px;
+    opacity: 0.94;
+}
+
+.financial-dashboard.fdash-pro .kpi-card h3 {
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+}
+
+.financial-dashboard.fdash-pro .chart-card {
+    background: linear-gradient(180deg, #ffffff 0%, #fcfdff 100%);
+}
+
+.financial-dashboard.fdash-pro .chart-card .card-header {
+    border-bottom: 1px solid #deebf8;
+    background: linear-gradient(180deg, #f9fcff, #f2f8ff);
+    color: var(--fd-title);
+    font-weight: 700;
+    border-radius: var(--fd-radius) var(--fd-radius) 0 0;
+}
+
+.financial-dashboard.fdash-pro .chart-card .card-header .btn {
+    border-radius: 9px;
+    border: 1px solid #bfd4ea;
+    background: #fff;
+}
+
+.financial-dashboard.fdash-pro .chart-card .card-header .btn.active {
+    background: linear-gradient(135deg, #0ea5e9, #2563eb);
+    border-color: #2563eb;
+    color: #fff;
+}
+
+.financial-dashboard.fdash-pro .table-responsive {
+    border: 1px solid #d8e5f3;
+    border-radius: 12px;
+    overflow: auto;
+    background: #ffffff;
+}
+
+.financial-dashboard.fdash-pro .table {
+    margin-bottom: 0;
+}
+
+.financial-dashboard.fdash-pro .table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 4;
+    background: linear-gradient(180deg, #f6fbff, #edf5ff);
+    color: #31516f;
+    border-bottom: 1px solid #d4e2f0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.financial-dashboard.fdash-pro .table tbody tr:nth-child(even):not(.statement-row-section_header):not(.statement-row-subtotal):not(.statement-row-total) {
+    background: #fbfdff;
+}
+
+.financial-dashboard.fdash-pro .table tbody tr:hover:not(.statement-row-section_header):not(.statement-row-subtotal):not(.statement-row-total) {
+    background: #ecf5ff;
+}
+
+.financial-dashboard.fdash-pro .financial-statements-card {
+    margin-top: 8px;
+    background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+}
+
+.financial-dashboard.fdash-pro .financial-statements-header {
+    background: linear-gradient(160deg, #f2f8ff 0%, #e8f1fc 100%);
+    border-bottom: 1px solid #cfdded;
+    padding: 14px 16px 8px;
+}
+
+.financial-dashboard.fdash-pro .financial-statements-header .card-title {
+    color: #143757;
+    font-size: 1.15rem;
+}
+
+.financial-dashboard.fdash-pro .financial-statement-tabs {
+    gap: 4px;
+}
+
+.financial-dashboard.fdash-pro .financial-statement-tabs .nav-link {
+    border: 1px solid #c5d7eb;
+    border-radius: 10px;
+    color: #3d5f81;
+    background: #f8fbff;
+    font-weight: 600;
+    padding: 7px 11px;
+}
+
+.financial-dashboard.fdash-pro .financial-statement-tabs .nav-link.active {
+    background: linear-gradient(135deg, #0ea5e9, #2563eb) !important;
+    border-color: #2563eb;
+    color: #fff !important;
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+}
+
+/* Increased bottom area size as requested */
+.financial-dashboard.fdash-pro .financial-statements-card .card-body {
+    min-height: 760px;
+    padding: 16px;
+}
+
+.financial-dashboard.fdash-pro .financial-statements-card .table-responsive {
+    max-height: 62vh;
+    min-height: 420px;
+}
+
+.financial-dashboard.fdash-pro .statement-row-section_header td {
+    background: #dde9f7;
+    color: #1b3c5d;
+    border-top: 2px solid #8ca9c8;
+}
+
+.financial-dashboard.fdash-pro .statement-row-subtotal td {
+    background: #f1f6fd;
+    color: #244666;
+}
+
+.financial-dashboard.fdash-pro .statement-row-total td {
+    background: #d9e8fa;
+    color: #0f2e4a;
+    border-top: 2px solid #7d9ec4;
+}
+
+@media (max-width: 991px) {
+    .financial-dashboard.fdash-pro {
+        border-radius: 14px;
+        padding: 12px 10px 18px;
+    }
+
+    .financial-dashboard.fdash-pro .financial-statements-card .card-body {
+        min-height: 620px;
+    }
+
+    .financial-dashboard.fdash-pro .financial-statements-card .table-responsive {
+        min-height: 340px;
+        max-height: 56vh;
+    }
+}
