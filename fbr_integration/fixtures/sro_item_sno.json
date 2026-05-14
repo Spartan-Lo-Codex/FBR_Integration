@@ -1,102 +1,198 @@
 [
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "1",
-  "name": "1"
+  "modified": "2025-07-09 21:44:39.138844",
+  "name": "Region-I",
+  "sro_item_sno": "Region-I"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "2",
-  "name": "2"
+  "modified": "2025-07-09 21:44:42.838176",
+  "name": "Region-II",
+  "sro_item_sno": "Region-II"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "3",
-  "name": "3"
+  "modified": "2025-07-09 21:44:50.662180",
+  "name": "1(i)(a)",
+  "sro_item_sno": "1(i)(a)"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "4",
-  "name": "4"
+  "modified": "2025-07-09 21:45:00.498686",
+  "name": "112J(viii)(a)",
+  "sro_item_sno": "112J(viii)(a)"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "5",
-  "name": "5"
+  "modified": "2025-07-09 21:45:08.204749",
+  "name": "27(vii)",
+  "sro_item_sno": "27(vii)"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "6",
-  "name": "6"
+  "modified": "2025-07-09 21:45:17.512943",
+  "name": "53(ix)",
+  "sro_item_sno": "53(ix)"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "7",
-  "name": "7"
+  "modified": "2025-07-09 21:45:31.474916",
+  "name": "82",
+  "sro_item_sno": "82"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "8",
-  "name": "8"
+  "modified": "2026-05-14 10:55:44.344512",
+  "name": "1",
+  "sro_item_sno": "1"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "9",
-  "name": "9"
+  "modified": "2026-05-14 10:55:44.360434",
+  "name": "2",
+  "sro_item_sno": "2"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "10",
-  "name": "10"
+  "modified": "2026-05-14 10:55:44.376882",
+  "name": "3",
+  "sro_item_sno": "3"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "11",
-  "name": "11"
+  "modified": "2026-05-14 10:55:44.394025",
+  "name": "4",
+  "sro_item_sno": "4"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "12",
-  "name": "12"
+  "modified": "2026-05-14 10:55:44.409576",
+  "name": "5",
+  "sro_item_sno": "5"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "13",
-  "name": "13"
+  "modified": "2026-05-14 10:55:44.425738",
+  "name": "6",
+  "sro_item_sno": "6"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "14",
-  "name": "14"
+  "modified": "2026-05-14 10:55:44.442989",
+  "name": "7",
+  "sro_item_sno": "7"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "15",
-  "name": "15"
+  "modified": "2026-05-14 10:55:44.457811",
+  "name": "8",
+  "sro_item_sno": "8"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "16",
-  "name": "16"
+  "modified": "2026-05-14 10:55:44.471932",
+  "name": "9",
+  "sro_item_sno": "9"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "17",
-  "name": "17"
+  "modified": "2026-05-14 10:55:44.487862",
+  "name": "10",
+  "sro_item_sno": "10"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "18",
-  "name": "18"
+  "modified": "2026-05-14 10:55:44.505599",
+  "name": "11",
+  "sro_item_sno": "11"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "19",
-  "name": "19"
+  "modified": "2026-05-14 10:55:44.519893",
+  "name": "12",
+  "sro_item_sno": "12"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "sro_item_sno": "20",
-  "name": "20"
+  "modified": "2026-05-14 10:55:44.533226",
+  "name": "13",
+  "sro_item_sno": "13"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Item SNo",
+  "modified": "2026-05-14 10:55:44.550368",
+  "name": "14",
+  "sro_item_sno": "14"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Item SNo",
+  "modified": "2026-05-14 10:55:44.565222",
+  "name": "15",
+  "sro_item_sno": "15"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Item SNo",
+  "modified": "2026-05-14 10:55:44.579528",
+  "name": "16",
+  "sro_item_sno": "16"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Item SNo",
+  "modified": "2026-05-14 10:55:44.595593",
+  "name": "17",
+  "sro_item_sno": "17"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Item SNo",
+  "modified": "2026-05-14 10:55:44.608335",
+  "name": "18",
+  "sro_item_sno": "18"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Item SNo",
+  "modified": "2026-05-14 10:55:44.622101",
+  "name": "19",
+  "sro_item_sno": "19"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Item SNo",
+  "modified": "2026-05-14 10:55:44.634515",
+  "name": "20",
+  "sro_item_sno": "20"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Item SNo",
+  "modified": "2025-07-09 21:45:26.496724",
+  "name": "81",
+  "sro_item_sno": "81"
  }
 ]

@@ -1,17 +1,37 @@
 [
  {
+  "docstatus": 0,
+  "doctype": "Invoice Type",
+  "invoice_type": "STWH",
+  "modified": "2025-07-09 18:03:21.260146",
+  "name": "STWH"
+ },
+ {
+  "docstatus": 0,
   "doctype": "Invoice Type",
   "invoice_type": "General Invoice",
+  "modified": "2026-05-14 10:55:42.968278",
   "name": "General Invoice"
  },
  {
+  "docstatus": 0,
   "doctype": "Invoice Type",
   "invoice_type": "Credit Note",
+  "modified": "2026-05-14 10:55:42.985170",
   "name": "Credit Note"
  },
  {
+  "docstatus": 0,
   "doctype": "Invoice Type",
   "invoice_type": "Debit Note",
+  "modified": "2026-05-14 10:55:43.003132",
   "name": "Debit Note"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Invoice Type",
+  "invoice_type": "Sale Invoice",
+  "modified": "2025-07-09 18:03:51.572435",
+  "name": "Sale Invoice"
  }
 ]

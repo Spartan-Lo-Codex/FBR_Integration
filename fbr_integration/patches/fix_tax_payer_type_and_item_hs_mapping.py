@@ -61,20 +61,20 @@ def _cleanup_extra_tax_payer_types():
 
 
 def _fix_hs_code_mapping():
-	has_hs_code_no = frappe.db.exists("Custom Field", "Item-custom_hs_code_no")
 	has_hs_code = frappe.db.exists("Custom Field", "Item-custom_hs_code")
 
-	if has_hs_code and has_hs_code_no:
-		# Keep existing customer field (custom_hs_code_no) as primary and hide duplicate field.
-		frappe.db.set_value("Custom Field", "Item-custom_hs_code", "hidden", 1)
-
-	hs_fetch_from = "item_code.custom_hs_code_no" if has_hs_code_no else "item_code.custom_hs_code"
+	if has_hs_code:
+		frappe.db.set_value(
+			"Custom Field",
+			"Item-custom_hs_code",
+			{"hidden": 0, "fetch_from": None, "fetch_if_empty": 0},
+		)
 
 	if frappe.db.exists("Custom Field", "Sales Invoice Item-custom_hs_code"):
 		frappe.db.set_value(
 			"Custom Field",
 			"Sales Invoice Item-custom_hs_code",
-			{"fetch_from": hs_fetch_from, "fetch_if_empty": 1},
+			{"fetch_from": "item_code.custom_hs_code", "fetch_if_empty": 1},
 		)
 
 	if frappe.db.exists("Custom Field", "Sales Invoice Item-custom_fbr_uom"):

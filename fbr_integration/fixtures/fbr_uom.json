@@ -1,97 +1,170 @@
 [
  {
+  "docstatus": 0,
+  "doctype": "FBR UOM",
+  "fbr_uom": "Meter",
+  "modified": "2025-07-09 18:32:29.901445",
+  "name": "Meter"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "FBR UOM",
+  "fbr_uom": "Dozen",
+  "modified": "2025-07-09 18:32:40.774829",
+  "name": "Dozen"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "FBR UOM",
+  "fbr_uom": "Liter",
+  "modified": "2025-07-09 18:33:00.210272",
+  "name": "Liter"
+ },
+ {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "KGS",
+  "modified": "2026-05-14 10:55:41.471934",
   "name": "KGS"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "MTR",
+  "modified": "2026-05-14 10:55:41.492123",
   "name": "MTR"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "NOS",
+  "modified": "2026-05-14 10:55:41.509561",
   "name": "NOS"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "LTR",
+  "modified": "2026-05-14 10:55:41.526323",
   "name": "LTR"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "SQM",
+  "modified": "2026-05-14 10:55:41.541239",
   "name": "SQM"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "MTQ",
+  "modified": "2026-05-14 10:55:41.556593",
   "name": "MTQ"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "TNE",
+  "modified": "2026-05-14 10:55:41.573034",
   "name": "TNE"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "DZN",
+  "modified": "2026-05-14 10:55:41.589811",
   "name": "DZN"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "SET",
+  "modified": "2026-05-14 10:55:41.606607",
   "name": "SET"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "PRJ",
+  "modified": "2026-05-14 10:55:41.622721",
   "name": "PRJ"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "BOX",
+  "modified": "2026-05-14 10:55:41.639442",
   "name": "BOX"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "PKT",
+  "modified": "2026-05-14 10:55:41.653840",
   "name": "PKT"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "BAG",
+  "modified": "2026-05-14 10:55:41.668025",
   "name": "BAG"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "ROL",
+  "modified": "2026-05-14 10:55:41.682942",
   "name": "ROL"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "CYL",
+  "modified": "2026-05-14 10:55:41.696493",
   "name": "CYL"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "CRT",
+  "modified": "2026-05-14 10:55:41.713849",
   "name": "CRT"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "PCS",
+  "modified": "2026-05-14 10:55:41.728979",
   "name": "PCS"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "GRM",
+  "modified": "2026-05-14 10:55:41.745798",
   "name": "GRM"
  },
  {
+  "docstatus": 0,
   "doctype": "FBR UOM",
   "fbr_uom": "MGM",
+  "modified": "2026-05-14 10:55:41.760087",
   "name": "MGM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "FBR UOM",
+  "fbr_uom": "Numbers, pieces, units",
+  "modified": "2026-05-12 10:28:38.887547",
+  "name": "Numbers, pieces, units"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "FBR UOM",
+  "fbr_uom": "KG",
+  "modified": "2025-07-09 18:30:28.228179",
+  "name": "KG"
  }
 ]

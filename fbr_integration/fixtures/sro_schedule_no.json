@@ -1,52 +1,135 @@
 [
  {
+  "docstatus": 0,
   "doctype": "SRO Schedule No",
-  "sro_schedule_no": "SRO 678(I)/2004",
-  "name": "SRO 678(I)/2004"
+  "modified": "2025-07-09 21:43:21.910300",
+  "name": "237(I)/2020",
+  "sro_schedule_no": "237(I)/2020"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Schedule No",
-  "sro_schedule_no": "SRO 1125(I)/2011",
-  "name": "SRO 1125(I)/2011"
+  "modified": "2025-07-09 21:43:34.603777",
+  "name": "3rd Schd Table II",
+  "sro_schedule_no": "3rd Schd Table II"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Schedule No",
-  "sro_schedule_no": "SRO 1190(I)/2015",
-  "name": "SRO 1190(I)/2015"
+  "modified": "2025-07-09 21:43:45.594422",
+  "name": "6th Schd Table I",
+  "sro_schedule_no": "6th Schd Table I"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Schedule No",
-  "sro_schedule_no": "SRO 1(I)/2019",
-  "name": "SRO 1(I)/2019"
+  "modified": "2025-07-09 21:43:54.648973",
+  "name": "6th Schd Table II",
+  "sro_schedule_no": "6th Schd Table II"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Schedule No",
-  "sro_schedule_no": "SRO 69(I)/2021",
-  "name": "SRO 69(I)/2021"
+  "modified": "2025-07-09 21:44:02.353174",
+  "name": "6th Schd Table III",
+  "sro_schedule_no": "6th Schd Table III"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Schedule No",
-  "sro_schedule_no": "SRO 283(I)/2022",
-  "name": "SRO 283(I)/2022"
+  "modified": "2025-07-09 21:44:17.389659",
+  "name": "EIGHTH SCHEDULE Table 2",
+  "sro_schedule_no": "EIGHTH SCHEDULE Table 2"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Schedule No",
-  "sro_schedule_no": "SRO 350(I)/2022",
-  "name": "SRO 350(I)/2022"
+  "modified": "2026-05-12 00:47:24.900763",
+  "name": "327(I)/2008",
+  "sro_schedule_no": "327(I)/2008"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Schedule No",
-  "sro_schedule_no": "SRO 499(I)/2013",
-  "name": "SRO 499(I)/2013"
+  "modified": "2026-05-14 10:55:44.679538",
+  "name": "SRO 678(I)/2004",
+  "sro_schedule_no": "SRO 678(I)/2004"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Schedule No",
-  "sro_schedule_no": "SRO 550(I)/2006",
-  "name": "SRO 550(I)/2006"
+  "modified": "2026-05-14 10:55:44.698057",
+  "name": "SRO 1125(I)/2011",
+  "sro_schedule_no": "SRO 1125(I)/2011"
  },
  {
+  "docstatus": 0,
   "doctype": "SRO Schedule No",
-  "sro_schedule_no": "SRO 655(I)/2006",
-  "name": "SRO 655(I)/2006"
+  "modified": "2026-05-14 10:55:44.715791",
+  "name": "SRO 1190(I)/2015",
+  "sro_schedule_no": "SRO 1190(I)/2015"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Schedule No",
+  "modified": "2026-05-14 10:55:44.731740",
+  "name": "SRO 1(I)/2019",
+  "sro_schedule_no": "SRO 1(I)/2019"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Schedule No",
+  "modified": "2026-05-14 10:55:44.747752",
+  "name": "SRO 69(I)/2021",
+  "sro_schedule_no": "SRO 69(I)/2021"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Schedule No",
+  "modified": "2026-05-14 10:55:44.764229",
+  "name": "SRO 283(I)/2022",
+  "sro_schedule_no": "SRO 283(I)/2022"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Schedule No",
+  "modified": "2026-05-14 10:55:44.780237",
+  "name": "SRO 350(I)/2022",
+  "sro_schedule_no": "SRO 350(I)/2022"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Schedule No",
+  "modified": "2026-05-14 10:55:44.795188",
+  "name": "SRO 499(I)/2013",
+  "sro_schedule_no": "SRO 499(I)/2013"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Schedule No",
+  "modified": "2026-05-14 10:55:44.810835",
+  "name": "SRO 550(I)/2006",
+  "sro_schedule_no": "SRO 550(I)/2006"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Schedule No",
+  "modified": "2026-05-14 10:55:44.826833",
+  "name": "SRO 655(I)/2006",
+  "sro_schedule_no": "SRO 655(I)/2006"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Schedule No",
+  "modified": "2026-05-12 10:25:18.022778",
+  "name": "297(I)/2023-Table-I",
+  "sro_schedule_no": "297(I)/2023-Table-I"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Schedule No",
+  "modified": "2025-07-09 21:44:10.238097",
+  "name": "EIGHTH SCHEDULE Table 1",
+  "sro_schedule_no": "EIGHTH SCHEDULE Table 1"
  }
 ]

@@ -1,37 +1,121 @@
 [
  {
+  "docstatus": 0,
   "doctype": "Sale Type",
-  "sale_type": "Goods at Standard Rate",
-  "name": "Goods at Standard Rate"
+  "modified": "2025-07-09 16:56:37.343349",
+  "name": "Toll Manufacturing",
+  "sale_type": "Toll Manufacturing"
  },
  {
+  "docstatus": 0,
   "doctype": "Sale Type",
-  "sale_type": "Goods at Reduced Rate",
-  "name": "Goods at Reduced Rate"
+  "modified": "2025-07-09 16:57:05.092737",
+  "name": "Cotton ginners",
+  "sale_type": "Cotton ginners"
  },
  {
+  "docstatus": 0,
   "doctype": "Sale Type",
-  "sale_type": "Exempt",
-  "name": "Exempt"
+  "modified": "2025-07-09 16:57:21.388004",
+  "name": "Potassium Chlorate",
+  "sale_type": "Potassium Chlorate"
  },
  {
+  "docstatus": 0,
   "doctype": "Sale Type",
-  "sale_type": "Zero-Rated",
-  "name": "Zero-Rated"
+  "modified": "2025-07-09 16:57:40.307299",
+  "name": "Exempt goods",
+  "sale_type": "Exempt goods"
  },
  {
+  "docstatus": 0,
   "doctype": "Sale Type",
-  "sale_type": "Fixed or Notified Value or Retail Price",
-  "name": "Fixed or Notified Value or Retail Price"
+  "modified": "2025-07-09 16:57:53.098335",
+  "name": "Services",
+  "sale_type": "Services"
  },
  {
+  "docstatus": 0,
   "doctype": "Sale Type",
-  "sale_type": "Services at Standard Rate",
-  "name": "Services at Standard Rate"
+  "modified": "2025-07-09 16:58:16.066764",
+  "name": "Processing/Conversion of Goods",
+  "sale_type": "Processing/Conversion of Goods"
  },
  {
+  "docstatus": 0,
   "doctype": "Sale Type",
-  "sale_type": "Further Tax",
-  "name": "Further Tax"
+  "modified": "2025-07-09 16:58:34.941468",
+  "name": "Mobile Phones",
+  "sale_type": "Mobile Phones"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Sale Type",
+  "modified": "2025-07-09 16:58:49.535651",
+  "name": "Goods at zero-rate",
+  "sale_type": "Goods at zero-rate"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Sale Type",
+  "modified": "2026-05-14 10:55:43.707044",
+  "name": "Goods at Standard Rate",
+  "sale_type": "Goods at Standard Rate"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Sale Type",
+  "modified": "2026-05-14 10:55:43.724267",
+  "name": "Goods at Reduced Rate",
+  "sale_type": "Goods at Reduced Rate"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Sale Type",
+  "modified": "2026-05-14 10:55:43.739664",
+  "name": "Exempt",
+  "sale_type": "Exempt"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Sale Type",
+  "modified": "2026-05-14 10:55:43.756617",
+  "name": "Zero-Rated",
+  "sale_type": "Zero-Rated"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Sale Type",
+  "modified": "2026-05-14 10:55:43.772623",
+  "name": "Fixed or Notified Value or Retail Price",
+  "sale_type": "Fixed or Notified Value or Retail Price"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Sale Type",
+  "modified": "2026-05-14 10:55:43.787896",
+  "name": "Services at Standard Rate",
+  "sale_type": "Services at Standard Rate"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Sale Type",
+  "modified": "2026-05-14 10:55:43.801095",
+  "name": "Further Tax",
+  "sale_type": "Further Tax"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Sale Type",
+  "modified": "2026-05-12 10:24:38.236840",
+  "name": "Goods as per SRO.297(|)/2023",
+  "sale_type": "Goods as per SRO.297(|)/2023"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Sale Type",
+  "modified": "2025-07-09 16:59:21.069780",
+  "name": "Goods at standard rate (default)",
+  "sale_type": "Goods at standard rate (default)"
  }
 ]
