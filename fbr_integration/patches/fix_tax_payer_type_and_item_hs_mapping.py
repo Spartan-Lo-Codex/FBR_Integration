@@ -7,6 +7,17 @@ DESIRED_TAX_PAYER_TYPES = {
 	"Retail Consumer",
 }
 
+# One-time normalization map for legacy values found on older sites.
+LEGACY_TAX_PAYER_MAP = {
+	"Un-Registered": "Unregistered",
+	"Final Consumer": "Retail Consumer",
+	"AOP": "Registered",
+	"Company": "Registered",
+	"Individual": "Registered",
+	"Government": "Registered",
+	"Foreign Buyer": "Unregistered",
+}
+
 
 def _ensure_tax_payer_type_records():
 	for value in sorted(DESIRED_TAX_PAYER_TYPES):
@@ -17,22 +28,34 @@ def _ensure_tax_payer_type_records():
 		)
 
 
-def _tax_payer_type_is_referenced(name: str) -> bool:
+def _remap_legacy_tax_payer_references():
 	if frappe.db.has_column("Sales Invoice", "custom_tax_payer_type"):
-		if frappe.db.count("Sales Invoice", {"custom_tax_payer_type": name}):
-			return True
+		for legacy_value, new_value in LEGACY_TAX_PAYER_MAP.items():
+			frappe.db.sql(
+				"""
+				UPDATE `tabSales Invoice`
+				SET custom_tax_payer_type = %s
+				WHERE custom_tax_payer_type = %s
+				""",
+				(new_value, legacy_value),
+			)
+
 	if frappe.db.has_column("Customer", "custom_tax_payer_type"):
-		if frappe.db.count("Customer", {"custom_tax_payer_type": name}):
-			return True
-	return False
+		for legacy_value, new_value in LEGACY_TAX_PAYER_MAP.items():
+			frappe.db.sql(
+				"""
+				UPDATE `tabCustomer`
+				SET custom_tax_payer_type = %s
+				WHERE custom_tax_payer_type = %s
+				""",
+				(new_value, legacy_value),
+			)
 
 
 def _cleanup_extra_tax_payer_types():
 	for row in frappe.get_all("Tax Payer Type", fields=["name"], limit_page_length=0):
 		name = row.name
 		if name in DESIRED_TAX_PAYER_TYPES:
-			continue
-		if _tax_payer_type_is_referenced(name):
 			continue
 		frappe.delete_doc("Tax Payer Type", name, ignore_permissions=True, force=1)
 
@@ -78,6 +101,7 @@ def _fix_hs_code_mapping():
 
 def execute():
 	_ensure_tax_payer_type_records()
+	_remap_legacy_tax_payer_references()
 	_cleanup_extra_tax_payer_types()
 	_fix_hs_code_mapping()
 
