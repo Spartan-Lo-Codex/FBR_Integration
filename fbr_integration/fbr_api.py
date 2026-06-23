@@ -361,8 +361,15 @@ def send_invoice_to_fbr(doc, method=None):
 	is_exempt_scenario = scenario_id == "SN006"
 	is_zero_rated_scenario = scenario_id == "SN007"
 	num = safe_abs_float if is_return_invoice else safe_float
+	customer_further_tax_rate = frappe.db.get_value(
+        "Customer",
+        doc.customer,
+        "custom_further_tax"
+    )
 	ftx = []
 	for item in doc.items:
+		item.custom_further_tax_rate = customer_further_tax_rate
+		item.custom_further_tax = item.get("qty", 0) * item.get("rate", 0) * customer_further_tax_rate
 		ftx.append((item.custom_further_tax, item.custom_further_tax))
 		sale_type_str = str(item.custom_sale_type or "").lower().replace(" ", "")
 		extra_tax = extra_tax_value(item.custom_extra_tax, sale_type_str)
