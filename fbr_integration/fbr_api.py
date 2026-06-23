@@ -361,7 +361,9 @@ def send_invoice_to_fbr(doc, method=None):
 	is_exempt_scenario = scenario_id == "SN006"
 	is_zero_rated_scenario = scenario_id == "SN007"
 	num = safe_abs_float if is_return_invoice else safe_float
+	ftx = []
 	for item in doc.items:
+		ftx.append((item.custom_further_tax, item.custom_further_tax))
 		sale_type_str = str(item.custom_sale_type or "").lower().replace(" ", "")
 		extra_tax = extra_tax_value(item.custom_extra_tax, sale_type_str)
 
@@ -427,7 +429,7 @@ def send_invoice_to_fbr(doc, method=None):
 				"sroItemSerialNo": sro_item_sno_val,
 			}
 		)
-	frappe.throw(f"{items_list}")
+	frappe.throw(f"{ftx}\n{items_list}")
 	payload = {
 		"invoiceType": safe_fbr_text(doc.custom_invoice_type),
 		"invoiceDate": str(doc.posting_date),
