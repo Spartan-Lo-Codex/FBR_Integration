@@ -385,7 +385,7 @@ def send_invoice_to_fbr(doc, method=None):
 			sales_tax_applicable = num(item.custom_sales_tax)
 			further_tax = num(item.custom_further_tax)
 			total_values = num(item.custom_tax_inclusive_amount)
-
+		further_tax = num(item.custom_further_tax)
 		sro_schedule_no_val, sro_item_sno_val = normalize_sro_fields_for_scenario(
 			scenario_id,
 			item.custom_sro_schedule_no,
@@ -427,7 +427,7 @@ def send_invoice_to_fbr(doc, method=None):
 				"sroItemSerialNo": sro_item_sno_val,
 			}
 		)
-
+	frappe.throw(f"{items_list}")
 	payload = {
 		"invoiceType": safe_fbr_text(doc.custom_invoice_type),
 		"invoiceDate": str(doc.posting_date),
