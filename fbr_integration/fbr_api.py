@@ -57,7 +57,7 @@ def safe_fbr_item_text(val):
 def extra_tax_value(val, sale_type_str):
 	reduced_types = ("goodsatreducedrate", "reducedrate", "rr")
 	if sale_type_str in reduced_types:
-		return 0
+		return ""
 	try:
 		num = float(val)
 		if num <= 0:
@@ -312,11 +312,11 @@ def send_invoice_to_fbr(doc, method=None):
 	if settings.integration_type == "Sandbox":
 		api_url = settings.sandbox_api_url
 		# token = (settings.sandbox_security_token or "").strip()
-        token = get_decrypted_password("FBR Invoice Settings", "FBR Invoice Settings", "sandbox_security_token")
+		token = get_decrypted_password("FBR Invoice Settings", "FBR Invoice Settings", "sandbox_security_token")
 	else:
 		api_url = settings.production_api_url
 		# token = (settings.production_security_token or "").strip()
-        token = get_decrypted_password("FBR Invoice Settings", "FBR Invoice Settings", "production_security_token")
+		token = get_decrypted_password("FBR Invoice Settings", "FBR Invoice Settings", "production_security_token")
 
 	if not api_url:
 		frappe.throw("FBR API URL missing in settings")
@@ -418,7 +418,7 @@ def send_invoice_to_fbr(doc, method=None):
 				"fixedNotifiedValueOrRetailPrice": num(item.rate),
 				"salesTaxApplicable": sales_tax_applicable,
 				"salesTaxWithheldAtSource": 0,
-				"extraTax": num(extra_tax),
+				"extraTax": num(extra_tax) if extra_tax else extra_tax,
 				"furtherTax": further_tax,
 				"sroScheduleNo": sro_schedule_no_val,
 				"fedPayable": 0,
