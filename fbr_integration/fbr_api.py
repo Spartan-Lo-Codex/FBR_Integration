@@ -366,11 +366,9 @@ def send_invoice_to_fbr(doc, method=None):
         doc.customer,
         "custom_further_tax"
     )
-	ftx = []
 	for item in doc.items:
 		item.custom_further_tax_rate = customer_further_tax_rate
-		item.custom_further_tax = item.get("qty", 0) * item.get("rate", 0) * customer_further_tax_rate
-		ftx.append((item.custom_further_tax, item.custom_further_tax))
+		item.custom_further_tax = ((item.get("qty", 0) * item.get("rate", 0)) * customer_further_tax_rate) / 100
 		sale_type_str = str(item.custom_sale_type or "").lower().replace(" ", "")
 		extra_tax = extra_tax_value(item.custom_extra_tax, sale_type_str)
 
@@ -436,7 +434,6 @@ def send_invoice_to_fbr(doc, method=None):
 				"sroItemSerialNo": sro_item_sno_val,
 			}
 		)
-	frappe.throw(f"{ftx}\n{items_list}")
 	payload = {
 		"invoiceType": safe_fbr_text(doc.custom_invoice_type),
 		"invoiceDate": str(doc.posting_date),
