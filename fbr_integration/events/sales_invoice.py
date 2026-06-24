@@ -9,7 +9,7 @@ def validate(doc, method=None):
         "236-H": "custom_236_h"
     }
 
-    customer_tax_vals = frappe.db.get_value("Customer", doc.customer, ["custom_236_g_account", "custom_236_h_account", "custom_236_g", "custom_236_h"], as_dict=True)
+    customer_tax_vals = frappe.db.get_value("Customer", doc.customer, ["custom_further_tax_account", "custom_236_g_account", "custom_236_h_account", "custom_236_g", "custom_236_h"], as_dict=True)
 
     # -----------------------------------------
     # Remove previously added custom tax rows
