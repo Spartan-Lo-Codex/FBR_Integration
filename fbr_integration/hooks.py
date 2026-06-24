@@ -13,6 +13,7 @@ doc_events = {
 			"fbr_integration.fbr_tax_calculation.sync_sales_invoice_master_defaults",
 			"fbr_integration.fbr_tax_calculation.calculate_fbr_tax",
 			"fbr_integration.fbr_api.enforce_return_invoice_type",
+			"fbr_integration.events.sales_invoice.validate",
 		],
 		"before_save": [
 			"fbr_integration.fbr_tax_calculation.sync_sales_invoice_master_defaults",
