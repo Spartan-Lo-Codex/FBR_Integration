@@ -1133,7 +1133,8 @@ frappe.ui.form.on("Sales Invoice", {
         frappe.call({
             method: "frappe.client.get_value",
             args: {
-                doctype: "FBR Invoice Settings",
+                doctype: "Company",
+                filters: { name: frm.doc.company },
                 fieldname: "integration_type",
             },
             callback: function (r) {
