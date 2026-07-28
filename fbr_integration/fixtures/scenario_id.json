@@ -210,14 +210,6 @@
  {
   "docstatus": 0,
   "doctype": "Scenario ID",
-  "modified": "2026-05-14 10:55:43.843916",
-  "name": "SN001 - Goods at Standard Rate (Registered Buyer)",
-  "scenario_detail": "Goods at Standard Rate (Registered Buyer)",
-  "scenario_id": "SN001"
- },
- {
-  "docstatus": 0,
-  "doctype": "Scenario ID",
   "modified": "2026-05-14 10:55:43.865259",
   "name": "SN002 - Goods at Standard Rate (Un-Registered Buyer)",
   "scenario_detail": "Goods at Standard Rate (Un-Registered Buyer)",
@@ -445,6 +437,14 @@
   "modified": "2026-02-23 12:43:50.377351",
   "name": "SN001 - Goods at Standard Rate to Registered Buyers",
   "scenario_detail": "Goods at Standard Rate to Registered Buyers",
+  "scenario_id": "SN001"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Scenario ID",
+  "modified": "2026-05-14 10:55:43.843916",
+  "name": "SN001 - Goods at Standard Rate (Registered Buyer)",
+  "scenario_detail": "Goods at Standard Rate (Registered Buyer)",
   "scenario_id": "SN001"
  }
 ]

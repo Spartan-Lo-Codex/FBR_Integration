@@ -16,13 +16,6 @@
  {
   "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "modified": "2025-07-09 21:44:50.662180",
-  "name": "1(i)(a)",
-  "sro_item_sno": "1(i)(a)"
- },
- {
-  "docstatus": 0,
-  "doctype": "SRO Item SNo",
   "modified": "2025-07-09 21:45:00.498686",
   "name": "112J(viii)(a)",
   "sro_item_sno": "112J(viii)(a)"
@@ -128,13 +121,6 @@
  {
   "docstatus": 0,
   "doctype": "SRO Item SNo",
-  "modified": "2026-05-14 10:55:44.519893",
-  "name": "12",
-  "sro_item_sno": "12"
- },
- {
-  "docstatus": 0,
-  "doctype": "SRO Item SNo",
   "modified": "2026-05-14 10:55:44.533226",
   "name": "13",
   "sro_item_sno": "13"
@@ -187,6 +173,34 @@
   "modified": "2026-05-14 10:55:44.634515",
   "name": "20",
   "sro_item_sno": "20"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Item SNo",
+  "modified": "2026-06-07 17:59:20.856505",
+  "name": "100",
+  "sro_item_sno": "100"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Item SNo",
+  "modified": "2025-07-09 21:44:50.662180",
+  "name": "1(i)(a)",
+  "sro_item_sno": "1(i)(a)"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Item SNo",
+  "modified": "2026-05-14 10:55:44.519893",
+  "name": "12",
+  "sro_item_sno": "12"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Item SNo",
+  "modified": "2026-06-09 19:17:39.593652",
+  "name": "70",
+  "sro_item_sno": "70"
  },
  {
   "docstatus": 0,

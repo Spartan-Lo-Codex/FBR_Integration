@@ -2,6 +2,13 @@
  {
   "docstatus": 0,
   "doctype": "FBR UOM",
+  "fbr_uom": "CTN",
+  "modified": "2026-06-17 20:36:51.696206",
+  "name": "CTN"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "FBR UOM",
   "fbr_uom": "Meter",
   "modified": "2025-07-09 18:32:29.901445",
   "name": "Meter"

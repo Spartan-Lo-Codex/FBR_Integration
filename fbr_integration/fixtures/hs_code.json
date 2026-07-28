@@ -2,6 +2,30 @@
  {
   "docstatus": 0,
   "doctype": "HS Code",
+  "hs_code": "9619.0000",
+  "hs_code_detail": null,
+  "modified": "2026-06-17 20:43:02.581843",
+  "name": "9619.0000"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "HS Code",
+  "hs_code": "123",
+  "hs_code_detail": null,
+  "modified": "2026-06-26 03:55:09.825729",
+  "name": "123"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "HS Code",
+  "hs_code": "789",
+  "hs_code_detail": null,
+  "modified": "2026-06-26 03:56:20.715936",
+  "name": "789"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "HS Code",
   "hs_code": "3005.9090",
   "hs_code_detail": null,
   "modified": "2025-07-10 13:17:52.024952",
@@ -614,5 +638,29 @@
   "hs_code_detail": null,
   "modified": "2025-07-09 18:21:17.985523",
   "name": "3005.1010"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "HS Code",
+  "hs_code": "3917.3200",
+  "hs_code_detail": null,
+  "modified": "2026-06-17 20:42:46.357638",
+  "name": "3917.3200"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "HS Code",
+  "hs_code": "0102.2930",
+  "hs_code_detail": "0102.2930",
+  "modified": "2026-06-07 17:27:23.007523",
+  "name": "0102.2930"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "HS Code",
+  "hs_code": "1404.9049",
+  "hs_code_detail": null,
+  "modified": "2026-07-12 20:42:03.162758",
+  "name": "1404.9049"
  }
 ]
