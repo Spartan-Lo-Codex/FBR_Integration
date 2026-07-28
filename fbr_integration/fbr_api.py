@@ -428,7 +428,7 @@ def send_invoice_to_fbr(doc, method=None):
 				"quantity": num(item.qty),
 				"totalValues": total_values,
 				"valueSalesExcludingST": value_sales_excluding_st,
-				"fixedNotifiedValueOrRetailPrice": num(item.rate),
+				"fixedNotifiedValueOrRetailPrice": num(item.get("custom_fixed__notified_value_or_retail_price", 0)),
 				"salesTaxApplicable": sales_tax_applicable,
 				"salesTaxWithheldAtSource": 0,
 				"extraTax": num(extra_tax) if extra_tax else extra_tax,
