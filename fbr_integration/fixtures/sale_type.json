@@ -51,23 +51,9 @@
  {
   "docstatus": 0,
   "doctype": "Sale Type",
-  "modified": "2025-07-09 16:58:49.535651",
-  "name": "Goods at zero-rate",
-  "sale_type": "Goods at zero-rate"
- },
- {
-  "docstatus": 0,
-  "doctype": "Sale Type",
   "modified": "2026-05-14 10:55:43.707044",
   "name": "Goods at Standard Rate",
   "sale_type": "Goods at Standard Rate"
- },
- {
-  "docstatus": 0,
-  "doctype": "Sale Type",
-  "modified": "2026-05-14 10:55:43.724267",
-  "name": "Goods at Reduced Rate",
-  "sale_type": "Goods at Reduced Rate"
  },
  {
   "docstatus": 0,
@@ -100,6 +86,20 @@
  {
   "docstatus": 0,
   "doctype": "Sale Type",
+  "modified": "2026-05-12 10:24:38.236840",
+  "name": "Goods as per SRO.297(|)/2023",
+  "sale_type": "Goods as per SRO.297(|)/2023"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Sale Type",
+  "modified": "2026-06-07 18:09:50.549089",
+  "name": "Goods (FED in ST Mode)",
+  "sale_type": "Goods (FED in ST Mode)"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Sale Type",
   "modified": "2026-05-14 10:55:43.801095",
   "name": "Further Tax",
   "sale_type": "Further Tax"
@@ -107,9 +107,30 @@
  {
   "docstatus": 0,
   "doctype": "Sale Type",
-  "modified": "2026-05-12 10:24:38.236840",
-  "name": "Goods as per SRO.297(|)/2023",
-  "sale_type": "Goods as per SRO.297(|)/2023"
+  "modified": "2026-06-07 18:12:29.041559",
+  "name": "Goods as per SRO.297(I)/2023",
+  "sale_type": "Goods as per SRO.297(I)/2023"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Sale Type",
+  "modified": "2025-07-09 16:58:49.535651",
+  "name": "Goods at zero-rate",
+  "sale_type": "Goods at zero-rate"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Sale Type",
+  "modified": "2026-06-07 18:06:30.751365",
+  "name": "3rd Schedule Goods",
+  "sale_type": "3rd Schedule Goods"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Sale Type",
+  "modified": "2026-05-14 10:55:43.724267",
+  "name": "Goods at Reduced Rate",
+  "sale_type": "Goods at Reduced Rate"
  },
  {
   "docstatus": 0,

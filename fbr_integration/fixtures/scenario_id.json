@@ -2,14 +2,6 @@
  {
   "docstatus": 0,
   "doctype": "Scenario ID",
-  "modified": "2026-02-23 12:43:50.459813",
-  "name": "SN002 - Goods at Standard Rate to Unregistered Buyers",
-  "scenario_detail": "Goods at Standard Rate to Unregistered Buyers",
-  "scenario_id": "SN002"
- },
- {
-  "docstatus": 0,
-  "doctype": "Scenario ID",
   "modified": "2026-02-23 12:43:50.466815",
   "name": "SN003 - Sale of Steel (Melted and Re-Rolled)",
   "scenario_detail": "Sale of Steel (Melted and Re-Rolled)",
@@ -22,14 +14,6 @@
   "name": "SN004 - Sale by Ship Breakers",
   "scenario_detail": "Sale by Ship Breakers",
   "scenario_id": "SN004"
- },
- {
-  "docstatus": 0,
-  "doctype": "Scenario ID",
-  "modified": "2026-02-23 12:43:50.480853",
-  "name": "SN005 - Reduced Rate Sale",
-  "scenario_detail": "Reduced Rate Sale",
-  "scenario_id": "SN005"
  },
  {
   "docstatus": 0,
@@ -438,6 +422,22 @@
   "name": "SN024 - Goods Sold that are Listed in SRO 297(1)/2023",
   "scenario_detail": "Goods Sold that are Listed in SRO 297(1)/2023",
   "scenario_id": "SN024"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Scenario ID",
+  "modified": "2026-02-23 12:43:50.480853",
+  "name": "SN005 - Reduced Rate Sale",
+  "scenario_detail": "Reduced Rate Sale",
+  "scenario_id": "SN005"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Scenario ID",
+  "modified": "2026-02-23 12:43:50.459813",
+  "name": "SN002 - Goods at Standard Rate to Unregistered Buyers",
+  "scenario_detail": "Goods at Standard Rate to Unregistered Buyers",
+  "scenario_id": "SN002"
  },
  {
   "docstatus": 0,

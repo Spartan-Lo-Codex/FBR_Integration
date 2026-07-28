@@ -37,13 +37,6 @@
  {
   "docstatus": 0,
   "doctype": "SRO Schedule No",
-  "modified": "2025-07-09 21:44:17.389659",
-  "name": "EIGHTH SCHEDULE Table 2",
-  "sro_schedule_no": "EIGHTH SCHEDULE Table 2"
- },
- {
-  "docstatus": 0,
-  "doctype": "SRO Schedule No",
   "modified": "2026-05-12 00:47:24.900763",
   "name": "327(I)/2008",
   "sro_schedule_no": "327(I)/2008"
@@ -121,9 +114,30 @@
  {
   "docstatus": 0,
   "doctype": "SRO Schedule No",
+  "modified": "2026-06-07 18:02:50.895961",
+  "name": "Goods at zero-rate",
+  "sro_schedule_no": "Goods at zero-rate"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Schedule No",
+  "modified": "2025-07-09 21:44:17.389659",
+  "name": "EIGHTH SCHEDULE Table 2",
+  "sro_schedule_no": "EIGHTH SCHEDULE Table 2"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Schedule No",
   "modified": "2026-05-12 10:25:18.022778",
   "name": "297(I)/2023-Table-I",
   "sro_schedule_no": "297(I)/2023-Table-I"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "SRO Schedule No",
+  "modified": "2026-07-07 22:30:19.269105",
+  "name": "FIFTH SCHEDULE",
+  "sro_schedule_no": "FIFTH SCHEDULE"
  },
  {
   "docstatus": 0,

@@ -2,20 +2,6 @@
  {
   "docstatus": 0,
   "doctype": "Tax Payer Type",
-  "modified": "2026-05-14 10:55:44.876689",
-  "name": "Registered",
-  "tax_payer_type": "Registered"
- },
- {
-  "docstatus": 0,
-  "doctype": "Tax Payer Type",
-  "modified": "2026-05-14 10:55:44.900559",
-  "name": "Unregistered",
-  "tax_payer_type": "Unregistered"
- },
- {
-  "docstatus": 0,
-  "doctype": "Tax Payer Type",
   "modified": "2026-05-14 10:55:44.917386",
   "name": "Unregistered Distributor",
   "tax_payer_type": "Unregistered Distributor"
@@ -26,5 +12,19 @@
   "modified": "2026-05-14 10:55:44.935101",
   "name": "Retail Consumer",
   "tax_payer_type": "Retail Consumer"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tax Payer Type",
+  "modified": "2026-05-14 10:55:44.876689",
+  "name": "Registered",
+  "tax_payer_type": "Registered"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Tax Payer Type",
+  "modified": "2026-05-14 10:55:44.900559",
+  "name": "Unregistered",
+  "tax_payer_type": "Unregistered"
  }
 ]

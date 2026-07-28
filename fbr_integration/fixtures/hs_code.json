@@ -538,14 +538,6 @@
  {
   "docstatus": 0,
   "doctype": "HS Code",
-  "hs_code": "8704",
-  "hs_code_detail": "Motor Vehicles for the Transport of Goods",
-  "modified": "2026-05-14 10:55:42.799014",
-  "name": "8704"
- },
- {
-  "docstatus": 0,
-  "doctype": "HS Code",
   "hs_code": "8708",
   "hs_code_detail": "Parts and Accessories of Motor Vehicles",
   "modified": "2026-05-14 10:55:42.816213",
@@ -578,26 +570,10 @@
  {
   "docstatus": 0,
   "doctype": "HS Code",
-  "hs_code": "9503",
-  "hs_code_detail": "Tricycles, Scooters, Pedal Cars and Similar Wheeled Toys",
-  "modified": "2026-05-14 10:55:42.878703",
-  "name": "9503"
- },
- {
-  "docstatus": 0,
-  "doctype": "HS Code",
   "hs_code": "3005.1090",
   "hs_code_detail": null,
   "modified": "2025-07-09 18:21:53.463944",
   "name": "3005.1090"
- },
- {
-  "docstatus": 0,
-  "doctype": "HS Code",
-  "hs_code": "0101.2100",
-  "hs_code_detail": null,
-  "modified": "2026-05-12 10:27:10.828674",
-  "name": "0101.2100"
  },
  {
   "docstatus": 0,
@@ -610,9 +586,73 @@
  {
   "docstatus": 0,
   "doctype": "HS Code",
+  "hs_code": "9619.0000",
+  "hs_code_detail": null,
+  "modified": "2026-06-17 20:43:02.581843",
+  "name": "9619.0000"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "HS Code",
+  "hs_code": "123",
+  "hs_code_detail": null,
+  "modified": "2026-06-26 03:55:09.825729",
+  "name": "123"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "HS Code",
+  "hs_code": "789",
+  "hs_code_detail": null,
+  "modified": "2026-06-26 03:56:20.715936",
+  "name": "789"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "HS Code",
+  "hs_code": "9503",
+  "hs_code_detail": "Tricycles, Scooters, Pedal Cars and Similar Wheeled Toys",
+  "modified": "2026-05-14 10:55:42.878703",
+  "name": "9503"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "HS Code",
+  "hs_code": "8704",
+  "hs_code_detail": "Motor Vehicles for the Transport of Goods",
+  "modified": "2026-05-14 10:55:42.799014",
+  "name": "8704"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "HS Code",
   "hs_code": "3005.1010",
   "hs_code_detail": null,
   "modified": "2025-07-09 18:21:17.985523",
   "name": "3005.1010"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "HS Code",
+  "hs_code": "0101.2100",
+  "hs_code_detail": null,
+  "modified": "2026-05-12 10:27:10.828674",
+  "name": "0101.2100"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "HS Code",
+  "hs_code": "3917.3200",
+  "hs_code_detail": null,
+  "modified": "2026-06-17 20:42:46.357638",
+  "name": "3917.3200"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "HS Code",
+  "hs_code": "0102.2930",
+  "hs_code_detail": "0102.2930",
+  "modified": "2026-06-07 17:27:23.007523",
+  "name": "0102.2930"
  }
 ]

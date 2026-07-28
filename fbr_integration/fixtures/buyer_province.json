@@ -35,13 +35,6 @@
   "name": "Punjab"
  },
  {
-  "buyer_province": "Sindh",
-  "docstatus": 0,
-  "doctype": "Buyer Province",
-  "modified": "2026-05-14 10:55:28.261753",
-  "name": "Sindh"
- },
- {
   "buyer_province": "Khyber Pakhtunkhwa",
   "docstatus": 0,
   "doctype": "Buyer Province",
@@ -82,5 +75,12 @@
   "doctype": "Buyer Province",
   "modified": "2026-05-14 10:55:28.352408",
   "name": "FATA"
+ },
+ {
+  "buyer_province": "Sindh",
+  "docstatus": 0,
+  "doctype": "Buyer Province",
+  "modified": "2026-05-14 10:55:28.261753",
+  "name": "Sindh"
  }
 ]
