@@ -31,6 +31,11 @@ doctype_js = {
 	"Sales Invoice": "public/js/sales_invoice_fbr.js",
 }
 
+# Sales Invoice list view: bulk "Send to FBR" action
+doctype_list_js = {
+	"Sales Invoice": "public/js/sales_invoice_list.js",
+}
+
 # Purple button CSS (you already have fbr.css)
 app_include_css = ["/assets/fbr_integration/css/fbr.css"]
 

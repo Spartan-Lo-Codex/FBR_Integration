@@ -302,6 +302,74 @@ def send_to_fbr_si(name: str):
 	return send_invoice_to_fbr(doc)
 
 
+def bulk_send_error_message(error):
+	"""Build a short, single line error message for a failed bulk send."""
+	message = safe_str(error).strip() or "Unknown Error"
+	message = re.sub(r"\s+", " ", frappe.utils.strip_html(message)).strip()
+	return message[:300]
+
+
+@frappe.whitelist()
+def send_to_fbr_bulk(names):
+	"""Send multiple Sales Invoices to FBR, one invoice at a time.
+
+	Each invoice is sent with the same logic used by the single invoice action, so
+	invoices that fail do not stop the remaining ones.
+	"""
+	if isinstance(names, str):
+		names = frappe.parse_json(names)
+
+	invoice_names = []
+	for name in names or []:
+		name = safe_str(name).strip()
+		if name and name not in invoice_names:
+			invoice_names.append(name)
+
+	if not invoice_names:
+		frappe.throw("No Sales Invoice selected to send to FBR.")
+
+	results = []
+	for index, name in enumerate(invoice_names, start=1):
+		save_point = f"fbr_bulk_send_{index}"
+		frappe.db.savepoint(save_point)
+
+		try:
+			response = send_to_fbr_si(name) or {}
+		except Exception as error:
+			frappe.db.rollback(save_point=save_point)
+			frappe.clear_messages()
+			results.append(
+				{
+					"invoice": name,
+					"status": "Failed",
+					"invoice_no": "",
+					"error": bulk_send_error_message(error),
+				}
+			)
+		else:
+			frappe.db.release_savepoint(save_point)
+			results.append(
+				{
+					"invoice": name,
+					"status": "Sent" if response.get("success") else "Already Sent",
+					"invoice_no": safe_str(response.get("invoice_no")),
+					"error": "",
+				}
+			)
+
+	sent = [row for row in results if row["status"] == "Sent"]
+	skipped = [row for row in results if row["status"] == "Already Sent"]
+	failed = [row for row in results if row["status"] == "Failed"]
+
+	return {
+		"total": len(results),
+		"sent": len(sent),
+		"skipped": len(skipped),
+		"failed": len(failed),
+		"results": results,
+	}
+
+
 def send_invoice_to_fbr(doc, method=None):
 	enforce_return_invoice_type(doc)
 
