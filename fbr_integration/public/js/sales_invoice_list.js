@@ -90,25 +90,49 @@ function add_bulk_send_action(listview) {
     );
 }
 
-// Append our action to the doctype's listview settings, keeping whatever
-// ERPNext or other apps already registered (onload, get_indicator, add_fields...).
-function register_bulk_send_action() {
-    const settings = (frappe.listview_settings["Sales Invoice"] =
-        frappe.listview_settings["Sales Invoice"] || {});
-    const previous_onload = settings.onload;
+const DOCTYPE = "Sales Invoice";
+const MARKER = "__fbr_bulk_send_action";
+const PATCH_FLAG = "__fbr_bulk_send_patched";
 
-    if (previous_onload && previous_onload.__fbr_bulk_send_action) return;
+function chain_onload(previous) {
+    if (previous && previous[MARKER]) return previous;
 
     const onload = function (listview) {
-        if (typeof previous_onload === "function") {
-            previous_onload.call(this, listview);
+        if (typeof previous === "function") {
+            previous.call(this, listview);
         }
 
         add_bulk_send_action(listview);
     };
 
-    onload.__fbr_bulk_send_action = true;
-    settings.onload = onload;
+    onload[MARKER] = true;
+    return onload;
+}
+
+// Every doctype_list_js file for a doctype is concatenated into one shared
+// `__list_js` block and executed in installed-app order, so other apps load
+// after us (srb_integration does, and it assigns a brand new settings object).
+// Turn the key into an accessor so our onload survives those replacements
+// instead of being silently dropped.
+function register_bulk_send_action() {
+    const registry = frappe.listview_settings;
+    registry[PATCH_FLAG] = registry[PATCH_FLAG] || {};
+
+    if (registry[PATCH_FLAG][DOCTYPE]) return;
+    registry[PATCH_FLAG][DOCTYPE] = true;
+
+    let settings = registry[DOCTYPE] || {};
+    settings.onload = chain_onload(settings.onload);
+
+    Object.defineProperty(registry, DOCTYPE, {
+        configurable: true,
+        enumerable: true,
+        get: () => settings,
+        set: (value) => {
+            settings = value || {};
+            settings.onload = chain_onload(settings.onload);
+        },
+    });
 }
 
 register_bulk_send_action();
