@@ -5,6 +5,12 @@ def send_to_fbr_si(name: str):
     from fbr_integration.fbr_api import send_to_fbr_si as _send
     return _send(name)
 
+@frappe.whitelist()
+def send_to_fbr_bulk(names):
+    """Send the selected Sales Invoices to FBR one by one and return a summary."""
+    from fbr_integration.fbr_api import send_to_fbr_bulk as _send_bulk
+    return _send_bulk(names)
+
 # ---------------------------------------------------------
 # QR/Barcode generator (if you are using the backend QR)
 # ---------------------------------------------------------
